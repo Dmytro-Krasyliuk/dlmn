@@ -225,6 +225,24 @@ function createEditor(code) {
               documentation: "Represents a paragraph of text in HTML.",
             },
             {
+              label: "br",
+              kind: monaco.languages.CompletionItemKind.Snippet,
+              insertText: "<br>$1</br>",
+              insertTextRules:
+                monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+              detail: "ppp",
+              documentation: "Represents a paragraph of text in HTML.",
+            },
+            {
+              label: "input",
+              kind: monaco.languages.CompletionItemKind.Snippet,
+              insertText: '<input type="text">',
+              insertTextRules:
+                monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+              detail: "ppp",
+              documentation: "Represents a paragraph of text in HTML.",
+            },
+            {
               label: "ul",
               kind: monaco.languages.CompletionItemKind.Snippet,
               insertText: "<ul>$1</ul>",
@@ -352,6 +370,15 @@ function createEditor(code) {
               insertTextRules:
                 monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
               detail: "margin",
+              documentation: "Represents a paragraph of text in HTML.",
+            },
+            {
+              label: "bd",
+              kind: monaco.languages.CompletionItemKind.Snippet,
+              insertText: "border: ${1:10}px;",
+              insertTextRules:
+                monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+              detail: "border",
               documentation: "Represents a paragraph of text in HTML.",
             },
             {

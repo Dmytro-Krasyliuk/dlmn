@@ -376,8 +376,8 @@
 
                                           }
                                       // '0px none rgb(0, 0, 0)'
-                                        if (checkEl.command == 'border' && checkEl.value == '0') {
-                                            cssCurrentValue = getComputedStyle(el).border;
+                                        if ((checkEl.command == 'border' || checkEl.command == 'outline')  && checkEl.value == '0') {
+                                            cssCurrentValue = getComputedStyle(el)[checkEl.command];
                                             if (cssCurrentValue == '0px none rgb(0, 0, 0)') {
                                                 nextTask();
                                               }

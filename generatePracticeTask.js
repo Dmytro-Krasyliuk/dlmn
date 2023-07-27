@@ -10,7 +10,7 @@ const translations = {
   height: "висоту",
   border: "рамку",
   background: "фон",
-  color: "колір",
+  color: "колір тексту",
   margin: "відступ",
   padding: "внутрішні відступи",
   h1: "заголовок першого рівня",
@@ -20,6 +20,7 @@ const translations = {
   h5: "заголовок пятого рівня",
   h6: "заголовок шостого рівня",
   "padding-left": "внутрішній відступ зліва",
+  "font-size": "розмір тексту",
   "padding-right": "внутрішній відступ справа",
   "padding-top": "внутрішню відступ зверху",
   "padding-bottom": "внутрішню відступ знизу",
@@ -48,6 +49,8 @@ const translations = {
   s: "перекреслений текст",
   i: "нахилений текст",
   u: "підкреслений текст",
+  p: "звичайний текст",
+  button: "кнопку",
 };
 
 function generatePracticeTask(task) {
