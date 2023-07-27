@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Распознавание элементов на фото</title>
+</head>
+<body>
+  <h1>Обработка изображения на сервере</h1>
+  <img src="https://klike.net/uploads/posts/2019-11/1574605225_2.jpg" id="image">
+  <button onclick="processImage()">Обработать</button>
+  <div id="result"></div>
+
+  <style>
+    img {
+        width: 200px;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  <script>
+    async function processImage() {
+      const imageElement = document.getElementById('image');
+      const imageUrl = imageElement.src;
+
+      const response = await fetch('http://localhost:3009/process-image', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ imageUrl: imageUrl })
+      });
+
+      const predictions = await response.json();
+      displayResult(predictions);
+    }
+
+    function displayResult(predictions) {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '';
+
+      predictions.forEach((prediction) => {
+        const { bbox, class: className, score } = prediction;
+        const label = `${className} (${Math.round(score * 100)}%)`;
+        const box = document.createElement('div');
+        box.classList.add('box');
+        box.style.left = `${bbox[0]}px`;
+        box.style.top = `${bbox[1]}px`;
+        box.style.width = `${bbox[2]}px`;
+        box.style.height = `${bbox[3]}px`;
+        const labelDiv = document.createElement('div');
+        labelDiv.textContent = label;
+        box.appendChild(labelDiv);
+        resultDiv.appendChild(box);
+      });
+    }
+  </script>
+</body>
+</html>
