@@ -23,7 +23,7 @@
     "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "html-to-image": "^1.11.11",
-    "jsdom": "^22.1.0",
+    "jsdom": "19.0.0",
     "moment": "^2.29.4",
     "mongoose": "^7.3.0",
     "node-fetch": "^3.3.1",
