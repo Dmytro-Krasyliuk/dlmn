@@ -718,7 +718,6 @@ await Practice.insertMany([
   margin-top: 20px;
   padding: 10px;
   border: 0;
-  outline: 0;
   width: 320px;
 }
 .card__textarea {

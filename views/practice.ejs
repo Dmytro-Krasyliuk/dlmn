@@ -77,7 +77,7 @@
               <div class="task-body">
                 <h4 class="task-body__title">Додаткова інформація:</h4>
                 <div class="task-body__code"><%- task.label %></div>
-                <button class="task-body__show-answer">Показати рішення</button>
+                <button class="task-body__show-answer">Пропустити завдання</button>
                 <div class="task-details-counter">1/15</div>
               </div>
             </div>
@@ -156,7 +156,12 @@
     <script>
          document.addEventListener('DOMContentLoaded', function () {
 
+          
+
+      const taskBodyShowAnswer = document.getElementsByClassName('task-body__show-answer')[0];
       const container = document.getElementsByClassName('race')[0];
+
+      
 
 
 
@@ -337,6 +342,9 @@
 
 
                           }
+                          taskBodyShowAnswer.addEventListener('click', function () {
+                            nextTask()
+                          })
                           
 
                           const taskBodyShowAnswer = document.getElementById('task-body__show-answer');
