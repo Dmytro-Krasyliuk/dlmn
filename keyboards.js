@@ -285,7 +285,7 @@ const practiceKeyboard = (idStudent, idTask) => {
     btns.push([
       {
         text: "Виконати завдання",
-        url: `https://practice2-j4q4.onrender.com/get/practice/${idTask}/${idStudent}`,
+        url: `https://platform-sj3z.onrender.com/get/practice/${idTask}/${idStudent}`,
         callback_data: `practice-${idTask}-${idStudent}`,
       },
     ]);

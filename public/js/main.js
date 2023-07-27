@@ -772,7 +772,7 @@ ${jsValue}
   function initProject(idStudent, idTask, imageResult) {
     console.log(181);
     let tasks;
-    fetch(`https://practice2-j4q4.onrender.com/getTasks/${idStudent}/${idTask}`)
+    fetch(`https://platform-sj3z.onrender.com/getTasks/${idStudent}/${idTask}`)
       .then((res) => res.json())
       .then((json) => {
         tasks = json.data.tasks;
@@ -1073,7 +1073,7 @@ ${jsValue}
                 },
               };
 
-              const url = "https://practice2-j4q4.onrender.com/set/practice";
+              const url = "https://platform-sj3z.onrender.com/set/practice";
 
               fetch(url, {
                 method: "POST",
