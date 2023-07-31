@@ -1,6 +1,6 @@
 import { students } from "./data.js";
 
-import { technologiesStack, cThemes, adminId } from "./data.js";
+import { technologiesStack, themes, adminId } from "./data.js";
 import { User } from "./database/index.js";
 import { testsID, shuffle, getNamesOneStudentByIdGroup } from "./app.js";
 let namesRight = [];
@@ -633,7 +633,7 @@ const chooseStudents = async function (type) {
     
 
     try {
-      students = await User.find({});
+      let students = await User.find({});
       console.log(students);
       for (let i = 0; i < students.length; i ++) {
         console.log('-- -- --')

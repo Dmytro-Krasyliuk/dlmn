@@ -15,7 +15,7 @@ import mongoose, { Schema } from "mongoose";
 import { JSDOM } from "jsdom";
 import ffmpeg from "fluent-ffmpeg";
 import request from "request";
-import { cThemes, students, templates } from "./data.js";
+import { themes, students, templates } from "./data.js";
 import { result } from "./rss/quiz.js";
 import time from "./time.js";
 import { drawResult } from "./draw/quiz.js";
@@ -518,7 +518,7 @@ let practiceList = [];
 // await studentListPractice.deleteMany({});
 
 let idMsgThemes = 0;
-let currentThemes = cThemes[0].data;
+let currentThemes = themes[0].data;
 let formSoloImg = {
   idGroup: "",
   name: "",
@@ -1308,8 +1308,8 @@ ${link.invite_link}
     bot.sendMessage(
       chatId,
       "Список усіх тем",
-      mainThemes(cThemes)
-      // themesKeyboard2(cThemes[0].data, formSoloImg.themes)
+      mainThemes(themes)
+      // themesKeyboard2(themes[0].data, formSoloImg.themes)
     );
   }
   if (text == "Підтвердити фото") {
@@ -1435,13 +1435,13 @@ bot.on("callback_query", async (msg) => {
   }
   if (data.startsWith("mainThemesIndex-")) {
     let themeIndex = data.slice(16);
-    currentThemes = cThemes[themeIndex].data;
+    currentThemes = themes[themeIndex].data;
 
-    formSoloImg.themes.push("++" + cThemes[themeIndex].title);
+    formSoloImg.themes.push("++" + themes[themeIndex].title);
 
     bot.sendMessage(
       chatId,
-      "Тема: " + cThemes[themeIndex].title + " обрана!",
+      "Тема: " + themes[themeIndex].title + " обрана!",
       themesKeyboard2(currentThemes, formSoloImg.themes)
     );
   }
@@ -1719,7 +1719,7 @@ ${tasksItems}
         let currentThemesOld = currentThemes[+data.slice(12)];
         currentThemes = currentThemes[+data.slice(12)].childrens;
         if (currentThemes.length == 0) {
-          currentThemes = cThemes[0].data;
+          currentThemes = themes[0].data;
 
           formSoloImg.themes.push(currentThemesOld.details.title);
 
@@ -1765,8 +1765,8 @@ ${readyThemes}
     bot.sendMessage(
       chatId,
       "Список усіх тем",
-      mainThemes(cThemes)
-      // themesKeyboard2(cThemes[0].data, formSoloImg.themes)
+      mainThemes(themes)
+      // themesKeyboard2(themes[0].data, formSoloImg.themes)
     );
   }
 
@@ -2012,9 +2012,9 @@ ID заняття:
   if (data.startsWith("learn-new-")) {
     let themeText = data.slice(10);
     let theme;
-    for (let i = 0; i < cThemes[0].data.length; i++) {
-      if (cThemes[0].data[i].details.title === themeText) {
-        theme = cThemes[0].data[i].details;
+    for (let i = 0; i < themes[0].data.length; i++) {
+      if (themes[0].data[i].details.title === themeText) {
+        theme = themes[0].data[i].details;
       }
     }
     let sandbox = "";
