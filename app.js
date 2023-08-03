@@ -589,6 +589,82 @@ await Practice.insertMany([
     type: "classElement",
     level: 1,
     codeResult: {
+      html: `<div class="app">
+  <img class="app__img" src="https://w7.pngwing.com/pngs/487/704/png-transparent-football-field-football-field-green-background-football.png" alt="">
+  <img class="bal" src="https://www.pngplay.com/wp-content/uploads/6/Sports-Football-Transparent-PNG.png" alt="">
+  <div class="form">
+    <h2 class="form-title">Приєднуйся до нашого клубу футболістів</h2>
+    <input type="text" class="form-name">
+    <input type="text" class="form-phone">
+    <button class="form-btn">Відправити заявку</button>
+  </div>
+</div>
+    `,
+      css: `.app__img {
+  width: 700px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+.bal {
+  position: absolute;
+  top: 215px;
+  left: 330px;
+  width: 40px;
+}
+.form {
+  position: absolute;
+  top: 10px;
+  left: 750px;
+  background: skyblue;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  color: white;
+  
+}
+
+.form-name {
+  padding: 10px;
+  border-radius: 2px;
+  color: lime;
+  font-size: 22px;
+  width: 220px;
+  margin-bottom: 20px;
+}
+.form-phone {
+  padding: 10px;
+  border-radius: 2px;
+  color: lime;
+  font-size: 22px;
+  width: 220px;
+  margin-bottom: 20px;
+}
+.form-btn {
+  background: lime;
+  border-radius: 5px;
+  padding: 20px;
+  width: 240px;
+  border: 0;
+  cursor: pointer;
+}`,
+      js: `
+    `,
+    },
+    data: {
+      html: ``,
+      css: ``,
+      js: ``,
+    },
+  }),
+  generatePracticeTask({
+    id: 12,
+    name: "Картка товару ",
+    description: "(мікрофон)",
+    type: "classElement",
+    level: 1,
+    codeResult: {
       html: `<div class="product">
   <img class="image" src="https://content1.rozetka.com.ua/goods/images/big/325921621.jpg" alt="">
   <h1 class="title">Мікрофон DKWAY PSY-950</h1>
