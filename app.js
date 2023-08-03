@@ -583,9 +583,9 @@ await studentListPractice.deleteMany({});
 
 await Practice.insertMany([
   generatePracticeTask({
-    id: 1,
-    name: "Картка товару ",
-    description: "(мікрофон)",
+    id: 125,
+    name: "Football ",
+    description: "",
     type: "classElement",
     level: 1,
     codeResult: {
@@ -1626,7 +1626,7 @@ id: ${idTest}
       }
 
       if (typeThemes == 'practice') {
-        let idPracticeTask = [2, 3];
+        let idPracticeTask = [1];
         let currentThemesNew = currentThemes[+data.slice(12)];
         console.log("currentThemesNew", currentThemesNew);
         for (let i = 0; i < idPracticeTask.length; i++) {
