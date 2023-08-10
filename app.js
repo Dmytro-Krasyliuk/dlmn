@@ -364,6 +364,10 @@ ${wrongTask}
   // res.send(`Hello, POST request received! Data: ${JSON.stringify(data)}`);
 });
 
+
+
+
+
 app.get("/getTasks/:idStudent/:idTask", async (req, res) => {
   let idStudent = req.params.idStudent;
   let idTask = Number(req.params.idTask);
@@ -581,6 +585,10 @@ let botId = "6183220599";
 await Practice.deleteMany({});
 await studentListPractice.deleteMany({});
 
+
+
+let idPracticeTask = [125, 126];
+
 await Practice.insertMany([
   generatePracticeTask({
     id: 125,
@@ -691,6 +699,119 @@ await Practice.insertMany([
   width: 80px;
   height: 30px;
   border-radius: 5px;
+}
+    `,
+      js: `
+    `,
+    },
+    data: {
+      html: ``,
+      css: ``,
+      js: ``,
+    },
+  }),
+  generatePracticeTask({
+    id: 126,
+    name: "Windows",
+    description: "(Windows)",
+    type: "classElement",
+    level: 1,
+    codeResult: {
+      html: `<div class="window">
+  <div class="window1"></div>
+  <div class="window2"></div>
+  <div class="window3"></div>
+  <div class="window4"></div>
+</div>
+    `,
+      css: `.window1 {
+  width: 100px;
+  height: 80px;
+  background: #f86828;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.window2 {
+  width: 100px;
+  height: 80px;
+  background: #92c400;
+  position: absolute;
+  top: 20px;
+  left: 140px;
+}
+.window3 {
+  width: 100px;
+  height: 80px;
+  background: #00b5f1;
+  position: absolute;
+  top: 120px;
+  left: 20px;
+}
+.window4 {
+  width: 100px;
+  height: 80px;
+  background: #ffc400;
+  position: absolute;
+  top: 120px;
+  left: 140px;
+}
+    `,
+      js: `
+    `,
+    },
+    data: {
+      html: ``,
+      css: ``,
+      js: ``,
+    },
+  }),
+
+  generatePracticeTask({
+    id: 127,
+    name: "Windows",
+    description: "(Windows)",
+    type: "classElement",
+    level: 1,
+    codeResult: {
+      html: `<div class="window">
+  <div class="window1"></div>
+  <div class="window2"></div>
+  <div class="window3"></div>
+  <div class="window4"></div>
+</div>
+    `,
+      css: `.window1 {
+  width: 100px;
+  height: 80px;
+  background: #f86828;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.window2 {
+  width: 100px;
+  height: 80px;
+  background: #92c400;
+  position: absolute;
+  top: 20px;
+  left: 140px;
+}
+.window3 {
+  width: 100px;
+  height: 80px;
+  background: #00b5f1;
+  position: absolute;
+  top: 120px;
+  left: 20px;
+}
+.window4 {
+  width: 100px;
+  height: 80px;
+  background: #ffc400;
+  position: absolute;
+  top: 120px;
+  left: 140px;
 }
     `,
       js: `
@@ -1626,7 +1747,7 @@ id: ${idTest}
       }
 
       if (typeThemes == 'practice') {
-        let idPracticeTask = [1];
+        // let idPracticeTask = [1];
         let currentThemesNew = currentThemes[+data.slice(12)];
         console.log("currentThemesNew", currentThemesNew);
         for (let i = 0; i < idPracticeTask.length; i++) {

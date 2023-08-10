@@ -249,6 +249,33 @@ document.addEventListener("DOMContentLoaded", function () {
                 documentation: "Represents a paragraph of text in HTML.",
               },
               {
+                label: "posa",
+                kind: monaco.languages.CompletionItemKind.Snippet,
+                insertText: "position: absolute;",
+                insertTextRules:
+                  monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                detail: "position",
+                documentation: "Represents a paragraph of text in HTML.",
+              },
+              {
+                label: "posr",
+                kind: monaco.languages.CompletionItemKind.Snippet,
+                insertText: "position: relative;",
+                insertTextRules:
+                  monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                detail: "position",
+                documentation: "Represents a paragraph of text in HTML.",
+              },
+              {
+                label: "posf",
+                kind: monaco.languages.CompletionItemKind.Snippet,
+                insertText: "position: fixed;",
+                insertTextRules:
+                  monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                detail: "position",
+                documentation: "Represents a paragraph of text in HTML.",
+              },
+              {
                 label: "brs",
                 kind: monaco.languages.CompletionItemKind.Snippet,
                 insertText: "border-radius: ${1:10}px;",
