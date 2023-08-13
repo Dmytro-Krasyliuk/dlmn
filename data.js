@@ -250,8 +250,8 @@ let themes = [
             ],
             sandbox: [
               {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/bGQqOdM",
-                title: "Простий приклад команди address",
+                url: "https://codepen.io/DmytroKrasyliuk/pen/KKrOwYb",
+                title: "Простий приклад команди abbr",
                 description: "",
               },
             ],
@@ -301,7 +301,7 @@ let themes = [
 якими ти розмічаєш де що буде.
         `,
           tasks: {
-            practice: [125],
+            practice: ['html_aside_1'],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -392,7 +392,6 @@ let themes = [
 
 Ось як ти можеш використати цей тег, щоб додати музику або інші звуки до своєї веб-сторінки:
 
-
 <audio controls>
   <source src="моя_пісня.mp3" type="audio/mpeg">
   Твій браузер не підтримує аудіо елемент.
@@ -408,7 +407,7 @@ let themes = [
 
         `,
           tasks: {
-            practice: [125],
+            practice: ['html_audio_1'],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -512,7 +511,7 @@ Copy code
 Він лише змінює візуальне відображення тексту. Якщо ти хочеш виділити частину тексту, яка має особливе значення, краще використати теги <strong> або <em>.
         `,
           tasks: {
-            practice: [125],
+            practice: ['html_b_1'],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",

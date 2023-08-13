@@ -596,7 +596,7 @@ ${jsValue}
       var tooltipY = editorHTML.getTopForLineNumber(startLineNumber) + 20; // Position tooltip 20 pixels below the highlighted text
 
       tooltip = document.createElement("div");
-      tooltip.textContent = "здесь есть ошибка";
+      // tooltip.textContent = "здесь есть ошибка";
       tooltip.className = "custom-tooltip";
       tooltip.style.left = tooltipX + "px";
       tooltip.style.top = tooltipY + "px";

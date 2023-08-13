@@ -5,6 +5,8 @@ function colorToRGB(colorName) {
   return Color(colorName).rgb().string();
 }
 
+let flag = 0;
+
 const translations = {
   width: "ширину",
   height: "висоту",
@@ -117,23 +119,34 @@ function processElement(
   parentLabel = "",
   selectorNumber = 1
 ) {
-   if (element.type === "text") {
-     const textCheck = [
-       {
-         type: "textElement",
-         selector: parentSelector,
-         selectorNumber,
-         text: element.text,
-       },
-     ];
+  if (flag == 1) {
+    selectorNumber--
+  }
+    if (selectorNumber == 0) {
+      selectorNumber = 1;
+    }
 
-     resultArray[parentSelector + ":text"] = {
-       title: `Додай текст: "${element.text}" у ${parentLabel}`,
-       label: element.text,
-       description: `Додай текст: "${element.text}" у ${parentLabel}`,
-       check: textCheck,
-     };
-   } 
+  if (element.type === "text" && element.text) {
+    flag = 1;
+    const textCheck = [
+      {
+        type: "textElement",
+        selector: parentSelector,
+        selectorNumber,
+        text: element.text,
+      },
+    ];
+
+    resultArray[parentSelector + ":text"] = {
+      title: `Додай текст: "${element.text}" у ${parentLabel}`,
+      label: element.text,
+      description: `Додай текст: "${element.text}" у ${parentLabel}`,
+      check: textCheck,
+    };
+    return;
+  } 
+
+
   if (element.tagName) {
     const translatedTag = translations[element.tagName] || element.tagName;
     const selector = parentSelector
@@ -142,7 +155,8 @@ function processElement(
 
     if (!childSelectorCounters[selector]) {
       childSelectorCounters[selector] = 1;
-    } else {
+    } 
+    else {
       childSelectorCounters[selector]++;
     }
 
@@ -166,53 +180,26 @@ function processElement(
       check,
     };
 
-    if (element.attributes && element.attributes.length > 0) {
-      element.attributes.forEach((attr) => {
-        if (attr.attribute === "class") {
-          const classNames = attr.value.split(" ");
-          classNames.forEach((className) => {
-            const classSelector = parentSelector
-              ? `${parentSelector} > ${element.tagName}.${className}`
-              : `${element.tagName}.${className}`;
-            const classCheck = [
-              {
-                type: "classElement",
-                selector: classSelector,
-                selectorNumber: childSelectorCounters[classSelector]
-                  ? ++childSelectorCounters[classSelector]
-                  : (childSelectorCounters[classSelector] = 1),
-                className,
-              },
-            ];
-            resultArray[classSelector] = {
-              title: `Додай клас для ${translatedTag}${currentParentLabel}`,
-              label: className,
-              description: `Додай клас для ${translatedTag}${currentParentLabel}`,
-              check: classCheck,
-            };
-          });
-        }
+   if (element.attributes && element.attributes.length > 0) {
+     element.attributes.forEach((attr) => {
+       const attrCheck = [
+         {
+           type: "attributeElement",
+           selector: currentSelector,
+           selectorNumber,
+           attributeName: attr.attribute,
+           attributeValue: attr.value,
+         },
+       ];
 
-        if (attr.attribute === "src" || attr.attribute === "alt") {
-          const attrCheck = [
-            {
-              type: "attributeElement",
-              selector: currentSelector,
-              selectorNumber,
-              attributeName: attr.attribute,
-              attributeValue: attr.value,
-            },
-          ];
-
-          resultArray[currentSelector + attr.attribute] = {
-            title: `Додай атрибут ${attr.attribute} для ${translatedTag}${currentParentLabel}`,
-            label: attr.value,
-            description: `Додай атрибут ${attr.attribute} для ${translatedTag}${currentParentLabel}`,
-            check: attrCheck,
-          };
-        }
-      });
-    }
+       resultArray[currentSelector + attr.attribute] = {
+         title: `Додай атрибут ${attr.attribute} для ${translatedTag}${currentParentLabel}`,
+         label: attr.value,
+         description: `Додай атрибут ${attr.attribute} для ${translatedTag}${currentParentLabel}`,
+         check: attrCheck,
+       };
+     });
+   }
 
     if (element.children && element.children.length > 0) {
       element.children.forEach((child, index) => {
@@ -343,21 +330,19 @@ function generateTasks(cssCode, htmlCode, task) {
 
 
 let result = generatePracticeTask({
-  id: 26,
+  id: '__1',
   name: "Картка товару ",
   description: "(мікрофон)",
   type: "classElement",
   level: 1,
   codeResult: {
-    html: `<div class="circle circle1" id="element"></div>`,
-    css: `
-.circle {
-  display: flex;
-}
-.circle1 {
-  background: red;
-}
-    `,
+    html: `<p>Переглянь карту 
+<a class="a" href="https://goo.gl/maps/1x8yTmk9G46BdaFd8">Києва</a>
+<a href="https://goo.gl/maps/EcbEr2itoNRYhbTt9">Одеси</a>
+<a href="https://goo.gl/maps/iKdjqLVqR9fuisPC9">Чернівців</a>
+  
+</p>`,
+    css: ``,
     js: `
     `,
   },

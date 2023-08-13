@@ -28,7 +28,6 @@ import { generatePracticeTaskHTML } from "./practiceTasksHTML.js";
 import getCodeColor from "./getCodeColor.js";
 import generatePracticeTask from "./generatePracticeTask.js";
 import { Practice, User, studentListPractice } from "./database/index.js";
-// import { Practice, User, students, studentListPractice } from "./data.js";
 
 const app = express();
 const server = http.createServer(app); // Use http.createServer with Express app
@@ -37,17 +36,6 @@ const io = new socketIO(server); // Initialize socket.io with the existing serve
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const port = process.env.PORT || 3009;
-
-
-
-
-
-
-
-
-
-
-
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -159,8 +147,6 @@ app.get("/sandbox/select/:data", function (req, res) {
   console.log();
 });
 
-
-
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
@@ -180,7 +166,6 @@ function shuffle(array) {
 
   return array;
 }
-
 
 // app.post("/process-image", async (req, res) => {
 //   try {
@@ -364,10 +349,6 @@ ${wrongTask}
   // res.send(`Hello, POST request received! Data: ${JSON.stringify(data)}`);
 });
 
-
-
-
-
 app.get("/getTasks/:idStudent/:idTask", async (req, res) => {
   let idStudent = req.params.idStudent;
   let idTask = req.params.idTask;
@@ -381,65 +362,60 @@ app.get("/get/practice/:idTask/:idStudent", async (req, res) => {
   let idTask = req.params.idTask;
   let idStudent = req.params.idStudent;
   let nameStudent = getNamesOneStudentByIdGroup(idStudent);
+  console.log("!!!!!!!!", idTask);
   let task = await Practice.findOne({ id: idTask });
 
   let studentPractice = await studentListPractice.findOne({
     idPractice: idTask,
   });
 
-    if (studentPractice) {
-    
-
-  let allStudentsData = [];
-  console.log(studentPractice);
-
   if (studentPractice) {
-  studentPractice.students.forEach((student) => {
-    let myProfile = "";
-    if (student.idStudent == idStudent) {
-      myProfile = "your-car";
+    let allStudentsData = [];
+    console.log(studentPractice);
+
+    if (studentPractice) {
+      studentPractice.students.forEach((student) => {
+        let myProfile = "";
+        if (student.idStudent == idStudent) {
+          myProfile = "your-car";
+        }
+        allStudentsData.push({
+          studentName: getNamesOneStudentByIdGroup(student.idStudent),
+          studentCar: "/img/car-1.png",
+          studentId: student.idStudent,
+          myProfile: myProfile,
+          studentCurrentPosition: 3,
+        });
+      });
     }
-    allStudentsData.push({
-      studentName: getNamesOneStudentByIdGroup(student.idStudent),
-      studentCar: "/img/car-1.png",
-      studentId: student.idStudent,
-      myProfile: myProfile,
-      studentCurrentPosition: 3,
-    });
-  });
+
+    console.log("check");
+    console.log(task.tasks[0].check);
+
+    let HTML = task.codeResult.html;
+    let CSS = task.codeResult.css;
+    let JS = task.codeResult.js;
+    let taskName = task.name;
+
+    let data = {
+      nameStudent: nameStudent,
+      idStudent: idStudent,
+      idTask: idTask,
+      taskName: taskName,
+      allStudentsData: allStudentsData,
+      task: task,
+      tasks: task.tasks,
+      code: {
+        HTML: HTML,
+        CSS: CSS,
+        JS: JS,
+      },
+    };
+    console.log(data.code);
+    console.log("task", task);
+    res.render("practice", data);
   }
-
-
-
-  
-  console.log("check");
-  console.log(task.tasks[0].check);
-
-  let HTML = task.codeResult.html;
-  let CSS = task.codeResult.css;
-  let JS = task.codeResult.js;
-  let taskName = task.name;
-
-  let data = {
-    nameStudent: nameStudent,
-    idStudent: idStudent,
-    idTask: idTask,
-    taskName: taskName,
-    allStudentsData: allStudentsData,
-    task: task,
-    tasks: task.tasks,
-    code: {
-      HTML: HTML,
-      CSS: CSS,
-      JS: JS,
-    },
-  };
-  console.log(data.code);
-  console.log("task", task);
-  res.render("practice", data);
-    }
   res.render("practice", {});
-
 });
 
 app.get("/css/style.css", function (req, res) {
@@ -515,7 +491,7 @@ io.on("connection", (socket) => {
 let newGroupStudent = [];
 // let tests = false;
 // let practice = false;
-let typeThemes = 'practice'
+let typeThemes = "practice";
 let testsID = [];
 let practiceList = [];
 
@@ -585,13 +561,34 @@ let botId = "6183220599";
 await Practice.deleteMany({});
 await studentListPractice.deleteMany({});
 
-
-
 let idPracticeTask = [125, 126];
 
 await Practice.insertMany([
   generatePracticeTask({
     id: "html_a_1",
+    name: "Посилання на карти",
+    description: "Києва, Одеси та Чернівців",
+    type: "classElement",
+    level: 1,
+    codeResult: {
+      html: `<p>Переглянь карту 
+<a href="https://goo.gl/maps/1x8yTmk9G46BdaFd8">Києва</a>
+<a href="https://goo.gl/maps/EcbEr2itoNRYhbTt9">Одеси</a>
+<a href="https://goo.gl/maps/iKdjqLVqR9fuisPC9">Чернівців</a>
+  
+</p>`,
+      css: ``,
+      js: `
+    `,
+    },
+    data: {
+      html: ``,
+      css: ``,
+      js: ``,
+    },
+  }),
+  generatePracticeTask({
+    id: "html_abbr_1",
     name: "Посилання на карти",
     description: "Києва, Одеси та Чернівців",
     type: "classElement",
@@ -1178,16 +1175,15 @@ bot.on("callback_query", async (msg) => {
       "Оберіть по яким темам мають бути питання:",
       themesKeyboard2(currentThemes, formSoloImg.themes)
     );
-    typeThemes = 'tests';
+    typeThemes = "tests";
   }
   if (data == "sendPractice") {
-    
     bot.sendMessage(
       chatId,
       "Оберіть по яким темам мають бути питання:",
       themesKeyboard2(currentThemes, formSoloImg.themes)
     );
-    typeThemes = 'practice'
+    typeThemes = "practice";
   }
 
   if (data.startsWith("deleteTemplate-")) {
@@ -1213,7 +1209,7 @@ bot.on("callback_query", async (msg) => {
   }
   if (data.startsWith("themesIndex")) {
     try {
-      if (typeThemes == 'tests') {
+      if (typeThemes == "tests") {
         let currentThemesNew = currentThemes[+data.slice(12)];
         console.log("444");
         let ddata = currentThemesNew.details.tests;
@@ -1275,11 +1271,14 @@ id: ${idTest}
         }
       }
 
-      if (typeThemes == 'practice') {
+      if (typeThemes == "practice") {
         console.log(data); // themesIndex-70
         // let idPracticeTask = [1];
         let currentThemesNew = currentThemes[+data.slice(12)];
-        console.log("currentThemesNew", currentThemesNew.details.tasks.practice);
+        console.log(
+          "currentThemesNew",
+          currentThemesNew.details.tasks.practice
+        );
         idPracticeTask = currentThemesNew.details.tasks.practice;
         /* 
 
@@ -1310,11 +1309,13 @@ id: ${idTest}
         */
 
         for (let i = 0; i < idPracticeTask.length; i++) {
+          console.log(idPracticeTask[i], "idPracticeTask");
           let practiceTasks = await Practice.findOne({ id: idPracticeTask[i] });
-
-          let templateObjectData = {
-            output: "./practice-old.png",
-            html: `<html>
+          console.log("practiceTasks", practiceTasks);
+          try {
+            let templateObjectData = {
+              output: "./practice-old.png",
+              html: `<html>
   <body>
    ${practiceTasks.data.html}
    
@@ -1326,17 +1327,17 @@ id: ${idTest}
   </html>
   
   `,
-          };
+            };
 
-          await nodeHtmlToImage(templateObjectData);
+            await nodeHtmlToImage(templateObjectData);
 
-          let resultCSS = "";
+            let resultCSS = "";
 
-          console.log("practiceTasks.data.html", practiceTasks);
+            console.log("practiceTasks.data.html", practiceTasks);
 
-          await nodeHtmlToImage({
-            output: "./practice-result.png",
-            html: `<html>
+            await nodeHtmlToImage({
+              output: "./practice-result.png",
+              html: `<html>
   <body>
    ${practiceTasks.data.html}
    ${practiceTasks.codeResult.html}
@@ -1360,11 +1361,11 @@ id: ${idTest}
   </html>
   
   `,
-          }).then(() => console.log("The image was created successfully!"));
+            }).then(() => console.log("The image was created successfully!"));
 
-          await nodeHtmlToImage({
-            output: "./practice-result-tobase64.png",
-            html: `<html>
+            await nodeHtmlToImage({
+              output: "./practice-result-tobase64.png",
+              html: `<html>
   <body>
   ${practiceTasks.data.html}
    ${practiceTasks.codeResult.html}
@@ -1399,29 +1400,29 @@ id: ${idTest}
   </html>
   
   `,
-          }).then(() => console.log("The image was created successfully!"));
+            }).then(() => console.log("The image was created successfully!"));
 
-          practiceList.push({
-            idPractice: idPracticeTask[i],
-            photo:
-              "data:image/jpeg;base64," +
-              (await imageToBase64("./practice-result-tobase64.png")),
-            students: [],
-          });
+            practiceList.push({
+              idPractice: idPracticeTask[i],
+              photo:
+                "data:image/jpeg;base64," +
+                (await imageToBase64("./practice-result-tobase64.png")),
+              students: [],
+            });
 
-          let title = practiceTasks.name;
-          let themes = practiceTasks.themes;
-          let descriptionText = practiceTasks.description;
-          let tasks = practiceTasks.tasks.title;
-          let id = practiceTasks.id;
-          await drawPracticeTask(title, descriptionText, themes, tasks);
-          let tasksItems = "";
-          practiceTasks.tasks.forEach((task) => {
-            tasksItems += `▪️ ${task.title} ${task.label}
+            let title = practiceTasks.name;
+            let themes = practiceTasks.themes;
+            let descriptionText = practiceTasks.description;
+            let tasks = practiceTasks.tasks.title;
+            let id = practiceTasks.id;
+            await drawPracticeTask(title, descriptionText, themes, tasks);
+            let tasksItems = "";
+            practiceTasks.tasks.forEach((task) => {
+              tasksItems += `▪️ ${task.title} ${task.label}
 `;
-          });
+            });
 
-          let templateCaption = `
+            let templateCaption = `
 <b>${title}</b>
 Опис:
 <i>${descriptionText}</i>
@@ -1433,38 +1434,39 @@ ${tasksItems}
 <pre>${id}</pre>
 
     `.slice(0, 1023);
-          await drawPracticeTask(title, descriptionText, themes, tasks);
+            await drawPracticeTask(title, descriptionText, themes, tasks);
 
-          newGroupStudent.forEach(async (id) => {
-            practiceList[i].students.push({
-              idStudent: Number(id),
-              result: {
-                successTask: [],
-                wrongTask: [],
-              },
-              historyCode: [
-                {
+            newGroupStudent.forEach(async (id) => {
+              practiceList[i].students.push({
+                idStudent: Number(id),
+                result: {
+                  successTask: [],
+                  wrongTask: [],
+                },
+                historyCode: [
+                  {
+                    html: "",
+                    css: "",
+                    js: "",
+                  },
+                ],
+                finish: false,
+                grade: 6,
+                time: 0,
+                finishCode: {
                   html: "",
                   css: "",
                   js: "",
                 },
-              ],
-              finish: false,
-              grade: 6,
-              time: 0,
-              finishCode: {
-                html: "",
-                css: "",
-                js: "",
-              },
-            });
+              });
 
-            bot.sendPhoto(id, "practice-result-canvas.png", {
-              caption: templateCaption,
-              ...practiceKeyboard(id, idPracticeTask[i]),
-              parse_mode: "HTML",
+              bot.sendPhoto(id, "practice-result-canvas.png", {
+                caption: templateCaption,
+                ...practiceKeyboard(id, idPracticeTask[i]),
+                parse_mode: "HTML",
+              });
             });
-          });
+          } catch (e) {}
         }
 
         await studentListPractice.insertMany(practiceList);
@@ -1571,11 +1573,11 @@ ${readyThemes}
     bot.sendMessage(chatId, "Оберіть учнів:", confirmNewGroup);
   }
 
-    if (data == "clearGroup") {
-      await studentListPractice.deleteMany({});
-      newGroupStudent = [];
-      bot.sendMessage(chatId, "В групі немає людей");
-    }
+  if (data == "clearGroup") {
+    await studentListPractice.deleteMany({});
+    newGroupStudent = [];
+    bot.sendMessage(chatId, "В групі немає людей");
+  }
 
   if (data.startsWith("newGroupStudent-/-")) {
     let index = "newGroupStudent-/-".length;

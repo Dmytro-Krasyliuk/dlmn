@@ -119,6 +119,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 documentation: "Represents a paragraph of text in HTML.",
               },
               {
+                label: "a",
+                kind: monaco.languages.CompletionItemKind.Snippet,
+                insertText: '<a href="">$1</button>',
+                insertTextRules:
+                  monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                detail: "a",
+                documentation: "Represents a paragraph of text in HTML.",
+              },
+              {
                 label: "h1",
                 kind: monaco.languages.CompletionItemKind.Snippet,
                 insertText: "<h1>$1</h1>",
@@ -449,7 +458,7 @@ ${jsValue}
         var tooltipY = editorHTML.getTopForLineNumber(startLineNumber) + 20; // Position tooltip 20 pixels below the highlighted text
 
         tooltip = document.createElement("div");
-        tooltip.textContent = "здесь есть ошибка";
+        // tooltip.textContent = "здесь есть ошибка";
         tooltip.className = "custom-tooltip";
         tooltip.style.left = tooltipX + "px";
         tooltip.style.top = tooltipY + "px";
