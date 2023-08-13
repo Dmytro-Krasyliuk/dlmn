@@ -370,7 +370,7 @@ ${wrongTask}
 
 app.get("/getTasks/:idStudent/:idTask", async (req, res) => {
   let idStudent = req.params.idStudent;
-  let idTask = Number(req.params.idTask);
+  let idTask = req.params.idTask;
   let task = "not defined";
   task = await Practice.findOne({ id: idTask });
   console.log("hello");
@@ -378,7 +378,7 @@ app.get("/getTasks/:idStudent/:idTask", async (req, res) => {
 });
 
 app.get("/get/practice/:idTask/:idStudent", async (req, res) => {
-  let idTask = Number(req.params.idTask);
+  let idTask = req.params.idTask;
   let idStudent = req.params.idStudent;
   let nameStudent = getNamesOneStudentByIdGroup(idStudent);
   let task = await Practice.findOne({ id: idTask });
