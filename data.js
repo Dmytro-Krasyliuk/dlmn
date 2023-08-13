@@ -83,6 +83,7 @@ let themes = [
 У цьому прикладі, якщо ти клікнеш на посилання "Перейти до секції 1", ти перемістишся до елементу з id "section1" на тій ж сторінці.
         `,
           tasks: {
+            practice: ['html_a_1'],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -198,6 +199,7 @@ let themes = [
 Це дуже корисно, коли ти хочеш зробити свій текст коротшим або коли ти використовуєш скорочення, які деякі люди можуть не знати. Завдяки тегу <abbr>, вони можуть просто навести курсор на скорочення, щоб побачити, що воно означає.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -299,6 +301,7 @@ let themes = [
 якими ти розмічаєш де що буде.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -405,6 +408,7 @@ let themes = [
 
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -508,6 +512,7 @@ Copy code
 Він лише змінює візуальне відображення тексту. Якщо ти хочеш виділити частину тексту, яка має особливе значення, краще використати теги <strong> або <em>.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -613,6 +618,7 @@ Copy code
 В цьому прикладі цитата Ейнштейна буде відокремлена від іншого тексту з використанням відступів.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -713,6 +719,7 @@ Copy code
 У цьому коді всередині тега <body> є заголовок <h1>, абзац тексту <p> і картинка <img>. Коли люди відкривають твій веб-сайт, ось це вони і бачать.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -801,6 +808,7 @@ Copy code
 Але важливо не зловживати цим тегом для відступів між абзацами чи великими блоками тексту. Для цього краще використовувати CSS стилі.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -895,6 +903,7 @@ Copy code
 Для того щоб запрограмувати її при клікі, необхідно підключити javascript або jquery.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/NT7ZGVV9tmL2X83tYET7Rz/Buttons?type=design&node-id=0-1&mode=design&t=N4TFrbv9V4LZqMt8-0",
@@ -1016,6 +1025,7 @@ Copy code
 Якщо дуже просто: тег <canvas> - це як чисте полотно для живопису. Ти можеш використати JavaScript як твої фарби і кисть, щоб намалювати що-небудь на цьому полотні прямо на своїй веб-сторінці. Це може бути все, що тобі подобається - від простого кольорового квадрата до складної анімації.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -1124,6 +1134,7 @@ Copy code
 Якщо дуже просто: тег <caption> - це як назва книги. Коли ти бачиш книгу на полиці, ти перш за все дивишся на її назву, щоб зрозуміти, про що вона. Те саме стосується і таблиці на веб-сторінці: тег <caption> допомагає людям зрозуміти, що вони бачать у таблиці.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -1215,6 +1226,7 @@ Copy code
 У цьому прикладі, <cite>Гаррі Поттер і філософський камінь</cite> позначає назву книги.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -1308,6 +1320,7 @@ Copy code
 У цьому прикладі, <code>let</code> і <code>let myVariable = 5;</code> - це шматочки коду, які відображаються моноширинним шрифтом.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -1403,6 +1416,7 @@ Copy code
 Якщо дуже просто: уяви, що ти робиш словник, де для кожного слова є його визначення. Тег <dt> - це слово, а тег <dd> - це визначення цього слова. Якщо ти хочеш сказати, що "комп'ютер" - це "електронний пристрій, який може зберігати, обробляти та виводити інформацію", то ти використовуєш тег <dd>, щоб дати це визначення.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -1494,6 +1508,7 @@ Copy code
 Якщо дуже просто: уяви, що ти пишеш речення і потім змінюєш свою думку про щось. Ти хочеш показати, що раніше ти сказав одну річ, але тепер це змінилося. Тег <del> - це як магічна гумка, яка показує, що ти видалив певну частину свого тексту. Цей текст стає перекресленим, щоб всім було зрозуміло, що ти змінив свою думку.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -1585,6 +1600,7 @@ Copy code
 Якщо дуже просто: уяви, що ти маєш коробку, і в тебе є можливість відкрити і закрити її. Коли коробка відкрита, ти бачиш що всередині, а коли закрита - не бачиш. Тег <details> в HTML - це як така коробка для тексту на веб-сторінці. Він допомагає приховати частину тексту і показати його лише тоді, коли користувач хоче його побачити.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -1681,6 +1697,7 @@ Copy code
 Якщо дуже просто: уяви, що ти граєш у гру і раптом з'являється спеціальне вікно з повідомленням або питанням, яке ти повинен прочитати або на яке ти повинен відповісти, перш ніж продовжити гру. Тег <dialog> в HTML - це як це спеціальне вікно в грі. Він допомагає створити подібне вікно на веб-сторінці.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -1770,6 +1787,7 @@ Copy code
 4. Тексти пишіть не в div, а в p або h1 і т.д. які можуть бути вже в div.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -1861,6 +1879,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -1947,6 +1966,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2045,6 +2065,7 @@ Copy code
 У цьому прикладі, крім повідомлення про авторські права, ми також маємо навігаційне меню з посиланнями на сторінки "Про нас", "Політика конфіденційності" і "Контакти". Це все обгорнуто в тег <footer>, який показує, що ця інформація знаходиться в нижній частині веб-сторінки або блоку.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2141,6 +2162,7 @@ Copy code
 Якщо дуже просто: уяви, що ти хочеш зареєструватись в онлайн-грі. Тобі потрібно ввести своє ім'я користувача, електронну пошту та придумати пароль. Всі ці речі ти вводиш в спеціальні поля на сторінці реєстрації. Таку набір полів називають "формою". Тег <form> в HTML допомагає створити таку форму на веб-сторінці.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2228,6 +2250,7 @@ Copy code
 h1 можна вважати як назву книги. У книги може бути лише 1 назва.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2323,6 +2346,7 @@ h1 можна вважати як назву книги. У книги може 
 Якщо h1 можна вважати як назву книги, то h2 є розділами цієї книги
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2398,6 +2422,7 @@ h1 можна вважати як назву книги. У книги може 
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2484,6 +2509,7 @@ h1 можна вважати як назву книги. У книги може 
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2570,6 +2596,7 @@ h1 можна вважати як назву книги. У книги може 
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2656,6 +2683,7 @@ h1 можна вважати як назву книги. У книги може 
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2751,6 +2779,7 @@ h1 можна вважати як назву книги. У книги може 
 Пам'ятайте, що все, що ви ставите у <head>, не буде відображатись на самій веб-сторінці. Воно лише допомагає браузеру та пошуковим системам краще розуміти та показувати вашу сторінку.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2836,6 +2865,7 @@ h1 можна вважати як назву книги. У книги може 
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -2917,6 +2947,7 @@ h1 можна вважати як назву книги. У книги може 
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3013,6 +3044,7 @@ h1 можна вважати як назву книги. У книги може 
 У цьому прикладі, <html> є кореневим тегом, який містить усю іншу HTML-структуру всередині себе. Він має два дочірніх елементи: <head> з заголовком сторінки та <body> з основним вмістом.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3094,6 +3126,7 @@ h1 можна вважати як назву книги. У книги може 
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3182,6 +3215,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Подумай про iframe як про сучасний телевізор на твоєму веб-сайті. Цей телевізор може показувати контент з інших веб-сайтів прямо на твоєму сайті, без потреби відвідувачам йти на ті сайти. Тобто, якщо ти хочеш показати відео з YouTube на своєму веб-сайті, ти можеш використати iframe, і відео з'явиться прямо там, і люди зможуть його дивитися, не виходячи з твого сайту.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3285,6 +3319,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3390,6 +3425,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3472,6 +3508,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3558,6 +3595,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3639,6 +3677,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3720,6 +3759,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3802,6 +3842,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3888,6 +3929,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -3974,6 +4016,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4060,6 +4103,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4146,6 +4190,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4227,6 +4272,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4313,6 +4359,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4415,6 +4462,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4507,6 +4555,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Тег <pre> часто використовують для відображення коду або іншого тексту, в якому важливо зберегти оригінальне форматування.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4592,6 +4641,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Тег <progress> використовується для візуалізації прогресу операції, допомагаючи користувачеві розуміти, скільки вже зроблено, і скільки ще залишилося.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4678,6 +4728,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4766,6 +4817,7 @@ iframe, або "inline frame", це елемент HTML, який дозволя
 Однак важливо зазначити, що для семантичних цілей рекомендується використовувати тег <del> для тексту, що був видалений, та <ins> для тексту, що був вставлений, у випадку редагування документів. Тег <s> слід використовувати тоді, коли текст втратив свою актуальність, але не був обов'язково видалений.
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4859,6 +4911,7 @@ JavaScript - це мова програмування, яку браузери �
 В цьому прикладі, браузер завантажить та виконає JavaScript код, який знаходиться в файлі "script.js".
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -4950,6 +5003,7 @@ JavaScript - це мова програмування, яку браузери �
 Коли користувач відкриває випадаючий список, він побачить текст, що належить кожному <option>, та може вибрати один з них. Значення обраного варіанту потім можна використовувати у JavaScript або відправити на сервер через форму.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5040,6 +5094,7 @@ JavaScript - це мова програмування, яку браузери �
 У цьому прикладі, ми використовуємо тег <source> в середині тега <picture> для вибору одного з трьох зображень. Браузер вибере зображення "big_image.jpg", якщо ширина екрану є 650 пікселів або більше. Якщо ширина екрану від 465 до 649 пікселів, буде вибране зображення "medium_image.jpg". Якщо жодна з цих умов не виконується (наприклад, якщо ширина екрану менше 465 пікселів), браузер вибере "small_image.jpg". Таким чином, він завжди отримує зображення, що підходить для його поточних умов.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5125,6 +5180,7 @@ JavaScript - це мова програмування, яку браузери �
 Елемент є строковим.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5208,6 +5264,7 @@ JavaScript - це мова програмування, яку браузери �
 У цьому прикладі, слова "цей текст жирний" будуть відображені жирним шрифтом на веб-сторінці.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5317,6 +5374,7 @@ Copy code
 Важливо пам'ятати, що тег <style> повинен бути розміщений або в head або в body документа. Проте, зазвичай його розміщують у head, щоб стилі були визначені до того, як браузер почне відображати сторінку.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5398,6 +5456,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5484,6 +5543,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5570,6 +5630,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5656,6 +5717,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5742,6 +5804,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5827,6 +5890,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5912,6 +5976,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -5997,6 +6062,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6082,6 +6148,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6167,6 +6234,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6252,6 +6320,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6337,6 +6406,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6422,6 +6492,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6429,6 +6500,7 @@ Copy code
                 hardLevel: 2,
               },
             ],
+            practice: [125],
           },
           tests: [
             {
@@ -6507,6 +6579,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6592,6 +6665,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6677,6 +6751,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6762,6 +6837,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6842,6 +6918,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -6927,6 +7004,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -7023,6 +7101,7 @@ Copy code
 Цей елемент з'явився в останній, 5 версії HTML. До 2015 року його не було.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -7118,6 +7197,7 @@ Copy code
 
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -7235,6 +7315,7 @@ button {
 Подумай про них як про різні розміри чашок або ковбасок. "H1" - це найбільша чашка або найбільша ковбаска, і "H6" - це найменша чашка або найменша ковбаска.
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/2FpQBsqGIzt4bpCj0Zdlor/text-align?type=design&node-id=0%3A1&mode=design&t=Jaj4sK91NUYCVOC7-1",
@@ -7333,6 +7414,7 @@ p {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -7466,6 +7548,7 @@ content вказує на те, що саме ми хочемо додати - �
 Пам'ятай, що ти маєш вказати щось в content, навіть якщо це пустий рядок (content: "";), бо інакше "::after" не працюватиме.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -7594,6 +7677,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -7726,6 +7810,7 @@ button {
 Таким чином, ти можеш зробити процес виділення тексту більш веселим та креативним!
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -7857,6 +7942,7 @@ input:focus {
 Ця властивість дуже корисна для покращення доступності сайту, оскільки допомагає людям з різними способами навігації (наприклад, використовуючи клавіатуру замість миші) зрозуміти, на якому елементі вони знаходяться.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -7987,6 +8073,7 @@ button {
 
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -8124,6 +8211,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -8268,6 +8356,7 @@ button {
 Таким чином, з допомогою @keyframes ти можеш зробити свої веб-сторінки більш динамічними та цікавими!
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -8397,6 +8486,7 @@ button {
 Це може бути дуже корисно, якщо ви хочете, щоб ваш сайт виглядав добре на різних пристроях з різними розмірами екранів. Ти можеш змінювати розмір тексту, ширину колонок, розташування елементів, і багато інших властивостей, використовуючи медіа запити.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -8525,6 +8615,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -8653,6 +8744,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -8781,6 +8873,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -8909,6 +9002,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -9037,6 +9131,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -9165,6 +9260,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -9293,6 +9389,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -9421,6 +9518,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -9549,6 +9647,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -9677,6 +9776,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -9805,6 +9905,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -9933,6 +10034,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -10061,6 +10163,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -10189,6 +10292,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -10317,6 +10421,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -10445,6 +10550,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -10573,6 +10679,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -10701,6 +10808,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -10829,6 +10937,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -10957,6 +11066,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -11085,6 +11195,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -11213,6 +11324,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -11341,6 +11453,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -11469,6 +11582,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -11597,6 +11711,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -11725,6 +11840,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -11853,6 +11969,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -11981,6 +12098,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -12109,6 +12227,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -12237,6 +12356,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -12376,6 +12496,7 @@ div {
 }
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -12504,6 +12625,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -12632,6 +12754,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -12760,6 +12883,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -12888,6 +13012,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -13016,6 +13141,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -13144,6 +13270,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -13272,6 +13399,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -13400,6 +13528,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -13528,6 +13657,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -13656,6 +13786,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -13784,6 +13915,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -13912,6 +14044,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -14040,6 +14173,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -14168,6 +14302,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -14296,6 +14431,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -14425,6 +14561,7 @@ cursor: wait; - використовує курсор у вигляді годи
 Якщо дуже просто, властивість cursor в CSS - це ніби чарівна паличка, яка змінює вигляд курсора миші, коли ти наводиш його на різні частини веб-сторінки. Ти можеш зробити його схожим на руку, текст, перехрестя або годинник.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -14553,6 +14690,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -14681,6 +14819,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -14809,6 +14948,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -14937,6 +15077,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -15065,6 +15206,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -15193,6 +15335,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -15321,6 +15464,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -15449,6 +15593,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -15577,6 +15722,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -15705,6 +15851,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -15833,6 +15980,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -15961,6 +16109,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -16089,6 +16238,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -16217,6 +16367,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -16345,6 +16496,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -16475,6 +16627,7 @@ p {
 Google Fonts - це бібліотека безкоштовних шрифтів, яку ви можете використовувати на своїх веб-сайтах. Ці шрифти ліцензовані так, що вони безпечні для використання на будь-якому веб-сайті, без обмежень.
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -16614,6 +16767,7 @@ p {
 У цьому прикладі всі абзаци (<p>) на веб-сторінці будуть використовувати кернінг, якщо він доступний в шрифті. Це може допомогти зробити текст більш приємним для читання.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -16741,6 +16895,7 @@ p {
 У цьому прикладі, весь текст всередині тегів <p> (абзаців) буде відображатися з розміром шрифту 16 пікселів.
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -16830,6 +16985,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -16922,6 +17078,7 @@ button {
 ⚠️ Працює тільки якщо є команда diplay: flex;
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -17016,6 +17173,7 @@ div {
 У цьому прикладі "1fr 2fr 1fr" задає розмір трьох стовпців: перший та третій стовпці займають 1 "вільну частину" простору, а другий стовпець - 2 "вільні частини". Ключове слово auto для рядків означає, що висота рядків автоматично встановлюється відповідно до вмісту. Gap: 10px; створює проміжки 10 пікселів між рядками та стовпцями.
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -17139,6 +17297,7 @@ button {
 У цьому прикладі, ми визначили сітку з областями, що називаються "header", "sidebar", "content" та "footer". Кожен з цих елементів потім вказує своє розташування, використовуючи ці назви зон.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -17234,6 +17393,7 @@ button {
 Використання grid-auto-flow може допомогти вам створити більш гнучкі та реагуючі макети, оскільки воно дозволяє сітці автоматично налаштовувати розміщення елементів відповідно до доступного простору.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -17332,6 +17492,7 @@ button {
 Ця властивість є дуже потужною у комбінації з іншими властивостями CSS Grid, оскільки вона дозволяє вам легко маніпулювати положенням елементів сітки.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -17461,6 +17622,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -17589,6 +17751,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -17717,6 +17880,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -17845,6 +18009,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -17973,6 +18138,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -18101,6 +18267,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -18229,6 +18396,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -18357,6 +18525,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -18485,6 +18654,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -18613,6 +18783,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -18741,6 +18912,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -18869,6 +19041,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -18987,6 +19160,7 @@ button {
 Властивість <b>left</b> у CSS це як коли ти рухаєш свою фігурку на грі вліво. Ти можеш вирішити, наскільки далеко ти хочеш її перемістити вліво, вказавши відстань у пікселях або відсотках. Але ця властивість працює лише тоді, коли ти вказав позицію елементу як absolute, relative, fixed або sticky.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -19118,6 +19292,7 @@ p {
 Якщо дуже просто: властивість letter-spacing в CSS допомагає нам віддалити або наблизити букви в словах, щоб зробити текст більш читабельним або надати йому особливий стиль. Це як коли ти пишеш слово маркером і вирішуєш, наскільки широко розставити букви.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -19242,6 +19417,7 @@ button {
 ◾️ strict: Це значення забороняє розривати слова і рядки там, де цього не передбачено мовою.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -19370,6 +19546,7 @@ p {
 Якщо дуже просто: властивість line-height в CSS допомагає нам вирішити, наскільки широкими повинні бути рядки у тексті. Це як коли ти пишеш в зошиті з великими рядками або маленькими рядками. Ти можеш вибрати, наскільки широкими або вузькими хочеш зробити свої рядки.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -19502,6 +19679,7 @@ ul {
 У цьому прикладі, ми встановлюємо list-style-type як square, тому маркери будуть квадратними. list-style-position встановлено як inside, тому маркери будуть всередині текстового блоку. list-style-image встановлено як none, тому зображення для маркерів не використовуватиметься.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -19637,6 +19815,7 @@ button {
 Важливо зазначити, що margin може приймати не лише позитивні, але й негативні значення, що дозволяє "зсунути" елементи ближче один до одного, ніж це було б з можливими значеннями лише padding або border.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -19769,6 +19948,7 @@ p {
 встановить нижнє поле для всіх абзаців (<p>) в 20 пікселів.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -19867,6 +20047,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -19995,6 +20176,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -20123,6 +20305,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -20252,6 +20435,7 @@ button {
 Примітка: Функція max() підтримується не всіма браузерами, тому до її використання варто перевірити сумісність.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -20380,6 +20564,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -20508,6 +20693,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -20636,6 +20822,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -20764,6 +20951,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -20892,6 +21080,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -21020,6 +21209,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -21148,6 +21338,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -21276,6 +21467,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -21404,6 +21596,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -21532,6 +21725,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -21667,6 +21861,7 @@ element {
 }
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -21795,6 +21990,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -21923,6 +22119,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -22051,6 +22248,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -22179,6 +22377,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -22307,6 +22506,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -22435,6 +22635,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -22563,6 +22764,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -22691,6 +22893,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -22819,6 +23022,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -22947,6 +23151,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -23075,6 +23280,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -23208,6 +23414,7 @@ button {
 ▪️ z-index
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -23337,6 +23544,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -23465,6 +23673,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -23594,6 +23803,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -23722,6 +23932,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -23850,6 +24061,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -23978,6 +24190,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -24106,6 +24319,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -24234,6 +24448,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -24362,6 +24577,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -24490,6 +24706,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -24614,6 +24831,7 @@ button {
 
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -24742,6 +24960,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -24870,6 +25089,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -25006,6 +25226,7 @@ transition-play-state
 transition ніколи не пишемо в :hover (інакше ефект не буде плавним)!
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -25157,6 +25378,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -25285,6 +25507,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -25413,6 +25636,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -25541,6 +25765,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -25670,6 +25895,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -25799,6 +26025,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -25933,6 +26160,7 @@ width: 100%;
 
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -26067,6 +26295,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -26196,6 +26425,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -26325,6 +26555,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -26454,6 +26685,7 @@ button {
 За бажанням можна зробити фон з декількох зображень або з декількох кольорів
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -26583,6 +26815,7 @@ button {
 
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -26707,6 +26940,7 @@ button {
 Команда text-align не може вирівняти по вертикалі, лише по горизонталі!
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/2FpQBsqGIzt4bpCj0Zdlor/text-align?type=design&node-id=0%3A1&mode=design&t=Jaj4sK91NUYCVOC7-1",
@@ -26822,6 +27056,7 @@ p {
 Також важливо пам'ятати, що "віртуальні" пікселі, які ти використовуєш у CSS, не завжди відповідають "реальним" пікселям на екрані. 
 Це особливо стосується високоякісних екранів, таких як Retina-дисплеї на пристроях Apple, де один "віртуальний" піксель може складатися з декількох "реальних" пікселів, що дозволяє зображенням та тексту виглядати більш чіткими та деталізованими.`,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",
@@ -26915,6 +27150,7 @@ button {
 Отже, використовуючи RGB, ти можеш створити мільйони різних відтінків, комбінуючи різні значення червоного, зеленого та синього.
         `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",
@@ -27026,6 +27262,7 @@ button {
 ▪️ JavaScript - це мова, яка додає інтерактивність до веб-сторінки. Це можна уявити як "електрику" будинку: включення і виключення світла, регулювання температури, відкривання і закривання дверей тощо. У веб-сторінці JavaScript може змінювати елементи HTML та CSS в залежності від дій користувача, таких як натискання кнопки, заповнення форми, наведення миші на елемент тощо.
 Таким чином, HTML, CSS та JavaScript разом створюють повноцінну веб-сторінку, яку ми бачимо і з якою можемо взаємодіяти. `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",
@@ -27130,6 +27367,7 @@ button {
 Кожен тег HTML починається з < і закінчується на >. Більшість тегів мають відкриваючий тег, наприклад <p>, і закриваючий тег, наприклад </p>, що охоплює вміст.
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -27239,6 +27477,7 @@ button {
 ▪️ JavaScript - це мова, яка додає інтерактивність до веб-сторінки. Це можна уявити як "електрику" будинку: включення і виключення світла, регулювання температури, відкривання і закривання дверей тощо. У веб-сторінці JavaScript може змінювати елементи HTML та CSS в залежності від дій користувача, таких як натискання кнопки, заповнення форми, наведення миші на елемент тощо.
 Таким чином, HTML, CSS та JavaScript разом створюють повноцінну веб-сторінку, яку ми бачимо і з якою можемо взаємодіяти. `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",
@@ -27337,6 +27576,7 @@ button {
 ▪️ JavaScript - це мова, яка додає інтерактивність до веб-сторінки. Це можна уявити як "електрику" будинку: включення і виключення світла, регулювання температури, відкривання і закривання дверей тощо. У веб-сторінці JavaScript може змінювати елементи HTML та CSS в залежності від дій користувача, таких як натискання кнопки, заповнення форми, наведення миші на елемент тощо.
 Таким чином, HTML, CSS та JavaScript разом створюють повноцінну веб-сторінку, яку ми бачимо і з якою можемо взаємодіяти. `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",
@@ -27421,6 +27661,7 @@ p {
 
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",
@@ -27496,6 +27737,7 @@ Pixel Perfect (Точність пікселів): Кажуть, що щось �
 Застосування: Pixel Perfect є особливо важливим, коли ми створюємо веб-сайти, мобільні додатки або графічні зображення, оскільки хочемо, щоб вони виглядали добре на різних пристроях і роздільних здатностях екранів. Це допомагає забезпечити зручне користування і приємний вигляд контенту для користувачів.
 Отже, "Pixel Perfect" - це мета, яка означає добитися високої якості та точності зображень чи дизайнів, щоб вони виглядали гарно та професійно на різних екранах та пристроях.`,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",
@@ -27593,6 +27835,7 @@ _Курсивний_ текст
 3. Пункт 3
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",
@@ -27668,6 +27911,7 @@ _Курсивний_ текст
 Таким чином, коли ми говоримо про алгоритми в програмуванні, ми маємо на увазі встановлений порядок дій, який допомагає комп'ютеру вирішити певну задачу.
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",
@@ -27774,6 +28018,7 @@ let, const і var - це три способи оголошення змінни
 ▪️ Незмінність примітивних типів: Примітивні типи (числа, рядки, булеві значення, null, undefined, символи) в JavaScript є незмінними. Це означає, що коли ти присвоюєш нове значення змінній, яка вже має значення, JavaScript фактично створює нову змінну з новим значенням.
 `,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",
@@ -27890,6 +28135,7 @@ button {
 
 Кожен тип даних використовується для різних цілей, і в залежності від того, що вам потрібно зробити в вашій програмі, ви вибираєте відповідний тип даних.`,
           tasks: {
+            practice: [125],
             speed: [
               {
                 url: "",

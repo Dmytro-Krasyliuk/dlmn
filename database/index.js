@@ -9,7 +9,7 @@ mongoose.connect(
 );
 
 let practiceSchema = new Schema({
-  id: { type: Number },
+  id: { type: String },
   name: { type: String },
   description: { type: String },
   type: { type: String },
