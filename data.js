@@ -83,7 +83,7 @@ let themes = [
 У цьому прикладі, якщо ти клікнеш на посилання "Перейти до секції 1", ти перемістишся до елементу з id "section1" на тій ж сторінці.
         `,
           tasks: {
-            practice: ['html_a_1'],
+            practice: ["html_a_1", "html_a_2"],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -301,7 +301,7 @@ let themes = [
 якими ти розмічаєш де що буде.
         `,
           tasks: {
-            practice: ['html_aside_1'],
+            practice: ["html_aside_1"],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -407,7 +407,7 @@ let themes = [
 
         `,
           tasks: {
-            practice: ['html_audio_1'],
+            practice: ["html_audio_1"],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -511,7 +511,7 @@ Copy code
 Він лише змінює візуальне відображення тексту. Якщо ти хочеш виділити частину тексту, яка має особливе значення, краще використати теги <strong> або <em>.
         `,
           tasks: {
-            practice: ['html_b_1'],
+            practice: ["html_b_1"],
             speed: [
               {
                 url: "https://www.figma.com/file/LnFMeZq25fQj00dDEmX7zG/address?type=design&node-id=0-1&mode=design&t=qzS4DyGBSNQtr3hn-0",
@@ -15192,20 +15192,44 @@ button {
           title: "flex",
           speedCode: "fx",
           description: `
-<b>flex</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
+<b>flex</b> - Команда flex в CSS (Cascading Style Sheets) є частиною гнучкої (flexbox) моделі верстання, яка дозволяє більш ефективно розміщувати, вирівнювати та розподіляти простір серед елементів у контейнері, навіть коли їхні розміри невідомі або динамічні.
 
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
 
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
+Уявімо, що у нас є коробка (це буде наш flex контейнер), і в цій коробці є ряд книг (це будуть наші flex елементи). Ми можемо влаштувати книги (елементи) всередині коробки (контейнера) так, як нам хочеться: горизонтально або вертикально, розтягнути їх, щоб вони заповнили всю коробку, або згрупувати їх у центрі коробки тощо.
+
+Ось як це працює на практиці у CSS:
+
+Створення flex контейнера: Щоб зробити коробку (елемент) flex контейнером, ми вказуємо для нього властивість display: flex; або display: inline-flex;, якщо хочемо, щоб контейнер був інлайновим елементом.
+
+.container {
+  display: flex;
+}
+
+Впорядкування елементів: За замовчуванням, всі дочірні елементи flex контейнера будуть вистроєні в ряд (горизонтально). Щоб змінити це, можна використовувати властивість flex-direction:
+
+.container {
+  flex-direction: column; /* Зараз елементи будуть вистроєні вертикально */
+}
+
+Вирівнювання елементів: Ми можемо контролювати, як елементи вирівнюються у головному (основному) та поперечному напрямках використовуючи властивості justify-content і align-items:
+.container {
+  justify-content: center; /* Центрує елементи по горизонталі */
+  align-items: center; /* Центрує елементи по вертикалі */
+}
+
+
+Розподіл простору: Щоб контролювати, як елементи розтягуються або скорочуються, використовуємо властивість flex для дочірніх елементів:
+
+.item {
+  flex: 1; /* Кожен елемент буде розтягнутий, щоб заповнити доступний простір в контейнері */
+}
+
+Ця модель дуже потужна і гнучка, і з її допомогою можна легко створювати складні макети сторінки без використання плаваючих елементів (floats) чи позиціонування.
+
+
         `,
           tasks: {
-            practice: [125],
+            practice: ["css_display_flex_1"],
             speed: [
               {
                 url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
@@ -15321,17 +15345,40 @@ button {
           title: "flex-basis",
           speedCode: "fxb",
           description: `
-<b>flex-basis</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
+<b>flex-basis</b> — це властивість CSS, яка визначає початковий розмір flex-елемента по головній осі, перед тим як буде призначено залишкове простір. У простих термінах, це майже те ж саме, що і ширина для горизонтальних елементів або висота для вертикальних елементів в контексті flexbox.
 
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
+Отже, flex-basis є мовою, якою ми говоримо браузеру: "я хочу, щоб цей елемент починався з цього розміру". Після встановлення flex-basis, flex-елемент може змінюватися, залежно від інших властивостей flexbox, таких як flex-grow і flex-shrink.
 
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
+Ось деякі приклади використання flex-basis:
+
+Вказана Ширина:
+
+.item {
+  flex-basis: 200px;
+}
+
+У цьому прикладі, flex-елемент почне з початкової ширини 200 пікселів. Це не означає, що його ширина завжди буде 200 пікселів, вона може змінюватися в залежності від наявного простору та інших flex-властивостей.
+
+Відсотки:
+
+.item {
+  flex-basis: 50%;
+}
+Тут flex-елемент почне з початкової ширини, яка дорівнює 50% ширини його flex-контейнера.
+
+Автоматичний Розмір:
+
+
+.item {
+  flex-basis: auto;
+}
+
+Зі значенням auto, flex-елемент використовує або свою ширину (width), або висоту (height), якщо вони вказані, або його дійсний розмір змісту, якщо ширину та висоту не вказано, як його початковий розмір.
+
+flex-basis використовується разом з flex-grow та flex-shrink, і ці три властивості можна вказати разом, використовуючи скорочену властивість flex. Наприклад, flex: 1 0 200px; встановлює flex-grow до 1, flex-shrink до 0, і flex-basis до 200 пікселів.
+
+Уявімо, що у нас є поличка для книг (це наш flex-контейнер), і ми хочемо покласти книги (це наші flex-елементи) на цю поличку. flex-basis це, скільки місця ми спочатку зарезервуємо для кожної книги на поличці. Це наче ми говоримо: "Ось ця книга повинна почати з 200 пікселів ширини на поличці". Після цього, залежно від того, скільки ще місця залишилось на поличці, книги можуть стати трохи ширше або вузькіше.
+        
         `,
           tasks: {
             practice: [125],
@@ -15437,7 +15484,7 @@ button {
           links: [
             {
               title: "Гарна стаття на MDN",
-              url: "https://developer.mozilla.org/ru/docs/Web/CSS/background",
+              url: "https://developer.mozilla.org/ru/docs/Web/CSS/flex-basis",
               details: "",
             },
           ],
@@ -15450,18 +15497,48 @@ button {
           title: "flex-direction",
           speedCode: "fxd",
           description: `
-<b>flex-direction</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
 
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
 
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
-        `,
+Властивість CSS <b>flex-direction</b> визначає напрямок головної осі flex-контейнера та визначає, в якому порядку flex-елементи будуть розташовані в контейнері. Вона визначає, чи будуть діти flex-контейнера вистроєні рядами або стовпцями.
+
+Ось можливі значення flex-direction:
+
+row (за замовчуванням):
+Flex-елементи розташовуються в ряд по горизонталі, і головна вісь спрямована зліва направо (в більшості мов, включно з англійською та російською).
+
+.container {
+  flex-direction: row;
+}
+row-reverse:
+Те ж саме, що і row, але порядок flex-елементів обертається, і головна вісь прямує справа наліво.
+
+.container {
+  flex-direction: row-reverse;
+}
+column:
+Flex-елементи розташовуються в колонці вертикально, і головна вісь спрямована зверху вниз.
+
+
+.container {
+  flex-direction: column;
+}
+column-reverse:
+Те ж саме, що і column, але порядок flex-елементів обертається, і головна вісь прямує знизу вгору.
+
+.container {
+  flex-direction: column-reverse;
+}
+Пояснення для дітей 10 років:
+
+Уявімо, що у нас є коробка (це наш flex-контейнер), і в цій коробці є набір блоків (це наші flex-елементи).
+
+Коли ми встановлюємо flex-direction як row, ми кажемо: "Блоки повинні йти один за одним зліва направо, як слова в реченні."
+Коли ми встановлюємо flex-direction як row-reverse, ми кажемо: "Блоки повинні йти один за одним, але справа наліво, ніби ми читаємо з кінця речення."
+Коли ми встановлюємо flex-direction як column, ми кажемо: "Блоки повинні йти один під одним, зверху вниз, як ступені на сходах."
+Коли ми встановлюємо flex-direction як column-reverse, ми кажемо: "Блоки повинні йти один над одним, але знизу вгору, як сходи, які йдуть вниз."
+Ця властивість допомагає нам вирішити, як блоки будуть впорядковані в нашій коробці — горизонтально чи вертикально, і в якому порядку.
+
+`,
           tasks: {
             practice: [125],
             speed: [
@@ -15579,45 +15656,142 @@ button {
           title: "flex-flow",
           speedCode: "fxf",
           description: `
-<b>flex-flow</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
+<b>flex-flow</b> - є скороченою властивістю, яка встановлює дві інші властивості flex-контейнера одночасно: flex-direction і flex-wrap.
 
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
+Ось як вона працює:
 
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
+<code>flex-direction:</code>
+Це перший параметр в значенні flex-flow, і він визначає напрямок, в якому flex-елементи будуть розташовані в контейнері: горизонтально (як ряд) або вертикально (як стовпець). Можливі значення: row, row-reverse, column, column-reverse.
+
+<code>flex-wrap:</code>
+Це другий параметр в значенні flex-flow, і він визначає, чи повинні flex-елементи переноситися на новий ряд або стовпець, коли немає достатньо місця. Можливі значення: nowrap, wrap, wrap-reverse.
+
+Ось декілька прикладів використання flex-flow:
+
+<code>flex-flow: row nowrap;</code>
+Flex-елементи будуть розташовані горизонтально і не будуть переноситися на новий ряд, незалежно від того, скільки їх у контейнері.
+
+<code>flex-flow: column wrap;</code>
+Flex-елементи будуть розташовані вертикально, і коли не буде достатньо простору, вони переноситимуться на новий 'стовпець' (новий ряд у вертикальному впорядкуванні).
+
+<code>flex-flow: row-reverse wrap-reverse;</code>
+Flex-елементи будуть розташовані горизонтально в зворотному порядку (справа наліво), і коли не буде достатньо простору, вони переноситимуться в зворотному порядку на новий ряд.
+
+Якщо дуже просто:
+Уявімо, що у нас є коробка (це наш flex-контейнер), і в цій коробці є набір блоків (це наші flex-елементи).
+
+▪️ Коли ми кажемо flex-flow: row nowrap;, ми влаштовуємо наші блоки в рядок, як слова в реченні, і не дозволяємо їм переходити на новий 'рядок' в коробці, незалежно від того, наскільки вони великі.
+▪️ Коли ми кажемо flex-flow: column wrap;, ми влаштовуємо блоки один під одним, як ступені на сходах, і якщо нам закінчиться місце в коробці, ми почнемо новий 'стовпець' з блоків.
+▪️ Коли ми кажемо flex-flow: row-reverse wrap-reverse;, ми влаштовуємо блоки назад, як читання книги справа наліво, і коли ми бажаємо перейти на новий 'рядок', ми також робимо це в зворотному порядку.
+
+Тобто flex-flow – це мова, якою ми кажемо, як блоки повинні бути впорядковані в коробці – поруч або один під одним, і що робити, коли блоки не вміщаються в одному ряду або стовпці.
         `,
           tasks: {
-            practice: [125],
-            speed: [
+            practice: ["css_flex-flow_1", "css_flex-flow_2"],
+            experiments: [
               {
-                url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників з різними фонами",
-                hardLevel: 2,
-              },
-              {
-                url: "https://www.figma.com/file/r7RZgKdPGaHihLkfDF4zrM/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-3?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників: фон зображенням та градієнтами",
-                hardLevel: 4,
+                title: "flex-flow",
+                data: {
+                  html: `<div class="container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+  <div class="box">4</div>
+  <div class="box">5</div>
+</div>
+`,
+                  css: `.container {
+    display: [%1 flex %];
+    flex-flow: [%2 row wrap %];
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border: 3px solid #333;
+}
+
+
+
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    margin: 5px;
+}
+`,
+                  js: ``,
+                },
+                tasks: [
+                  {
+                    title: "Зробіть елемент з класом container флексовим:",
+                    description: "Змініть значення display на flex",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "flex",
+                      },
+                    },
+                  },
+                  {
+                    title: "Змініть напрямок елементів на вертикальний:",
+                    description:
+                      "Змініть значення flex-flow в CSS-файлі на column nowrap і подивіться, як елементи впорядковуються вертикально.",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "2",
+                        value: "column nowrap",
+                      },
+                    },
+                  },
+                  {
+                    title:
+                      "Переверніть елементи (щоб елементи йшли в зворотному порядку):",
+                    description:
+                      "Змініть значення flex-flow в CSS-файлі на column-reverse wrap і подивіться, як елементи будуть впорядковані в зворотному порядку вертикально.",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "2",
+                        value: "column-reverse nowrap",
+                      },
+                    },
+                  },
+                  {
+                    title: "Елементи мають іти в ряд та можуть переноситись:",
+                    description:
+                      "Змініть значення flex-flow в CSS-файлі на row wrap",
+                    result: {
+                      html: ``,
+                      css: {
+                        command: "2",
+                        value: "row wrap",
+                      },
+                    },
+                  },
+                ],
               },
             ],
+            speed: [],
           },
           tests: [
             {
-              title: "Як правильно написати фон?",
-              options: ["background", "backround", "bakgroun", "bakground"],
+              title:
+                "Яка команда скорочує дві інші команди: flex-direction & flex-wrap?",
+              options: ["flex-flow", "flex-grow", "grid", "order"],
             },
             {
-              title: "Як скорочено написати фон?",
-              options: ["bg", "bcg", "b", "br"],
+              title: "Як скорочено написати команду flex-flow?",
+              options: ["fxf", "fxw", "fix", "fex"],
             },
             {
-              title: "background це?",
-              options: ["колір фону", "колір тексту", "колір зображення"],
+              title: "flex-flow скорочує скільки команд?",
+              options: ["2", "1", "3", "4"],
             },
           ],
           default: {
@@ -15630,46 +15804,16 @@ button {
             ],
             images: [
               {
-                url: "./img/themes/css/background/img1.png",
-                title: "Приклади команди background",
+                url: "./img/themes/css/flex-flow/img1.png",
+                title: "Приклади команди flex-flow",
                 description: "",
                 links: {},
               },
             ],
             sandbox: [
               {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/XWyjrjo",
-                title: "Звичайний фон кольором",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPRQ",
-                title: "Фон лінійним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPbQ",
-                title: "Фон зображенням",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/mdQrbRE",
-                title: "Фон круговим градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/eYQdOgP",
-                title: "Фон конусним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/BaGLBWR",
-                title: "Фон колір + фото",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/xxQEKqo",
-                title: "Фон декількома зображеннями",
+                url: "https://codepen.io/DmytroKrasyliuk/pen/Jjegzjr",
+                title: "Приклад команди flex-flow",
                 description: "",
               },
             ],
@@ -15677,25 +15821,29 @@ button {
               {
                 body: `
 button {
-  background: red;
+  flex-flow: column nowrap;
 }
               `,
-                title: "Зробить фон кнопки червоним",
+                title:
+                  "Елементи будуть іти в колонку та не зможуть переноситись",
                 description: "",
               },
             ],
           },
           amount: 0,
           similarTags: [
-            "background-size",
-            "background-repeat",
-            "background-position",
+            "flex",
+            "flex-direction",
+            "flex-wrap",
+            "flex-basis",
+            "flex-grow",
+            "flex-shrink",
           ],
 
           links: [
             {
               title: "Гарна стаття на MDN",
-              url: "https://developer.mozilla.org/ru/docs/Web/CSS/background",
+              url: "https://developer.mozilla.org/ru/docs/Web/CSS/flex-flow",
               details: "",
             },
           ],
@@ -15703,52 +15851,110 @@ button {
 
         childrens: [],
       },
+
       {
         details: {
           title: "flex-grow",
           speedCode: "fxg",
-          description: `
-<b>flex-grow</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
+          description: `flex-grow - це властивість, яка визначає, наскільки flex-елемент може "вирости" порівняно з іншими елементами, коли у flex-контейнера є вільний простір. Це число, яке вказує, яку "частку" вільного простору в контейнері отримає цей елемент. Ось як вона працює:
 
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
+    ▪️ Коли flex-grow дорівнює 0 (це значення за замовчуванням), елемент не буде збільшуватися, якщо у контейнері є вільний простір.
+    ▪️ Коли flex-grow дорівнює 1, елемент збільшиться, щоб зайняти весь вільний простір в контейнері, якщо інші елементи також мають flex-grow 1.
+    ▪️ Коли flex-grow дорівнює, наприклад, 2, елемент отримає подвійну "частку" вільного простору порівняно з елементами, для яких flex-grow дорівнює 1.
 
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
-        `,
+    Якщо просто:
+    Уявімо, що у нас є коробка (це наш flex-контейнер), і в цій коробці є блоки (це наші flex-елементи). flex-grow – це ніби гумові стрічки, які тягнуть блоки і збільшують їх, коли в коробці з'являється вільне місце.`,
+
           tasks: {
-            practice: [125],
-            speed: [
+            practice: ["css_flex-grow_1", "css_flex-grow_2"],
+            experiments: [
               {
-                url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників з різними фонами",
-                hardLevel: 2,
-              },
-              {
-                url: "https://www.figma.com/file/r7RZgKdPGaHihLkfDF4zrM/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-3?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників: фон зображенням та градієнтами",
-                hardLevel: 4,
+                title: "flex-grow",
+                data: {
+                  html: `<div class="container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+</div>
+`,
+                  css: `.container {
+  display: flex;
+  width: 100%;
+  border: 3px solid #333;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  margin: 5px;
+  flex-grow: [%1 0 %];
+}
+`,
+                  js: ``,
+                },
+                tasks: [
+                  {
+                    title: "Зробіть так, щоб перший блок збільшувався:",
+                    description:
+                      "Змініть значення flex-grow першого блоку на 1",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "1",
+                      },
+                    },
+                  },
+                  {
+                    title:
+                      "Зробіть так, щоб третій блок був у два рази ширше за перший:",
+                    description:
+                      "Змініть значення flex-grow третього блоку на 2",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "2",
+                      },
+                    },
+                  },
+                ],
               },
             ],
+            speed: [],
           },
+
           tests: [
             {
-              title: "Як правильно написати фон?",
-              options: ["background", "backround", "bakgroun", "bakground"],
+              title: "Що робить властивість flex-grow?",
+              options: [
+                "Збільшує елемент, якщо є вільне місце",
+                "Зменшує елемент",
+                "Робить елемент круглим",
+                "Переміщує елемент в контейнері",
+              ],
             },
             {
-              title: "Як скорочено написати фон?",
-              options: ["bg", "bcg", "b", "br"],
+              title: "Яке значення flex-grow за замовчуванням?",
+              options: ["0", "1", "2", "3"],
             },
             {
-              title: "background це?",
-              options: ["колір фону", "колір тексту", "колір зображення"],
+              title:
+                "Якщо у всіх елементів flex-grow дорівнює 1, що трапиться?",
+              options: [
+                "Вони рівномірно розподілять вільний простір",
+                "Вони зникнуть",
+                "Вони стануть круглими",
+                "Вони будуть переміщатися",
+              ],
             },
           ],
+
           default: {
             figma: [
               {
@@ -15759,72 +15965,41 @@ button {
             ],
             images: [
               {
-                url: "./img/themes/css/background/img1.png",
-                title: "Приклади команди background",
+                url: "./img/themes/css/flex-grow/img1.png",
+                title: "Приклади команди flex-grow",
                 description: "",
                 links: {},
               },
             ],
             sandbox: [
               {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/XWyjrjo",
-                title: "Звичайний фон кольором",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPRQ",
-                title: "Фон лінійним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPbQ",
-                title: "Фон зображенням",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/mdQrbRE",
-                title: "Фон круговим градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/eYQdOgP",
-                title: "Фон конусним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/BaGLBWR",
-                title: "Фон колір + фото",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/xxQEKqo",
-                title: "Фон декількома зображеннями",
+                url: "https://codepen.io/DmytroKrasyliuk/pen/Jjegzjr",
+                title: "Приклад команди flex-grow",
                 description: "",
               },
             ],
             code: [
               {
                 body: `
-button {
-  background: red;
+.box {
+  flex-grow: 2;
 }
-              `,
-                title: "Зробить фон кнопки червоним",
+          `,
+                title:
+                  "Цей блок буде отримувати подвійну 'частку' вільного простору",
                 description: "",
               },
             ],
           },
+
           amount: 0,
-          similarTags: [
-            "background-size",
-            "background-repeat",
-            "background-position",
-          ],
+
+          similarTags: ["flex", "flex-flow", "flex-shrink", "flex-basis"],
 
           links: [
             {
               title: "Гарна стаття на MDN",
-              url: "https://developer.mozilla.org/ru/docs/Web/CSS/background",
+              url: "https://developer.mozilla.org/uk/docs/Web/CSS/flex-grow",
               details: "",
             },
           ],
@@ -15836,775 +16011,678 @@ button {
         details: {
           title: "flex-shrink",
           speedCode: "fxs",
-          description: `
-<b>flex-shrink</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
+          description: `flex-shrink - це властивість, яка визначає, наскільки flex-елемент може "зменшитися" порівняно з іншими елементами, коли у flex-контейнера не вистачає простору. Це число, яке вказує, яку "частку" зменшення отримає цей елемент. Ось як вона працює:
 
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
+    ▪️ Коли flex-shrink дорівнює 0, елемент не буде зменшуватися, незалежно від того, як мало місця в контейнері.
+    ▪️ Коли flex-shrink дорівнює 1 (це значення за замовчуванням), елемент зменшиться, щоб вписатися в контейнер, якщо інші елементи також мають flex-shrink 1.
+    ▪️ Коли flex-shrink дорівнює, наприклад, 2, елемент зменшиться вдвічі сильніше, порівняно з елементами, для яких flex-shrink дорівнює 1.
 
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
-        `,
+    Якщо просто:
+    Уявімо, що у нас є коробка (це наш flex-контейнер), і в цій коробці є блоки (це наші flex-елементи). flex-shrink – це ніби пружини, які дозволяють блокам стискатися, коли в коробці закінчується місце.`,
+
           tasks: {
-            practice: [125],
-            speed: [
+            practice: ["css_flex-shrink_1", "css_flex-shrink_2"],
+            experiments: [
               {
-                url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників з різними фонами",
-                hardLevel: 2,
-              },
-              {
-                url: "https://www.figma.com/file/r7RZgKdPGaHihLkfDF4zrM/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-3?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників: фон зображенням та градієнтами",
-                hardLevel: 4,
+                title: "flex-shrink",
+                data: {
+                  html: `<div class="container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+</div>
+`,
+                  css: `.container {
+  display: flex;
+  width: 100%;
+  border: 3px solid #333;
+}
+
+.box {
+  width: 150px;
+  height: 50px;
+  background-color: #3498db;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  margin: 5px;
+  flex-shrink: [%1 1 %];
+}
+`,
+                  js: ``,
+                },
+                tasks: [
+                  {
+                    title: "Зробіть так, щоб перший блок не зменшувався:",
+                    description:
+                      "Змініть значення flex-shrink першого блоку на 0",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "0",
+                      },
+                    },
+                  },
+                  {
+                    title:
+                      "Зробіть так, щоб третій блок зменшувався сильніше за інші:",
+                    description:
+                      "Змініть значення flex-shrink третього блоку на 2",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "2",
+                      },
+                    },
+                  },
+                ],
               },
             ],
+            speed: [],
           },
+
           tests: [
             {
-              title: "Як правильно написати фон?",
-              options: ["background", "backround", "bakgroun", "bakground"],
+              title: "Що робить властивість flex-shrink?",
+              options: [
+                "Зменшує елемент, якщо не вистачає місця",
+                "Збільшує елемент",
+                "Робить елемент круглим",
+                "Переміщує елемент в контейнері",
+              ],
+              correct: 0,
             },
             {
-              title: "Як скорочено написати фон?",
-              options: ["bg", "bcg", "b", "br"],
+              title: "Яке значення flex-shrink за замовчуванням?",
+              options: ["0", "1", "2", "3"],
+              correct: 1,
             },
             {
-              title: "background це?",
-              options: ["колір фону", "колір тексту", "колір зображення"],
+              title:
+                "Якщо у всіх елементів flex-shrink дорівнює 1, що трапиться?",
+              options: [
+                "Вони рівномірно зменшаться, якщо не вистачає місця",
+                "Вони зникнуть",
+                "Вони стануть круглими",
+                "Вони будуть переміщатися",
+              ],
+              correct: 0,
             },
-          ],
-          default: {
-            figma: [
-              {
-                url: "",
-                title: "",
-                description: "",
-              },
-            ],
-            images: [
-              {
-                url: "./img/themes/css/background/img1.png",
-                title: "Приклади команди background",
-                description: "",
-                links: {},
-              },
-            ],
-            sandbox: [
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/XWyjrjo",
-                title: "Звичайний фон кольором",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPRQ",
-                title: "Фон лінійним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPbQ",
-                title: "Фон зображенням",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/mdQrbRE",
-                title: "Фон круговим градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/eYQdOgP",
-                title: "Фон конусним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/BaGLBWR",
-                title: "Фон колір + фото",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/xxQEKqo",
-                title: "Фон декількома зображеннями",
-                description: "",
-              },
-            ],
-            code: [
-              {
-                body: `
-button {
-  background: red;
-}
-              `,
-                title: "Зробить фон кнопки червоним",
-                description: "",
-              },
-            ],
-          },
-          amount: 0,
-          similarTags: [
-            "background-size",
-            "background-repeat",
-            "background-position",
           ],
 
-          links: [
+          resources: [
             {
-              title: "Гарна стаття на MDN",
-              url: "https://developer.mozilla.org/ru/docs/Web/CSS/background",
-              details: "",
+              title: "Інтерактивний туторіал Flexbox",
+              url: "https://flexbox.help/",
+            },
+            {
+              title: "Flexbox Froggy: Гра для навчання Flexbox",
+              url: "https://flexboxfroggy.com/",
+            },
+            {
+              title: "Відео-курс по Flexbox",
+              url: "https://www.youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuZM1xL3YI9",
+            },
+            {
+              title: "Стаття 'Understanding the CSS flex-shrink property'",
+              url: "https://www.smashingmagazine.com/2021/04/css-flex-shrink-0-flexbox-issues/",
+            },
+            {
+              title: "CSS-Tricks Guide to Flexbox",
+              url: "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+            },
+            {
+              title: "Докладний огляд властивості flex-shrink на MDN",
+              url: "https://developer.mozilla.org/uk/docs/Web/CSS/flex-shrink",
             },
           ],
+
+          childrens: [],
         },
-
-        childrens: [],
       },
       {
         details: {
           title: "flex-wrap",
           speedCode: "fxw",
-          description: `
-<b>flex-wrap</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
+          description: `flex-wrap - це властивість, яка визначає, чи повинні flex-елементи переноситися на наступний рядок у flex-контейнері. Ця властивість допомагає управляти поведінкою елементів, коли в контейнері не вистачає місця.
 
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
+    ▪️ Коли flex-wrap дорівнює "nowrap" (це значення за замовчуванням), елементи не будуть переноситися на новий рядок.
+    ▪️ Коли flex-wrap дорівнює "wrap", елементи будуть переноситися на новий рядок, якщо простору не вистачає.
+    ▪️ "wrap-reverse" переносить елементи на новий рядок, але в оберненому порядку.`,
 
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
-        `,
           tasks: {
-            practice: [125],
-            speed: [
+            practice: ["css_flex-wrap_1", "css_flex-wrap_2"],
+            experiments: [
               {
-                url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників з різними фонами",
-                hardLevel: 2,
-              },
-              {
-                url: "https://www.figma.com/file/r7RZgKdPGaHihLkfDF4zrM/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-3?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників: фон зображенням та градієнтами",
-                hardLevel: 4,
+                title: "flex-wrap",
+                data: {
+                  html: `<div class="container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+</div>
+`,
+                  css: `.container {
+  display: flex;
+  width: 100%;
+  border: 3px solid #333;
+  flex-wrap: [%1 nowrap %];
+}
+
+.box {
+  width: 150px;
+  height: 50px;
+  background-color: #3498db;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  margin: 5px;
+}
+`,
+                  js: ``,
+                },
+                tasks: [
+                  {
+                    title:
+                      "Змініть поведінку контейнера, щоб елементи переносилися:",
+                    description: "Змініть значення flex-wrap на 'wrap'",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "wrap",
+                      },
+                    },
+                  },
+                  {
+                    title:
+                      "Змініть поведінку контейнера, щоб елементи переносилися в оберненому порядку:",
+                    description: "Змініть значення flex-wrap на 'wrap-reverse'",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "wrap-reverse",
+                      },
+                    },
+                  },
+                ],
               },
             ],
+            speed: [],
           },
+
           tests: [
             {
-              title: "Як правильно написати фон?",
-              options: ["background", "backround", "bakgroun", "bakground"],
+              title: "Яке є значенням flex-wrap за замовчуванням?",
+              options: ["wrap", "nowrap", "wrap-reverse", "none"],
+              correct: 1,
             },
             {
-              title: "Як скорочено написати фон?",
-              options: ["bg", "bcg", "b", "br"],
+              title: "Що робить flex-wrap зі значенням 'wrap'?",
+              options: [
+                "Переносить елементи на новий рядок",
+                "Не переносить елементи",
+                "Переносить елементи в оберненому порядку",
+                "Згортає елементи в один",
+              ],
+              correct: 0,
             },
             {
-              title: "background це?",
-              options: ["колір фону", "колір тексту", "колір зображення"],
+              title: "Що робить flex-wrap зі значенням 'wrap-reverse'?",
+              options: [
+                "Переносить елементи на новий рядок",
+                "Не переносить елементи",
+                "Переносить елементи в оберненому порядку",
+                "Згортає елементи в один",
+              ],
+              correct: 2,
             },
-          ],
-          default: {
-            figma: [
-              {
-                url: "",
-                title: "",
-                description: "",
-              },
-            ],
-            images: [
-              {
-                url: "./img/themes/css/background/img1.png",
-                title: "Приклади команди background",
-                description: "",
-                links: {},
-              },
-            ],
-            sandbox: [
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/XWyjrjo",
-                title: "Звичайний фон кольором",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPRQ",
-                title: "Фон лінійним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPbQ",
-                title: "Фон зображенням",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/mdQrbRE",
-                title: "Фон круговим градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/eYQdOgP",
-                title: "Фон конусним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/BaGLBWR",
-                title: "Фон колір + фото",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/xxQEKqo",
-                title: "Фон декількома зображеннями",
-                description: "",
-              },
-            ],
-            code: [
-              {
-                body: `
-button {
-  background: red;
-}
-              `,
-                title: "Зробить фон кнопки червоним",
-                description: "",
-              },
-            ],
-          },
-          amount: 0,
-          similarTags: [
-            "background-size",
-            "background-repeat",
-            "background-position",
           ],
 
-          links: [
+          resources: [
             {
-              title: "Гарна стаття на MDN",
-              url: "https://developer.mozilla.org/ru/docs/Web/CSS/background",
-              details: "",
+              title: "Інтерактивний туторіал Flexbox",
+              url: "https://flexbox.help/",
+            },
+            {
+              title: "Flexbox Froggy: Гра для навчання Flexbox",
+              url: "https://flexboxfroggy.com/",
+            },
+            {
+              title: "Відео-курс по Flexbox",
+              url: "https://www.youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuZM1xL3YI9",
+            },
+            {
+              title: "CSS-Tricks Guide to Flexbox",
+              url: "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+            },
+            {
+              title: "Докладний огляд властивості flex-wrap на MDN",
+              url: "https://developer.mozilla.org/uk/docs/Web/CSS/flex-wrap",
             },
           ],
+
+          childrens: [],
         },
-
-        childrens: [],
       },
+
       {
         details: {
           title: "float",
-          speedCode: "fl",
-          description: `
-<b>float</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
+          speedCode: "flt",
+          description: `float - це властивість CSS, яка визначає, як елемент повинен бути розташований відносно його батьківського блока. Зазвичай використовується для текстового обтікання зображення або для розташування елементів в рядок.
 
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
+    ▪️ Коли float дорівнює "left", елемент переміщується ліворуч у своєму батьківському контейнері.
+    ▪️ Коли float дорівнює "right", елемент переміщується праворуч.
+    ▪️ "none" (це значення за замовчуванням) означає, що елемент не повинен обтікати інші елементи.`,
 
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
-        `,
           tasks: {
-            practice: [125],
-            speed: [
+            practice: ["css_float_1", "css_float_2"],
+            experiments: [
               {
-                url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників з різними фонами",
-                hardLevel: 2,
-              },
-              {
-                url: "https://www.figma.com/file/r7RZgKdPGaHihLkfDF4zrM/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-3?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників: фон зображенням та градієнтами",
-                hardLevel: 4,
+                title: "float",
+                data: {
+                  html: `<div class="container">
+  <img class="image" src="example.jpg" alt="Example Image">
+  <p class="text">Your text goes here...</p>
+</div>
+`,
+                  css: `.container {
+  width: 100%;
+  border: 3px solid #333;
+}
+
+.image {
+  float: [%1 none %];
+  width: 150px;
+  margin-right: 10px;
+}
+
+.text {
+  font-size: 16px;
+}
+`,
+                  js: ``,
+                },
+                tasks: [
+                  {
+                    title:
+                      "Змініть положення зображення, щоб текст обтікав його ліворуч:",
+                    description: "Змініть значення float зображення на 'left'",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "left",
+                      },
+                    },
+                  },
+                  {
+                    title:
+                      "Змініть положення зображення, щоб текст обтікав його праворуч:",
+                    description: "Змініть значення float зображення на 'right'",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "right",
+                      },
+                    },
+                  },
+                ],
               },
             ],
+            speed: [],
           },
+
           tests: [
             {
-              title: "Як правильно написати фон?",
-              options: ["background", "backround", "bakgroun", "bakground"],
+              title: "Яке є значенням float за замовчуванням?",
+              options: ["left", "right", "none", "center"],
+              correct: 2,
             },
             {
-              title: "Як скорочено написати фон?",
-              options: ["bg", "bcg", "b", "br"],
+              title: "Що робить float зі значенням 'left'?",
+              options: [
+                "Розташовує елемент ліворуч і дозволяє іншим елементам обтікати його праворуч",
+                "Розташовує елемент праворуч",
+                "Вирівнює елемент по центру",
+                "Не дозволяє іншим елементам обтікати його",
+              ],
+              correct: 0,
             },
             {
-              title: "background це?",
-              options: ["колір фону", "колір тексту", "колір зображення"],
+              title: "Що робить float зі значенням 'right'?",
+              options: [
+                "Розташовує елемент праворуч і дозволяє іншим елементам обтікати його ліворуч",
+                "Розташовує елемент ліворуч",
+                "Вирівнює елемент по центру",
+                "Не дозволяє іншим елементам обтікати його",
+              ],
+              correct: 0,
             },
-          ],
-          default: {
-            figma: [
-              {
-                url: "",
-                title: "",
-                description: "",
-              },
-            ],
-            images: [
-              {
-                url: "./img/themes/css/background/img1.png",
-                title: "Приклади команди background",
-                description: "",
-                links: {},
-              },
-            ],
-            sandbox: [
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/XWyjrjo",
-                title: "Звичайний фон кольором",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPRQ",
-                title: "Фон лінійним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPbQ",
-                title: "Фон зображенням",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/mdQrbRE",
-                title: "Фон круговим градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/eYQdOgP",
-                title: "Фон конусним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/BaGLBWR",
-                title: "Фон колір + фото",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/xxQEKqo",
-                title: "Фон декількома зображеннями",
-                description: "",
-              },
-            ],
-            code: [
-              {
-                body: `
-button {
-  background: red;
-}
-              `,
-                title: "Зробить фон кнопки червоним",
-                description: "",
-              },
-            ],
-          },
-          amount: 0,
-          similarTags: [
-            "background-size",
-            "background-repeat",
-            "background-position",
           ],
 
-          links: [
+          resources: [
             {
-              title: "Гарна стаття на MDN",
-              url: "https://developer.mozilla.org/ru/docs/Web/CSS/background",
-              details: "",
+              title: "Повне пояснення властивості float",
+              url: "https://css-tricks.com/all-about-floats/",
+            },
+            {
+              title: "Clearing Floats: Clearfix Hack",
+              url: "https://css-tricks.com/snippets/css/clear-fix/",
+            },
+            {
+              title: "Докладний огляд властивості float на MDN",
+              url: "https://developer.mozilla.org/uk/docs/Web/CSS/float",
             },
           ],
+
+          childrens: [],
         },
-
-        childrens: [],
       },
+
       {
         details: {
           title: ":focus",
-          speedCode: ":fos",
-          description: `
-<b>:focus</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
+          speedCode: "fcs",
+          description: `:focus - це псевдоклас в CSS, який використовується для стилізації елементів, коли вони знаходяться в стані фокусу. Цей стан активується, коли користувач клікає на елемент або переходить до нього за допомогою клавіші 'Tab' на клавіатурі.
 
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
+    Приклади використання:
+    ▪️ Змінювати колір рамки текстового поля, коли користувач клікає на нього.
+    ▪️ Змінювати колір фону кнопки, коли користувач переходить до неї за допомогою клавіатури.`,
 
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
-        `,
           tasks: {
-            practice: [125],
-            speed: [
+            practice: ["css_focus_1", "css_focus_2"],
+            experiments: [
               {
-                url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників з різними фонами",
-                hardLevel: 2,
-              },
-              {
-                url: "https://www.figma.com/file/r7RZgKdPGaHihLkfDF4zrM/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-3?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників: фон зображенням та градієнтами",
-                hardLevel: 4,
+                title: ":focus",
+                data: {
+                  html: `<form class="form">
+  <input class="input" type="text" placeholder="Enter text here">
+  <button class="button" type="submit">Submit</button>
+</form>
+`,
+                  css: `.input:focus {
+  border-color: [%1 #3498db %];
+  outline: none;
+}
+
+.button:focus {
+  background-color: [%2 #3498db %];
+  color: white;
+  outline: none;
+}
+`,
+                  js: ``,
+                },
+                tasks: [
+                  {
+                    title:
+                      "Змініть колір рамки текстового поля на червоний, коли воно у фокусі:",
+                    description:
+                      "Змініть значення border-color у селекторі .input:focus на '#e74c3c'",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "#e74c3c",
+                      },
+                    },
+                  },
+                  {
+                    title:
+                      "Змініть колір фону кнопки на зелений, коли вона у фокусі:",
+                    description:
+                      "Змініть значення background-color у селекторі .button:focus на '#2ecc71'",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "2",
+                        value: "#2ecc71",
+                      },
+                    },
+                  },
+                ],
               },
             ],
+            speed: [],
           },
+
           tests: [
             {
-              title: "Як правильно написати фон?",
-              options: ["background", "backround", "bakgroun", "bakground"],
+              title:
+                "Який псевдоклас використовується для стилізації елементів у стані фокусу?",
+              options: [":hover", ":active", ":focus", ":visited"],
+              correct: 2,
             },
             {
-              title: "Як скорочено написати фон?",
-              options: ["bg", "bcg", "b", "br"],
+              title: "Який стан активує псевдоклас :focus?",
+              options: [
+                "Коли користувач клікає на елемент",
+                "Коли користувач наводить курсор на елемент",
+                "Коли елемент має фокус",
+                "Коли користувач натискає і утримує елемент",
+              ],
+              correct: 2,
             },
             {
-              title: "background це?",
-              options: ["колір фону", "колір тексту", "колір зображення"],
+              title:
+                "Як вимкнути стандартний контур (outline) для елементів у фокусі?",
+              options: [
+                "outline: none;",
+                "border: none;",
+                "focus: off;",
+                "outline: 0;",
+              ],
+              correct: 0,
             },
-          ],
-          default: {
-            figma: [
-              {
-                url: "",
-                title: "",
-                description: "",
-              },
-            ],
-            images: [
-              {
-                url: "./img/themes/css/background/img1.png",
-                title: "Приклади команди background",
-                description: "",
-                links: {},
-              },
-            ],
-            sandbox: [
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/XWyjrjo",
-                title: "Звичайний фон кольором",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPRQ",
-                title: "Фон лінійним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPbQ",
-                title: "Фон зображенням",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/mdQrbRE",
-                title: "Фон круговим градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/eYQdOgP",
-                title: "Фон конусним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/BaGLBWR",
-                title: "Фон колір + фото",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/xxQEKqo",
-                title: "Фон декількома зображеннями",
-                description: "",
-              },
-            ],
-            code: [
-              {
-                body: `
-button {
-  background: red;
-}
-              `,
-                title: "Зробить фон кнопки червоним",
-                description: "",
-              },
-            ],
-          },
-          amount: 0,
-          similarTags: [
-            "background-size",
-            "background-repeat",
-            "background-position",
           ],
 
-          links: [
+          resources: [
             {
-              title: "Гарна стаття на MDN",
-              url: "https://developer.mozilla.org/ru/docs/Web/CSS/background",
-              details: "",
+              title: "Докладний огляд псевдокласу :focus на MDN",
+              url: "https://developer.mozilla.org/uk/docs/Web/CSS/:focus",
+            },
+            {
+              title: "Accessibility concerns with :focus",
+              url: "https://css-tricks.com/almanac/selectors/f/focus/",
+            },
+            {
+              title: "Using the :focus-visible pseudo-class",
+              url: "https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible",
             },
           ],
+
+          childrens: [],
         },
-
-        childrens: [],
       },
       {
         details: {
           title: "font",
-          speedCode: "f",
-          description: `
-<b>font</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
+          speedCode: "fnt",
+          description: `Властивість 'font' - це як магічна команда, що одразу змінює вигляд тексту на твоєму веб-сайті. З її допомогою ти можеш зробити текст більшим або меншим, жирним, нахилити його (зробити курсивом), вибрати, як він буде виглядати (сімейство шрифта) і навіть контролювати простір між рядками тексту! Ось як ця властивість працює:
 
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
+▪️ 'font-style': Хочеш, щоб текст був нахилений, як у книзі з поезією? Використовуй цю частину!
+▪️ 'font-variant': Дозволяє змінити вигляд літер, наприклад, зробити їх усі великими, але маленького розміру.
+▪️ 'font-weight': Щоб зробити текст жирнішим (як у заголовках) або легшим (тоншим), використовуй цю частину.
+▪️ 'font-size': Це як магічний збільшувач/зменшувач для тексту. Тут ти вказуєш, наскільки великим або маленьким повинен бути текст.
+▪️ 'line-height': Ця частина допомагає контролювати, наскільки близько або далеко одне від одного будуть рядки тексту.
+▪️ 'font-family': Тут ти можеш вибрати 'одяг' для своїх слів, тобто який шрифт вони будуть мати.
 
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
-        `,
+Приклад: 'font: italic small-caps bold 16px/2 cursive;' це команда, яка робить текст нахиленим, з великими першими літерами кожного слова, жирним, розміром в 16 пікселів, з подвійним проміжком між рядками і вибрано сімейство шрифтів, яке виглядає, ніби рукописне.`,
           tasks: {
-            practice: [125],
-            speed: [
+            practice: ["css_font_1", "css_font_2"],
+            experiments: [
               {
-                url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників з різними фонами",
-                hardLevel: 2,
-              },
-              {
-                url: "https://www.figma.com/file/r7RZgKdPGaHihLkfDF4zrM/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-3?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників: фон зображенням та градієнтами",
-                hardLevel: 4,
+                title: "font",
+                data: {
+                  html: `<p class="text">Hello, world!</p>`,
+                  css: `.text {
+  font: [%1 italic small-caps bold 16px/2 cursive; %]
+}
+`,
+                  js: ``,
+                },
+                tasks: [
+                  {
+                    title:
+                      "Змініть розмір шрифта на 20px і висоту лінії на 1.5:",
+                    description:
+                      "Змініть значення властивості 'font' на 'italic small-caps bold 20px/1.5 cursive'",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "italic small-caps bold 20px/1.5 cursive",
+                      },
+                    },
+                  },
+                  {
+                    title:
+                      "Змініть сімейство шрифтів на 'Arial', а стиль шрифта на 'normal':",
+                    description:
+                      "Змініть значення властивості 'font' на 'normal small-caps bold 20px/1.5 Arial'",
+                    result: {
+                      html: ``,
+                      css: {
+                        commandNumber: "1",
+                        value: "normal small-caps bold 20px/1.5 Arial",
+                      },
+                    },
+                  },
+                ],
               },
             ],
+            speed: [],
           },
+
           tests: [
             {
-              title: "Як правильно написати фон?",
-              options: ["background", "backround", "bakgroun", "bakground"],
+              title: "Що робить властивість 'font'?",
+              options: [
+                "Встановлює стиль, варіативність, жирність, розмір, висоту лінії та сімейство шрифтів",
+                "Встановлює колір шрифта",
+                "Встановлює відступи",
+                "Встановлює тільки розмір шрифта",
+              ],
+              correct: 2,
             },
             {
-              title: "Як скорочено написати фон?",
-              options: ["bg", "bcg", "b", "br"],
+              title: "Яке правильне значення для 'font'?",
+              options: [
+                "16px/2 Arial",
+                "Arial 16px",
+                "bold 2/16px",
+                "16px Arial 2",
+              ],
+              correct: 0,
             },
             {
-              title: "background це?",
-              options: ["колір фону", "колір тексту", "колір зображення"],
+              title: "Які компоненти можна встановити за допомогою 'font'?",
+              options: [
+                "Розмір, сімейство, жирність, стиль, варіативність, висота лінії",
+                "Тільки розмір та сімейство",
+                "Тільки розмір та жирність",
+                "Тільки сімейство",
+              ],
+              correct: 1,
             },
-          ],
-          default: {
-            figma: [
-              {
-                url: "",
-                title: "",
-                description: "",
-              },
-            ],
-            images: [
-              {
-                url: "./img/themes/css/background/img1.png",
-                title: "Приклади команди background",
-                description: "",
-                links: {},
-              },
-            ],
-            sandbox: [
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/XWyjrjo",
-                title: "Звичайний фон кольором",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPRQ",
-                title: "Фон лінійним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPbQ",
-                title: "Фон зображенням",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/mdQrbRE",
-                title: "Фон круговим градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/eYQdOgP",
-                title: "Фон конусним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/BaGLBWR",
-                title: "Фон колір + фото",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/xxQEKqo",
-                title: "Фон декількома зображеннями",
-                description: "",
-              },
-            ],
-            code: [
-              {
-                body: `
-button {
-  background: red;
-}
-              `,
-                title: "Зробить фон кнопки червоним",
-                description: "",
-              },
-            ],
-          },
-          amount: 0,
-          similarTags: [
-            "background-size",
-            "background-repeat",
-            "background-position",
           ],
 
-          links: [
+          resources: [
             {
-              title: "Гарна стаття на MDN",
-              url: "https://developer.mozilla.org/ru/docs/Web/CSS/background",
-              details: "",
+              title: "Детальний огляд властивості 'font' на MDN",
+              url: "https://developer.mozilla.org/uk/docs/Web/CSS/font",
+            },
+            {
+              title: "Поради щодо використання властивості 'font' в CSS",
+              url: "https://css-tricks.com/almanac/properties/f/font/",
             },
           ],
+
+          childrens: [],
         },
-
-        childrens: [],
       },
+
       {
         details: {
           title: "@font-face",
-          speedCode: "@ff",
-          description: `
-<b>@font-face</b> - команда яка дозволяє змінювати фон елемента. 
-Найчастіше використовується в кнопках та прямокутниках. 
-Є однією з найпопулярніших команд в CSS. 
-
-<b>Фон може бути:</b>
-▪️ Кольором
-▪️ Градієнтом
-▪️ Зображенням
-
-За бажанням фон можна зробити напівпрозорим
-За бажанням можна зробити фон з декількох зображень або з декількох кольорів
-        `,
+          speedCode: "ff",
+          description:
+            "Правило '@font-face' у CSS дозволяє нам 'принести' особливий шрифт прямо до нашого веб-сайту. З його допомогою ми можемо використовувати шрифти, які не встановлено на комп’ютерах користувачів. Ось як це працює:\n\n▪️ 'font-family': Даємо ім'я нашому шрифту, яке ми будемо використовувати в CSS.\n▪️ 'src': Вказуємо, де лежить файл з шрифтом.\n\nПриклад: '@font-face { font-family: 'МійОсобливийШрифт'; src: url('шлях/до/файлу/шрифта.woff'); }'",
           tasks: {
-            practice: [125],
-            speed: [
+            practice: ["css_fontface_1", "css_fontface_2"],
+            experiments: [
               {
-                url: "https://www.figma.com/file/xSZ0QJERoBWYg89hTdsFdS/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-1?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників з різними фонами",
-                hardLevel: 2,
-              },
-              {
-                url: "https://www.figma.com/file/r7RZgKdPGaHihLkfDF4zrM/%D0%A2%D1%80%D0%B5%D0%BD%D1%83%D1%94%D0%BC%D0%BE-%D1%84%D0%BE%D0%BD.-%D0%A0%D1%96%D0%B2%D0%B5%D0%BD%D1%8C-3?type=design&node-id=0-1&t=qKEBTJu2Ls3lOS7U-0",
-                title: "FIGMA: 7 прямокутників: фон зображенням та градієнтами",
-                hardLevel: 4,
+                title: "@font-face",
+                data: {
+                  html: "<p class='special-text'>Привіт, світе!</p>",
+                  css: "@font-face {\n  font-family: 'МійОсобливийШрифт';\n  src: url('[% 1 шлях/до/файлу/шрифта.woff %]');\n}\n\n.special-text {\n  font-family: 'МійОсобливийШрифт', sans-serif;\n}\n",
+                  js: "",
+                },
+                tasks: [
+                  {
+                    title: "Змініть ім'я шрифта на 'КрутийШрифт':",
+                    description:
+                      "Змініть 'font-family' в '@font-face' на 'КрутийШрифт' та оновіть його в класі 'special-text'.",
+                    result: {
+                      html: "",
+                      css: {
+                        commandNumber: "1",
+                        value: "КрутийШрифт",
+                      },
+                    },
+                  },
+                ],
               },
             ],
+            speed: [],
           },
+
           tests: [
             {
-              title: "Як правильно написати фон?",
-              options: ["background", "backround", "bakgroun", "bakground"],
+              title: "Для чого використовується '@font-face'?",
+              options: [
+                "Для завантаження особливого шрифта на веб-сайт",
+                "Для встановлення колір шрифта",
+                "Для встановлення відступів",
+                "Для встановлення тільки розміру шрифта",
+              ],
             },
             {
-              title: "Як скорочено написати фон?",
-              options: ["bg", "bcg", "b", "br"],
+              title: "Який елемент вказує де знаходиться файл шрифта?",
+              options: ["src", "font-location", "font-path",  "font-file"],
             },
             {
-              title: "background це?",
-              options: ["колір фону", "колір тексту", "колір зображення"],
+              title:
+                "Який формат файлу шрифта НЕ використовується в '@font-face'?",
+              options: [".jpg", ".woff", ".ttf",  ".otf"],
             },
-          ],
-          default: {
-            figma: [
-              {
-                url: "",
-                title: "",
-                description: "",
-              },
-            ],
-            images: [
-              {
-                url: "./img/themes/css/background/img1.png",
-                title: "Приклади команди background",
-                description: "",
-                links: {},
-              },
-            ],
-            sandbox: [
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/XWyjrjo",
-                title: "Звичайний фон кольором",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPRQ",
-                title: "Фон лінійним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/JjeRPbQ",
-                title: "Фон зображенням",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/mdQrbRE",
-                title: "Фон круговим градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/eYQdOgP",
-                title: "Фон конусним градієнтом",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/BaGLBWR",
-                title: "Фон колір + фото",
-                description: "",
-              },
-              {
-                url: "https://codepen.io/DmytroKrasyliuk/pen/xxQEKqo",
-                title: "Фон декількома зображеннями",
-                description: "",
-              },
-            ],
-            code: [
-              {
-                body: `
-button {
-  background: red;
-}
-              `,
-                title: "Зробить фон кнопки червоним",
-                description: "",
-              },
-            ],
-          },
-          amount: 0,
-          similarTags: [
-            "background-size",
-            "background-repeat",
-            "background-position",
           ],
 
-          links: [
+          resources: [
             {
-              title: "Гарна стаття на MDN",
-              url: "https://developer.mozilla.org/ru/docs/Web/CSS/background",
-              details: "",
+              title: "Детальний огляд правила '@font-face' на MDN",
+              url: "https://developer.mozilla.org/uk/docs/Web/CSS/@font-face",
+            },
+            {
+              title: "Як використовувати веб-шрифти",
+              url: "https://www.w3schools.com/css/css3_fonts.asp",
+            },
+            {
+              title: "Поради щодо використання '@font-face' в CSS",
+              url: "https://css-tricks.com/snippets/css/using-font-face/",
             },
           ],
+
+          childrens: [],
         },
-
-        childrens: [],
       },
       {
         details: {
@@ -28199,6 +28277,88 @@ button {
 
         childrens: [],
       },
+      {
+  "details": {
+    "title": "Конкатенація в JavaScript",
+    "speedCode": "jsConcat",
+    "description": "Конкатенація - це спосіб об'єднання двох або більше рядків в один. У JavaScript для цього можна використовувати оператор `+` або метод `.concat()`. Приклад: `'Hello, ' + 'World!'` об'єднає два рядки в один: `'Hello, World!'`.",
+
+    "tasks": {
+      "practice": ["js_concat_1", "js_concat_2"],
+      "experiments": [
+        {
+          "title": "Конкатенація рядків",
+          "data": {
+            "html": ``,
+            "js": `let greeting = 'Hello, ';
+let name = 'John';
+let message = greeting + name;
+console.log(message); // Виведе: 'Hello, John'
+`
+          },
+          "tasks": [
+            {
+              "title": "Змініть ім'я на 'Alice' і знову виведіть повідомлення:",
+              "description": "Змініть значення змінної 'name' на 'Alice' і виведіть знову змінну 'message' у консоль.",
+              "result": {
+                "js": {
+                  "commandNumber": "2",
+                  "value": "Alice"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "speed": []
+    },
+
+    "tests": [
+      {
+        "title": "Як об'єднати два рядки 'Hello, ' та 'World!'?",
+        "options": [
+          "'Hello, ' + 'World!'",
+          "'Hello, '.concat('World!')",
+          "'Hello, ' - 'World!'",
+          "'Hello, ' * 'World!'"
+        ],
+        "correct": 0
+      },
+      {
+        "title": "Який результат буде виведено на екран, якщо `let message = 'Hi ' + 5 + 3;`?",
+        "options": [
+          "'Hi 53'",
+          "'Hi 8'",
+          "'Hi 53.0'",
+          "8"
+        ],
+        "correct": 0
+      },
+      {
+        "title": "Чи можна використовувати `.concat()` для об'єднання рядків?",
+        "options": [
+          "Так",
+          "Ні"
+        ],
+        "correct": 0
+      }
+    ],
+
+    "resources": [
+      {
+        "title": "Стрічкові літерали та конкатенація в MDN",
+        "url": "https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String"
+      },
+      {
+        "title": "Темплейтні літерали для об'єднання рядків",
+        "url": "https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Template_literals"
+      }
+    ],
+
+    "childrens": []
+  }
+},
+
     ],
   },
 ];

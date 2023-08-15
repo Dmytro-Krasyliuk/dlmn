@@ -588,6 +588,64 @@ await Practice.insertMany([
     },
   }),
   generatePracticeTask({
+    id: "css_display_flex_1",
+    name: "4 Елемента в ряд",
+    description: "display: flex & gap",
+    type: "classElement",
+    level: 1,
+    codeResult: {
+      html: `<div class="app">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+</div>`,
+      css: `.app {
+  width: 260px;
+  display: flex;
+  gap: 10px;
+  background: #0CE508;
+  padding: 20px;
+}
+.item {
+  background: orange;
+  color: white;
+  padding: 20px;
+  border-radius: 4px;
+  font-size: 30px;
+}`,
+      js: `
+    `,
+    },
+    data: {
+      html: ``,
+      css: ``,
+      js: ``,
+    },
+  }),
+
+  generatePracticeTask({
+    id: "html_a_2",
+    name: "Посилання на facebook",
+    description: "з різними атрибутами",
+    type: "classElement",
+    level: 1,
+    codeResult: {
+      html: `<div class="app">
+  <a href="https://www.facebook.com/" target="_blank" class="facebook" title="Популярна соц. мережа" id="fb">link to Facebook</a>
+</div>`,
+      css: ``,
+      js: `
+    `,
+    },
+    data: {
+      html: ``,
+      css: ``,
+      js: ``,
+    },
+  }),
+
+  generatePracticeTask({
     id: "html_abbr_1",
     name: "Посилання на карти",
     description: "Києва, Одеси та Чернівців",

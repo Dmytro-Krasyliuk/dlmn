@@ -119,12 +119,7 @@ function processElement(
   parentLabel = "",
   selectorNumber = 1
 ) {
-  if (flag == 1) {
-    selectorNumber--
-  }
-    if (selectorNumber == 0) {
-      selectorNumber = 1;
-    }
+
 
   if (element.type === "text" && element.text) {
     flag = 1;
@@ -143,8 +138,9 @@ function processElement(
       description: `Додай текст: "${element.text}" у ${parentLabel}`,
       check: textCheck,
     };
-    return;
-  } 
+  } else {
+    flag = 0;
+  }
 
 
   if (element.tagName) {
@@ -330,19 +326,33 @@ function generateTasks(cssCode, htmlCode, task) {
 
 
 let result = generatePracticeTask({
-  id: '__1',
+  id: "__1",
   name: "Картка товару ",
   description: "(мікрофон)",
   type: "classElement",
   level: 1,
   codeResult: {
-    html: `<p>Переглянь карту 
-<a class="a" href="https://goo.gl/maps/1x8yTmk9G46BdaFd8">Києва</a>
-<a href="https://goo.gl/maps/EcbEr2itoNRYhbTt9">Одеси</a>
-<a href="https://goo.gl/maps/iKdjqLVqR9fuisPC9">Чернівців</a>
-  
-</p>`,
-    css: ``,
+    html: `<div class="app">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+</div>`,
+
+    css: `.app {
+  width: 260px;
+  display: flex;
+  gap: 10px;
+  background: #0CE508;
+  padding: 20px;
+}
+.item {
+  background: orange;
+  color: white;
+  padding: 20px;
+  border-radius: 4px;
+  font-size: 30px;
+}`,
     js: `
     `,
   },
