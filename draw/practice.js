@@ -20,7 +20,7 @@ async function drawPracticeTask(title, description, themes, tasks) {
     y: 200,
   };
 
-  await loadImage("./practice-old.png").then((image) => {
+  await loadImage("./img/practice-old.png").then((image) => {
     const { w, h, x, y } = imagePosition;
     context.drawImage(image, x, y, w, h);
 
@@ -34,15 +34,15 @@ async function drawPracticeTask(title, description, themes, tasks) {
     context.fillStyle = "#444";
     context.fillText(description, 500, 130, 1000);
 
-    loadImage("./arrow-yellow.png").then((image) => {
+    loadImage("./img/arrow-yellow.png").then((image) => {
       context.drawImage(image, 420, y + 100, 140, 120);
 
-      loadImage("./practice-result.png").then((image) => {
+      loadImage("./img/practice-result.png").then((image) => {
         const { w, h, x, y } = imagePosition;
         context.drawImage(image, x + imagePosition.w + 150, y, w, h);
 
         const buffer = canvas.toBuffer("image/png");
-        fs.writeFileSync("./practice-result-canvas.png", buffer);
+        fs.writeFileSync("./img/practice-result-canvas.png", buffer);
         return true;
       });
     });

@@ -20,7 +20,7 @@ function drawResult(name, money) {
     y: 0,
   };
 
-  loadImage("./template.png").then((image) => {
+  loadImage("./img/template.png").then((image) => {
     const { w, h, x, y } = imagePosition;
     context.drawImage(image, x, y, w, h);
 
@@ -41,7 +41,7 @@ function drawResult(name, money) {
     context.fillText(`+ ${money} грн`, 770, 248);
 
     const buffer = canvas.toBuffer("image/png");
-    fs.writeFileSync("./image20.png", buffer);
+    fs.writeFileSync("./img/image20.png", buffer);
     return true;
   });
 

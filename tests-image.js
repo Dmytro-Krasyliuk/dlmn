@@ -49,9 +49,9 @@ async function testsImage(title) {
     wrapText(context, title, 40, 80, 520, 48);
 
     const buffer = canvas.toBuffer("image/png");
-    fs.writeFileSync("./tests-create.png", buffer);
+    fs.writeFileSync("./img/tests-create.png", buffer);
     console.log("1");
-    return "tests-create.png";
+    return "./img/tests-create.png";
   });
 }
 

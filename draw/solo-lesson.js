@@ -131,7 +131,7 @@ async function drawSolo(name, grade, technologies, date, teacher, themes) {
   }
 
   const buffer = canvas.toBuffer("image/png");
-  fs.writeFileSync("./template-grade-individual-lesson20.png", buffer);
+  fs.writeFileSync("./img/template-grade-individual-lesson20.png", buffer);
   return idLesson;
 }
 

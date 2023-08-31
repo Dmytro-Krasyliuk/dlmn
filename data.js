@@ -1,4 +1,5 @@
 import { Practice, User } from "./database/index.js";
+import { v4 as uuid } from "uuid";
 
 let adminId = 957139896;
 
@@ -53,6 +54,51 @@ let technologiesStack = [
   "other",
 ];
 
+
+
+let elementsData = {
+  button: {
+    title: ``,
+    description: ``,
+    variants: [
+      {
+        id: uuid(),
+        video: "./public/video/button/1.mp4",
+        title: `Проста кнопка без css та javascript`,
+        description: ``,
+        code: {
+          "index.html": `<button>додати в корзину</button>`,
+          "style.css": ``,
+          "script.js": ``,
+        },
+        result:
+          "https://res.cloudinary.com/teepublic/image/private/s--dQw2Q36k--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_fffffe,e_outline:48/co_fffffe,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_auto:good:420,w_630/v1540801018/production/designs/3405364_0.jpg",
+      },
+      {
+        id: uuid(),
+        video: "",
+        title: `Гарна кнопка з css (без javascript)`,
+        description: ``,
+        code: {
+          "index.html": `<button class="btn">додати в корзину</button>`,
+          "style.css": `.btn {
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 0;
+  background: green;
+}`,
+          "script.js": ``,
+        },
+        result: "https://cdn-icons-png.flaticon.com/512/6028/6028690.png",
+      },
+    ],
+  },
+};
+
+
+
+
 let themes = [
   {
     title: "html",
@@ -98,7 +144,7 @@ let themes = [
               options: ["a", "b", "c", "d"],
             },
             {
-              title: "Тег a створює на сайті",
+              title: "Тег a створює на сайті ...",
               options: [
                 "посилання",
                 "жирний текст",
@@ -108,7 +154,7 @@ let themes = [
             },
             {
               title:
-                "Щоб посилання відкрилось у новій вкладці необхідно написати ",
+                "Щоб посилання відкрилось у новій вкладці необхідно написати атрибут",
               options: [
                 'target="_blank"',
                 'target="_new"',
@@ -123,6 +169,28 @@ let themes = [
                 "Текст посилання",
                 "Формат посилання",
                 "Стиль посилання",
+              ],
+            },
+            {
+              title: "Якщо ми не знаємо куди має вести посилання то пишемо...?",
+              options: ['href="#"', 'href="*"', 'href="/"', 'href="..."'],
+            },
+            {
+              title: "Яке посилання не спрацює?",
+              options: [
+                'href="google.com"',
+                'href="http://google.com"',
+                'href="https://google.com"',
+                'href="https://google.com/"',
+              ],
+            },
+            {
+              title: "Як зробити посилання на номер телефону?",
+              options: [
+                'href="tel:+380500751745"',
+                'href="number:+380500751745"',
+                'href="phone:+380500751745"',
+                'href="get:+380500751745"',
               ],
             },
           ],
@@ -223,9 +291,9 @@ let themes = [
               ],
             },
             {
-              title: "Для чого використовується атрибут title в тега abbr?",
+              title: "Для чого використовується атрибут title в тегі abbr?",
               options: [
-                "Для повного виразу абревіатури",
+                "Для абревіатури",
                 "Для стилю тексту",
                 "Для посилання",
                 "Для кольору тексту",
@@ -430,10 +498,16 @@ let themes = [
               options: ["au", "ao", "ado", "auu"],
             },
             {
-              title: "Який атрибут необхідно додати щоб з'явився плеєр?",
+              title: "Який атрибут необхідно додати щоб було видно плеєр?",
               photo: "",
               code: "",
               options: ["controls", "play", "show-music", "pleer"],
+            },
+            {
+              title: "Найпопулярнішим розширенням аудіо файлів є?",
+              photo: "",
+              code: "",
+              options: ["mp3", "mp4", "gif", "mus"],
             },
           ],
           default: {
@@ -543,6 +617,17 @@ Copy code
                 '<b alt="HTML">',
               ],
             },
+            {
+              photo: "",
+              code: `
+<br>
+<hr>
+<b>
+<pre>
+              `,
+              title: "На якому рядку створюється жирний текст?",
+              options: ["3", "1", "2", "4"],
+            },
           ],
           default: {
             figma: [
@@ -628,8 +713,8 @@ Copy code
           },
           tests: [
             {
-              title: "Яке створити велику (блокову) цитату",
-              options: ["bq", "bt", "bkt", "bote"],
+              title: "Як створити велику (блокову) цитату",
+              options: ["blockquote", "bigquote", "bquote", "big-quote"],
             },
             {
               title: "Яке скорочення створює велику (блокову) цитату",
@@ -821,6 +906,21 @@ Copy code
               title: "Як зробити ентер в html?",
               options: ["br", "enter", "break", "end"],
             },
+            {
+              title: "Чи парний тег br?",
+              options: ["ні", "так"],
+            },
+            {
+              photo: "",
+              code: `
+<br>
+<hr>
+<b>
+<pre>
+              `,
+              title: "На якому рядку створюється ентер?",
+              options: ["1", "3", "2", "4"],
+            },
           ],
           default: {
             figma: [
@@ -944,10 +1044,10 @@ Copy code
             {
               photo: "",
               code: `
-1| <div>Видалити</div>
-2| <btn>Видалити</btn>
-3| <button>Видалити</button>
-4| <img src="button.jpg">
+<div>Видалити</div>
+<btn>Видалити</btn>
+<button>Видалити</button>
+<img src="button.jpg">
               `,
               title: "На якому рядку створюється кнопка?",
               options: ["3", "1", "2", "4"],
@@ -16657,12 +16757,12 @@ button {
             },
             {
               title: "Який елемент вказує де знаходиться файл шрифта?",
-              options: ["src", "font-location", "font-path",  "font-file"],
+              options: ["src", "font-location", "font-path", "font-file"],
             },
             {
               title:
                 "Який формат файлу шрифта НЕ використовується в '@font-face'?",
-              options: [".jpg", ".woff", ".ttf",  ".otf"],
+              options: [".jpg", ".woff", ".ttf", ".otf"],
             },
           ],
 
@@ -27459,7 +27559,7 @@ button {
               options: ["a", "b", "c", "d"],
             },
             {
-              title: "Тег a створює на сайті",
+              title: "Тег a створює на сайті ...",
               options: [
                 "посилання",
                 "жирний текст",
@@ -27469,7 +27569,7 @@ button {
             },
             {
               title:
-                "Щоб посилання відкрилось у новій вкладці необхідно написати ",
+                "Щоб посилання відкрилось у новій вкладці необхідно написати атрибут",
               options: [
                 'target="_blank"',
                 'target="_new"',
@@ -27484,6 +27584,28 @@ button {
                 "Текст посилання",
                 "Формат посилання",
                 "Стиль посилання",
+              ],
+            },
+            {
+              title: "Якщо ми не знаємо куди має вести посилання то пишемо...?",
+              options: ['href="#"', 'href="*"', 'href="/"', 'href="..."'],
+            },
+            {
+              title: "Яке посилання не спрацює?",
+              options: [
+                'href="google.com"',
+                'href="http://google.com"',
+                'href="https://google.com"',
+                'href="https://google.com/"',
+              ],
+            },
+            {
+              title: "Як зробити посилання на номер телефону?",
+              options: [
+                'href="tel:+380500751745"',
+                'href="number:+380500751745"',
+                'href="phone:+380500751745"',
+                'href="get:+380500751745"',
               ],
             },
           ],
@@ -28196,7 +28318,6 @@ button {
           title: "Типи данних",
           speedCode: "",
           description: `В JavaScript, як і в багатьох інших мовах програмування, є різні "типи даних". Можна уявити, що типи даних - це різні "категорії" або "ящики", в які ми можемо помістити нашу інформацію, і кожен ящик має свої особливості. Ось основні типи даних в JavaScript:
-
 <b>Числа (Number):</b> 
 Це використовується для представлення чисел. Наприклад, ви можете використовувати цей тип даних, коли хочете зберігати скільки сторінок у вашій улюбленій книзі, або скільки цукерок у вашому мішечку.
 <b>Рядки (String): </b> 
@@ -28278,89 +28399,502 @@ button {
         childrens: [],
       },
       {
-  "details": {
-    "title": "Конкатенація в JavaScript",
-    "speedCode": "jsConcat",
-    "description": "Конкатенація - це спосіб об'єднання двох або більше рядків в один. У JavaScript для цього можна використовувати оператор `+` або метод `.concat()`. Приклад: `'Hello, ' + 'World!'` об'єднає два рядки в один: `'Hello, World!'`.",
-
-    "tasks": {
-      "practice": ["js_concat_1", "js_concat_2"],
-      "experiments": [
-        {
-          "title": "Конкатенація рядків",
-          "data": {
-            "html": ``,
-            "js": `let greeting = 'Hello, ';
+        details: {
+          title: "Конкатенація в JavaScript",
+          speedCode: "",
+          description:
+            "Конкатенація - це спосіб об'єднання двох або більше рядків в один. У JavaScript для цього можна використовувати оператор `+` або метод `.concat()`. Приклад: `'Hello, ' + 'World!'` об'єднає два рядки в один: `'Hello, World!'`.",
+          tasks: {
+            practice: ["js_concat_1", "js_concat_2"],
+            experiments: [
+              {
+                title: "Конкатенація рядків",
+                data: {
+                  html: ``,
+                  js: `let greeting = 'Hello, ';
 let name = 'John';
 let message = greeting + name;
 console.log(message); // Виведе: 'Hello, John'
-`
+`,
+                },
+                tasks: [
+                  {
+                    title:
+                      "Змініть ім'я на 'Alice' і знову виведіть повідомлення:",
+                    description:
+                      "Змініть значення змінної 'name' на 'Alice' і виведіть знову змінну 'message' у консоль.",
+                    result: {
+                      js: {
+                        commandNumber: "2",
+                        value: "Alice",
+                      },
+                    },
+                  },
+                ],
+              },
+            ],
+            speed: [],
           },
-          "tasks": [
+
+          tests: [
             {
-              "title": "Змініть ім'я на 'Alice' і знову виведіть повідомлення:",
-              "description": "Змініть значення змінної 'name' на 'Alice' і виведіть знову змінну 'message' у консоль.",
-              "result": {
-                "js": {
-                  "commandNumber": "2",
-                  "value": "Alice"
-                }
-              }
-            }
-          ]
-        }
-      ],
-      "speed": []
-    },
+              title: "Як об'єднати два рядки 'Hello, ' та 'World!'?",
+              options: [
+                "'Hello, ' + 'World!'",
+                "'Hello, '.concat('World!')",
+                "'Hello, ' - 'World!'",
+                "'Hello, ' * 'World!'",
+              ],
+              correct: 0,
+            },
+            {
+              title:
+                "Який результат буде виведено на екран, якщо `let message = 'Hi ' + 5 + 3;`?",
+              options: ["'Hi 53'", "'Hi 8'", "'Hi 53.0'", "8"],
+              correct: 0,
+            },
+            {
+              title:
+                "Чи можна використовувати `.concat()` для об'єднання рядків?",
+              options: ["Так", "Ні"],
+              correct: 0,
+            },
+          ],
 
-    "tests": [
-      {
-        "title": "Як об'єднати два рядки 'Hello, ' та 'World!'?",
-        "options": [
-          "'Hello, ' + 'World!'",
-          "'Hello, '.concat('World!')",
-          "'Hello, ' - 'World!'",
-          "'Hello, ' * 'World!'"
-        ],
-        "correct": 0
+          resources: [
+            {
+              title: "Стрічкові літерали та конкатенація в MDN",
+              url: "https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String",
+            },
+            {
+              title: "Темплейтні літерали для об'єднання рядків",
+              url: "https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Template_literals",
+            },
+          ],
+
+          childrens: [],
+        },
       },
       {
-        "title": "Який результат буде виведено на екран, якщо `let message = 'Hi ' + 5 + 3;`?",
-        "options": [
-          "'Hi 53'",
-          "'Hi 8'",
-          "'Hi 53.0'",
-          "8"
-        ],
-        "correct": 0
+        details: {
+          title: "При клікі на кнопку",
+          speedCode: "",
+          description: `
+1. (HTML) Створити кнопку
+2. (HTML) Додати клас
+3. (JS) 
+4. (JS)
+            `,
+          instruction: [
+            {
+              file: "index.html",
+              title: "Створити кнопку",
+              code: "<button$2>$1</button>",
+              place: "main",
+            },
+            {
+              file: "index.html",
+              title: 'Додати текст "click me"',
+              code: "click me",
+              place: "$1",
+            },
+            {
+              file: "script.js",
+              title: "Створити кнопку",
+              code: "let btn$1",
+              place: "main",
+            },
+            {
+              file: "script.js",
+              title: "Покласти кнопку в цю змінну",
+              code: '= document.getElementsByClassName("btn")[0]',
+              place: "$2",
+            },
+            {
+              file: "script.js",
+              title: "Створити кнопку",
+              code: ' class="btn"',
+              place: "$2",
+            },
+            {
+              file: "script.js",
+              title: "Створити кнопку",
+              code: ' class="btn"',
+              place: "$2",
+            },
+          ],
+          tasks: {
+            practice: ["js_click_button_1", "js_click_button_2"],
+            experiments: [
+              {
+                title: "Конкатенація рядків",
+                data: {
+                  html: ``,
+                  js: `let greeting = 'Hello, ';
+let name = 'John';
+let message = greeting + name;
+console.log(message); // Виведе: 'Hello, John'
+`,
+                },
+                tasks: [
+                  {
+                    title:
+                      "Змініть ім'я на 'Alice' і знову виведіть повідомлення:",
+                    description:
+                      "Змініть значення змінної 'name' на 'Alice' і виведіть знову змінну 'message' у консоль.",
+                    result: {
+                      js: {
+                        commandNumber: "2",
+                        value: "Alice",
+                      },
+                    },
+                  },
+                ],
+              },
+            ],
+            speed: [],
+          },
+
+          tests: [
+            {
+              title: "Як об'єднати два рядки 'Hello, ' та 'World!'?",
+              options: [
+                "'Hello, ' + 'World!'",
+                "'Hello, '.concat('World!')",
+                "'Hello, ' - 'World!'",
+                "'Hello, ' * 'World!'",
+              ],
+              correct: 0,
+            },
+            {
+              title:
+                "Який результат буде виведено на екран, якщо `let message = 'Hi ' + 5 + 3;`?",
+              options: ["'Hi 53'", "'Hi 8'", "'Hi 53.0'", "8"],
+              correct: 0,
+            },
+            {
+              title:
+                "Чи можна використовувати `.concat()` для об'єднання рядків?",
+              options: ["Так", "Ні"],
+              correct: 0,
+            },
+          ],
+
+          resources: [
+            {
+              title: "Стрічкові літерали та конкатенація в MDN",
+              url: "https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String",
+            },
+            {
+              title: "Темплейтні літерали для об'єднання рядків",
+              url: "https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Template_literals",
+            },
+          ],
+
+          childrens: [],
+        },
       },
       {
-        "title": "Чи можна використовувати `.concat()` для об'єднання рядків?",
-        "options": [
-          "Так",
-          "Ні"
-        ],
-        "correct": 0
-      }
+        details: {
+          title: "Змінення CSS команд через javascript",
+          speedCode: "",
+          description: `
+1. (HTML) Створити кнопку
+2. (HTML) Додати клас
+3. (JS)
+4. (JS)
+            `,
+          tasks: {
+            practice: ["js_click_button_1", "js_click_button_2"],
+            experiments: [
+              {
+                title: "Конкатенація рядків",
+                data: {
+                  html: ``,
+                  js: `let greeting = 'Hello, ';
+let name = 'John';
+let message = greeting + name;
+console.log(message); // Виведе: 'Hello, John'
+`,
+                },
+                tasks: [
+                  {
+                    title:
+                      "Змініть ім'я на 'Alice' і знову виведіть повідомлення:",
+                    description:
+                      "Змініть значення змінної 'name' на 'Alice' і виведіть знову змінну 'message' у консоль.",
+                    result: {
+                      js: {
+                        commandNumber: "2",
+                        value: "Alice",
+                      },
+                    },
+                  },
+                ],
+              },
+            ],
+            speed: [],
+          },
+
+          tests: [
+            {
+              title: "Як об'єднати два рядки 'Hello, ' та 'World!'?",
+              options: [
+                "'Hello, ' + 'World!'",
+                "'Hello, '.concat('World!')",
+                "'Hello, ' - 'World!'",
+                "'Hello, ' * 'World!'",
+              ],
+              correct: 0,
+            },
+            {
+              title:
+                "Який результат буде виведено на екран, якщо `let message = 'Hi ' + 5 + 3;`?",
+              options: ["'Hi 53'", "'Hi 8'", "'Hi 53.0'", "8"],
+              correct: 0,
+            },
+            {
+              title:
+                "Чи можна використовувати `.concat()` для об'єднання рядків?",
+              options: ["Так", "Ні"],
+              correct: 0,
+            },
+          ],
+
+          resources: [
+            {
+              title: "Стрічкові літерали та конкатенація в MDN",
+              url: "https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String",
+            },
+            {
+              title: "Темплейтні літерали для об'єднання рядків",
+              url: "https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Template_literals",
+            },
+          ],
+
+          childrens: [],
+        },
+      },
     ],
-
-    "resources": [
+  },
+  {
+    title: "Exam",
+    data: [
       {
-        "title": "Стрічкові літерали та конкатенація в MDN",
-        "url": "https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String"
+        details: {
+          title: "Основні теги html (30 штук)",
+          speedCode: "",
+          description: `
+          `,
+          tasks: {
+            practice: ["exam_main_tags_1"],
+            speed: [
+              {
+                url: "",
+                title: "",
+                hardLevel: 4,
+              },
+            ],
+          },
+          tests: [
+            {
+              photo: "",
+              title: 'Як називається "коробочка" для збергінання інформації?',
+              options: ["Змінна", "Функція", "Умова", "Цикл"],
+            },
+            {
+              photo: "",
+              title: "Якого кольору найбільше в: rgb(120, 200, 170)?",
+              options: ["зеленого", "синього", "червоного", "фіолетового"],
+            },
+            {
+              photo: "",
+              title: "Якого кольору найменше в: rgb(80, 175, 10)?",
+              options: ["синього", "червоного", "зеленого", "жовтого"],
+            },
+            {
+              photo: "",
+              title:
+                "Червоного кольору в системі RGB ми можемо дати максимально...",
+              options: ["255", "125", "300", "365"],
+            },
+            {
+              photo: "",
+              title: "Скільки відтінків дає система RGB?",
+              options: [
+                "декілька мільйонів",
+                "декілька сотень",
+                "декілька тисяч",
+              ],
+            },
+            {
+              photo: "",
+              title:
+                "Зелений колір зараз є світлим чи темним? rgb(50, 210, 10)?",
+              options: ["світлим", "темним"],
+            },
+          ],
+          default: {
+            figma: [
+              {
+                url: "",
+                title: "",
+                description: "",
+              },
+            ],
+            images: [
+              {
+                url: "./img/themes/css/background/img1.png",
+                title: "Приклади команди background",
+                description: "",
+                links: {},
+              },
+            ],
+            sandbox: [
+              {
+                url: "https://codepen.io/DmytroKrasyliuk/pen/XWyjrjo",
+                title: "Звичайний фон кольором",
+                description: "",
+              },
+            ],
+            code: [
+              {
+                body: `
+button {
+  background: rgb(0, 255, 0); 
+}
+              `,
+                title: "Зробить фон кнопки максимально яскраво-зеленим",
+                description: "",
+              },
+            ],
+          },
+          amount: 0,
+          similarTags: ["hex", "rgba", "cmyk"],
+
+          links: [
+            {
+              title: "Презентація по кольорам",
+              url: "https://www.figma.com/file/Fzv3AtlPaMs5NnXLdzckm3/IT-presentations?type=design&mode=design&t=OLppLPv85mhAAXO0-0",
+              details: "",
+            },
+          ],
+        },
+
+        childrens: [],
       },
       {
-        "title": "Темплейтні літерали для об'єднання рядків",
-        "url": "https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Template_literals"
-      }
-    ],
+        details: {
+          title: "Нові HTML 5 теги (20 штук)",
+          speedCode: "",
+          description: `
+          `,
+          tasks: {
+            practice: ["exam_html5_1"],
+            speed: [
+              {
+                url: "",
+                title: "",
+                hardLevel: 4,
+              },
+            ],
+          },
+          tests: [
+            {
+              photo: "",
+              title: 'Як називається "коробочка" для збергінання інформації?',
+              options: ["Змінна", "Функція", "Умова", "Цикл"],
+            },
+            {
+              photo: "",
+              title: "Якого кольору найбільше в: rgb(120, 200, 170)?",
+              options: ["зеленого", "синього", "червоного", "фіолетового"],
+            },
+            {
+              photo: "",
+              title: "Якого кольору найменше в: rgb(80, 175, 10)?",
+              options: ["синього", "червоного", "зеленого", "жовтого"],
+            },
+            {
+              photo: "",
+              title:
+                "Червоного кольору в системі RGB ми можемо дати максимально...",
+              options: ["255", "125", "300", "365"],
+            },
+            {
+              photo: "",
+              title: "Скільки відтінків дає система RGB?",
+              options: [
+                "декілька мільйонів",
+                "декілька сотень",
+                "декілька тисяч",
+              ],
+            },
+            {
+              photo: "",
+              title:
+                "Зелений колір зараз є світлим чи темним? rgb(50, 210, 10)?",
+              options: ["світлим", "темним"],
+            },
+          ],
+          default: {
+            figma: [
+              {
+                url: "",
+                title: "",
+                description: "",
+              },
+            ],
+            images: [
+              {
+                url: "./img/themes/css/background/img1.png",
+                title: "Приклади команди background",
+                description: "",
+                links: {},
+              },
+            ],
+            sandbox: [
+              {
+                url: "https://codepen.io/DmytroKrasyliuk/pen/XWyjrjo",
+                title: "Звичайний фон кольором",
+                description: "",
+              },
+            ],
+            code: [
+              {
+                body: `
+button {
+  background: rgb(0, 255, 0); 
+}
+              `,
+                title: "Зробить фон кнопки максимально яскраво-зеленим",
+                description: "",
+              },
+            ],
+          },
+          amount: 0,
+          similarTags: ["hex", "rgba", "cmyk"],
 
-    "childrens": []
-  }
-},
+          links: [
+            {
+              title: "Презентація по кольорам",
+              url: "https://www.figma.com/file/Fzv3AtlPaMs5NnXLdzckm3/IT-presentations?type=design&mode=design&t=OLppLPv85mhAAXO0-0",
+              details: "",
+            },
+          ],
+        },
 
+        childrens: [],
+      },
     ],
   },
 ];
 
-export { themes, students, templates, technologiesStack, adminId };
+export {
+  themes,
+  students,
+  templates,
+  technologiesStack,
+  adminId,
+  elementsData,
+};

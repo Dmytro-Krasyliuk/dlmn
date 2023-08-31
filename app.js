@@ -1,5 +1,7 @@
 import express from "express";
 import cors from "cors";
+import axios from "axios";
+import cron from "node-cron";
 import http from "http";
 import { Server as socketIO } from "socket.io";
 import path from "path";
@@ -12,26 +14,90 @@ import TelegramApi from "node-telegram-bot-api";
 import * as htmlToImage from "html-to-image";
 import nodeHtmlToImage from "node-html-to-image";
 import mongoose, { Schema } from "mongoose";
+import { v4 as uuid } from "uuid";
 import { JSDOM } from "jsdom";
 import ffmpeg from "fluent-ffmpeg";
+import escapeHTML from "escape-html";
 import request from "request";
-import { themes, students, templates } from "./data.js";
+import { themes, students, templates, elementsData } from "./data.js";
 import { result } from "./rss/quiz.js";
-import time from "./time.js";
+import time from "./other/time.js";
 import { drawResult } from "./draw/quiz.js";
 import { drawPracticeTask } from "./draw/practice.js";
-import { v4 as uuid } from "uuid";
 import { drawSolo } from "./draw/solo-lesson.js";
-import { technologiesKeyboard } from "./keyboards.js";
 import { testsImage } from "./tests-image.js";
 import { generatePracticeTaskHTML } from "./practiceTasksHTML.js";
 import getCodeColor from "./getCodeColor.js";
 import generatePracticeTask from "./generatePracticeTask.js";
 import { Practice, User, studentListPractice } from "./database/index.js";
+import { Keyboards } from "./keyboards.js";
+
+
+let adminkaGroupId = -889347051;
+let waitCardNumber = false;
+const keyboards = new Keyboards();
+let history = [];
+
+// ******** Розсилка кожного дня о 10:00
+// const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+// cron.schedule("0 10 * * *", async function () {
+//   const users = await User.find({});
+
+//   for (let i = 0; i < users.length; i++) {
+//     bot.sendMessage(users[i].idGroup, "Ваше сообщение здесь");
+//     await delay(2000); // Ждем 2 секунды перед следующей отправкой
+//   }
+// });
+
+// ******** Додати нове поле
+// let a = await User.updateMany(
+//   {}, // Условие выбора (пустое означает выбор всех)
+//   { $set: { diamonds: 0 } }
+// );
+// console.log(a);
+
+// ******** Chat GPT
+// // Вставьте ваш API-ключ здесь
+// const API_KEY = "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";
+
+// const headers = {
+//   "Content-Type": "application/json",
+//   Authorization: `Bearer ${API_KEY}`,
+// };
+
+// const prompt = "Какой сегодня день?";
+// const maxTokens = 150;
+
+// const data = {
+//   prompt: prompt,
+//   max_tokens: maxTokens,
+// };
+
+// let client = axios.create({
+//   headers: {
+//     Authorization: 'Bearer ' + API_KEY
+//   }
+// })
+
+// let params = {
+//   prompt: 'Как создать кнопку в html?',
+//   model: 'text-davinci-003',
+//   max_tokens: 1000,
+//   temperature: 0.7,
+// }
+
+// client
+//   .post("https://api.openai.com/v1/completions", params)
+//   .then((result) => {
+//     console.log(result.data.choices[0].text);
+//   })
+//   .catch((err) => {
+//     console.log("error", err);
+//   });
 
 const app = express();
-const server = http.createServer(app); // Use http.createServer with Express app
-const io = new socketIO(server); // Initialize socket.io with the existing server
+const server = http.createServer(app);
+const io = new socketIO(server);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -40,6 +106,8 @@ const port = process.env.PORT || 3009;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(json());
+app.use(cors());
+app.use(express.json());
 
 function getNamesOneStudentByIdGroup(id) {
   let names = "";
@@ -51,8 +119,6 @@ function getNamesOneStudentByIdGroup(id) {
   return names;
 }
 
-app.use(cors());
-app.use(express.json());
 
 app.get("/tests", async (req, res) => {
   const token = "6183220599:AAGzgg3MrVrxu2lu92WoBRRpLWanGa2UmWU";
@@ -146,6 +212,109 @@ app.get("/sandbox/select/:data", function (req, res) {
   let data = req.params.data;
   console.log();
 });
+
+
+app.get("/getTasks/:idStudent/:idTask", async (req, res) => {
+  let idStudent = req.params.idStudent;
+  let idTask = req.params.idTask;
+  let task = "not defined";
+  task = await Practice.findOne({ id: idTask });
+  console.log("hello");
+  return res.send({ data: task });
+});
+
+app.get("/sandbox-elements/:idTask", async (req, res) => {
+  let idTask = req.params.idTask;
+  let task = "not defined";
+  task = await Practice.findOne({ id: idTask });
+  console.log("hello");
+  return res.send({ data: task });
+});
+
+app.get("/get/practice/:idTask/:idStudent", async (req, res) => {
+  let idTask = req.params.idTask;
+  let idStudent = req.params.idStudent;
+  let nameStudent = getNamesOneStudentByIdGroup(idStudent);
+  console.log("!!!!!!!!", idTask);
+  let task = await Practice.findOne({ id: idTask });
+
+  let studentPractice = await studentListPractice.findOne({
+    idPractice: idTask,
+  });
+
+  if (studentPractice) {
+    let allStudentsData = [];
+    console.log(studentPractice);
+
+    if (studentPractice) {
+      studentPractice.students.forEach((student) => {
+        let myProfile = "";
+        if (student.idStudent == idStudent) {
+          myProfile = "your-car";
+        }
+        allStudentsData.push({
+          studentName: getNamesOneStudentByIdGroup(student.idStudent),
+          studentCar: "/img/car-1.png",
+          studentId: student.idStudent,
+          myProfile: myProfile,
+          studentCurrentPosition: 3,
+        });
+      });
+    }
+
+    console.log("check");
+    console.log(task.tasks[0].check);
+
+    let HTML = task.codeResult.html;
+    let CSS = task.codeResult.css;
+    let JS = task.codeResult.js;
+    let taskName = task.name;
+
+    let data = {
+      nameStudent: nameStudent,
+      idStudent: idStudent,
+      idTask: idTask,
+      taskName: taskName,
+      allStudentsData: allStudentsData,
+      task: task,
+      tasks: task.tasks,
+      code: {
+        HTML: HTML,
+        CSS: CSS,
+        JS: JS,
+      },
+    };
+    console.log(data.code);
+    console.log("task", task);
+    res.render("practice", data);
+  }
+  res.render("practice", {});
+});
+
+app.get("/css/style.css", function (req, res) {
+  res.sendFile(__dirname + "/public/css/style.css");
+});
+
+app.get("/js/practice/:idTask/:idStudent", async (req, res) => {
+  let idTask = req.params.idTask;
+  let idStudent = req.params.idStudent;
+  let studentPractice = await studentListPractice.findOne({
+    idPractice: idTask,
+  });
+  let imageResult = studentPractice.photo;
+  let template = `
+  
+let idStudent = ${idStudent};
+let idTask = ${idTask};
+let imageResult = '${imageResult}'
+
+initProject(idStudent, idTask, imageResult);
+  `;
+  res.setHeader("Content-Type", "application/javascript");
+  res.send(template);
+});
+
+
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -349,97 +518,6 @@ ${wrongTask}
   // res.send(`Hello, POST request received! Data: ${JSON.stringify(data)}`);
 });
 
-app.get("/getTasks/:idStudent/:idTask", async (req, res) => {
-  let idStudent = req.params.idStudent;
-  let idTask = req.params.idTask;
-  let task = "not defined";
-  task = await Practice.findOne({ id: idTask });
-  console.log("hello");
-  return res.send({ data: task });
-});
-
-app.get("/get/practice/:idTask/:idStudent", async (req, res) => {
-  let idTask = req.params.idTask;
-  let idStudent = req.params.idStudent;
-  let nameStudent = getNamesOneStudentByIdGroup(idStudent);
-  console.log("!!!!!!!!", idTask);
-  let task = await Practice.findOne({ id: idTask });
-
-  let studentPractice = await studentListPractice.findOne({
-    idPractice: idTask,
-  });
-
-  if (studentPractice) {
-    let allStudentsData = [];
-    console.log(studentPractice);
-
-    if (studentPractice) {
-      studentPractice.students.forEach((student) => {
-        let myProfile = "";
-        if (student.idStudent == idStudent) {
-          myProfile = "your-car";
-        }
-        allStudentsData.push({
-          studentName: getNamesOneStudentByIdGroup(student.idStudent),
-          studentCar: "/img/car-1.png",
-          studentId: student.idStudent,
-          myProfile: myProfile,
-          studentCurrentPosition: 3,
-        });
-      });
-    }
-
-    console.log("check");
-    console.log(task.tasks[0].check);
-
-    let HTML = task.codeResult.html;
-    let CSS = task.codeResult.css;
-    let JS = task.codeResult.js;
-    let taskName = task.name;
-
-    let data = {
-      nameStudent: nameStudent,
-      idStudent: idStudent,
-      idTask: idTask,
-      taskName: taskName,
-      allStudentsData: allStudentsData,
-      task: task,
-      tasks: task.tasks,
-      code: {
-        HTML: HTML,
-        CSS: CSS,
-        JS: JS,
-      },
-    };
-    console.log(data.code);
-    console.log("task", task);
-    res.render("practice", data);
-  }
-  res.render("practice", {});
-});
-
-app.get("/css/style.css", function (req, res) {
-  res.sendFile(__dirname + "/public/css/style.css");
-});
-
-app.get("/js/practice/:idTask/:idStudent", async (req, res) => {
-  let idTask = req.params.idTask;
-  let idStudent = req.params.idStudent;
-  let studentPractice = await studentListPractice.findOne({
-    idPractice: idTask,
-  });
-  let imageResult = studentPractice.photo;
-  let template = `
-  
-let idStudent = ${idStudent};
-let idTask = ${idTask};
-let imageResult = '${imageResult}'
-
-initProject(idStudent, idTask, imageResult);
-  `;
-  res.setHeader("Content-Type", "application/javascript");
-  res.send(template);
-});
 
 io.on("connection", (socket) => {
   console.log("New client connected");
@@ -511,36 +589,6 @@ let formSoloImg = {
 };
 let newUserStatus;
 
-import {
-  keyboardOptions,
-  adminMain,
-  confirmSave,
-  chooseStudents,
-  templateSuccess,
-  templatesKeyboard,
-  showQuiz,
-  registeredQuiz,
-  confirmDate,
-  confirmTechnology,
-  themesKeyboard,
-  gradeKeyboard,
-  openApp,
-  themesKeyboard2,
-  keyboardAdmin,
-  photoKeyboard,
-  keyboardDaysWeek,
-  keyboardTimeWeek,
-  keyboardIsNextDay,
-  confirmThemes,
-  themesDelete,
-  mainThemes,
-  confirmNewGroup,
-  createTest,
-  editTest,
-  practiceKeyboard,
-  keyboardSymbols,
-} from "./keyboards.js";
-
 let oldMessage = "";
 let lastMsgId = 0;
 let idCalendar = 0;
@@ -552,11 +600,11 @@ const groupId = String(templateGroupId).slice(4);
 let cc = "";
 
 const token = "6183220599:AAGzgg3MrVrxu2lu92WoBRRpLWanGa2UmWU";
+let botId = "6183220599";
 let rssDay = 0;
 
 const bot = new TelegramApi(token, { polling: true });
 
-let botId = "6183220599";
 
 await Practice.deleteMany({});
 await studentListPractice.deleteMany({});
@@ -670,24 +718,6 @@ await Practice.insertMany([
   }),
 ]);
 
-function testBot(dataBot) {
-  if (dataBot.video) {
-    bot.sendVideo(myId, "video/lessons/2.mp4");
-  }
-}
-
-function loadTasks() {}
-
-let dataBot = {
-  text: "my sms",
-  video: "lessons/block-strock-p-2.mp4",
-  buttons: [
-    {
-      text: "btn1",
-      handler: loadTasks,
-    },
-  ],
-};
 
 let newUser = {
   name: "",
@@ -722,6 +752,7 @@ function addNewUser(newUser) {
       currentMoney: 0,
       lastResultMoney: 0,
     },
+    diamonds: 0,
     contact: [],
 
     idGroup: newUser.group,
@@ -804,95 +835,202 @@ bot.setMyCommands([
   { command: "/help", description: "ok" },
 ]);
 
+// Обработка команды /start
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(
+    chatId,
+    "Привет! Нажми на эту ссылку для теста: [Alert](https://t.me/DimaNice_Bot?start=alert)",
+    {
+      parse_mode: "Markdown",
+    }
+  );
+});
+
+// Обработка команды /alert
+bot.onText(/\/alert/, (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(chatId, "⚠️ Это всплывающее уведомление! ⚠️");
+});
+
+// Обработка deep linking
+bot.onText(/\/start alert/, (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(
+    chatId,
+    "⚠️ Это всплывающее уведомление через deep linking! ⚠️"
+  );
+});
+
+bot.onText(/\/start (.+)/, (msg, match) => {
+  const chatId = msg.chat.id;
+  const param = match[1];
+
+  // https:t.me/DimaNice_Bot?start=SOME_PARAM
+  if (param === "SOME_PARAM") {
+    bot.sendMessage(
+      chatId,
+      "Вы перешли по специальной ссылке с параметром SOME_PARAM"
+    );
+  }
+});
+
 bot.on("message", async (msg) => {
   const text = msg.text;
   const chatId = msg.chat.id;
   lastMsgId = msg.message_id;
 
-  // let ddata = [
-  //   {
-  //     id: uuid(),
-  //     title: "Оберіть те що можна написати в тег address",
-  //     description: "description 1",
-  //     options: [
-  //       "+38 050 014 15",
-  //       "ноутбук Lenovo",
-  //       "Замовити",
-  //       "будь-яке зображення",
-  //     ],
-  //   },
-  //   {
-  //     id: uuid(),
-  //     title: "Оберіть те що можна написати в тег address 2",
-  //     description: "description 2",
-  //     options: [
-  //       "+38 050 014 15 2",
-  //       "ноутбук Lenovo 2",
-  //       "Замовити 2",
-  //       "будь-яке зображення 2",
-  //     ],
-  //   },
-  // ];
+  //    // Send the initial message
+  //    const message = await bot.sendMessage(chatId, "П");
 
-  // bot.sendMessage(
-  //   chatId,
-  //   "click me 2",
-  //   openApp("https://codepen.io/DimaNice/full/OJBodYj")
-  // );
+  //    // Get the message ID for future editing
+  //    const messageId = message.message_id;
 
-  if (newUserStatus) {
-    if (newUserStatus == "name") {
-      newUser.name = text;
-      bot.sendMessage(chatId, "Вкажіть прізвище учня");
-      newUserStatus = "family";
-    } else if (newUserStatus == "family") {
-      newUser.family = text;
-      bot.sendMessage(chatId, "Вкажіть вік учня");
-      newUserStatus = "age";
-    } else if (newUserStatus == "age") {
-      newUser.age = text;
-      bot.sendMessage(chatId, "Оберіть день занятя", keyboardDaysWeek);
-      newUserStatus = "schedule";
-    } else if (newUserStatus == "price") {
-      // if () { 112
+  //    // Simulate a typing effect
+  //    let text1 = "П";
+  //    const fullText = `Привіт, dimanice! 🥳
+  // Ми починаємо наші заняття по програмуванню!
+  // Ось уся необхідна інформація, яка стосується нашого навчання:
+  // 🔐 Постійні доступи до занять:`;
 
-      // }
-      newUser.group = text;
-      bot.sendMessage(chatId, "Вкажіть вартість навчання за місяць");
-      newUserStatus = "idGroup";
-    } else if (newUserStatus == "idGroup") {
-      newUser.price = text;
-      bot.sendMessage(chatId, "Вкажіть ID групи");
-      newUserStatus = "date";
-    } else if (newUserStatus == "date") {
-      try {
-        let c = await bot.getChatMember(text, botId);
+  //     for (let i = 1; i < fullText.length; i++) {
+  //       try{
+  //       if (
+  //         (fullText[i] === " " || fullText[i] === "\n") &&
+  //         i + 1 < fullText.length
+  //       ) {
+  //         text1 += fullText[i] + fullText[i + 1];
+  //         i++; // Skip the next character since we've already added it
+  //       } else {
+  //         text1 += fullText[i];
+  //       }
 
-        newUser.group = text;
-        bot.sendMessage(chatId, "Вкажіть дату початку занять та оплати");
-        newUserStatus = "contact";
-      } catch (e) {
+  //       await bot.editMessageText(text1, {
+  //         chat_id: chatId,
+  //         message_id: messageId,
+  //       });
+  //       await new Promise((resolve) => setTimeout(resolve, 150)); // Задержка в 200 миллисекунд
+  //     } catch(e) {}
+
+  //     }
+
+  if (waitCardNumber) {
+    let currentUser = await User.findOne({ idGroup: chatId });
+
+    let curMoney = currentUser.quiz.currentMoney;
+
+    bot.sendMessage(
+      adminkaGroupId,
+      `
+<b>Запит на виведення коштів:</b>
+
+<b>Учень:</b> ${getNamesOneStudentByIdGroup(chatId)}
+<b>Всього грошей:</b> ${curMoney} грн
+<b>Номер картки:</b> ${text}
+
+`,
+      { parse_mode: "HTML" }
+    );
+    bot.sendMessage(
+      chatId,
+      `
+<b>💸 Ваша заявка успішно відправлена!</b>
+
+⏳ Як тільки Дмитро звільниться, відправе вам кошти
+          `,
+      { parse_mode: "HTML" }
+    );
+    waitCardNumber = false;
+  } else {
+    // let ddata = [
+    //   {
+    //     id: uuid(),
+    //     title: "Оберіть те що можна написати в тег address",
+    //     description: "description 1",
+    //     options: [
+    //       "+38 050 014 15",
+    //       "ноутбук Lenovo",
+    //       "Замовити",
+    //       "будь-яке зображення",
+    //     ],
+    //   },
+    //   {
+    //     id: uuid(),
+    //     title: "Оберіть те що можна написати в тег address 2",
+    //     description: "description 2",
+    //     options: [
+    //       "+38 050 014 15 2",
+    //       "ноутбук Lenovo 2",
+    //       "Замовити 2",
+    //       "будь-яке зображення 2",
+    //     ],
+    //   },
+    // ];
+
+    // bot.sendMessage(
+    //   chatId,
+    //   "click me 2",
+    //   keyboards.openApp("https://codepen.io/DimaNice/full/OJBodYj")
+    // );
+
+    if (newUserStatus) {
+      if (newUserStatus == "name") {
+        newUser.name = text;
+        bot.sendMessage(chatId, "Вкажіть прізвище учня");
+        newUserStatus = "family";
+      } else if (newUserStatus == "family") {
+        newUser.family = text;
+        bot.sendMessage(chatId, "Вкажіть вік учня");
+        newUserStatus = "age";
+      } else if (newUserStatus == "age") {
+        newUser.age = text;
         bot.sendMessage(
           chatId,
-          "Вкажіть вірний ID групи. Можливо Бот не є адміністратором цієї групи"
+          "Оберіть день занятя",
+          keyboards.keyboardDaysWeek
         );
+        newUserStatus = "schedule";
+      } else if (newUserStatus == "price") {
+        // if () { 112
+
+        // }
+        newUser.group = text;
+        bot.sendMessage(chatId, "Вкажіть вартість навчання за місяць");
+        newUserStatus = "idGroup";
+      } else if (newUserStatus == "idGroup") {
+        newUser.price = text;
+        bot.sendMessage(chatId, "Вкажіть ID групи");
         newUserStatus = "date";
-      }
-    } else if (newUserStatus == "contact") {
-      newUser.contact = text;
-      bot.sendMessage(chatId, "Вкажіть контактну особу");
-      newUserStatus = "success";
-    } else if (newUserStatus == "success") {
-      // console.log(newUser);
-      await bot.setChatPhoto(newUser.group, "./img/other/ava-group.png");
+      } else if (newUserStatus == "date") {
+        try {
+          let c = await bot.getChatMember(text, botId);
 
-      let link = await bot.getChat(Number(newUser.group));
-      // console.log(link);
-      // console.log(link.invite_link);
-      // bot.sendMessage(chatId, link.invite_link);
+          newUser.group = text;
+          bot.sendMessage(chatId, "Вкажіть дату початку занять та оплати");
+          newUserStatus = "contact";
+        } catch (e) {
+          bot.sendMessage(
+            chatId,
+            "Вкажіть вірний ID групи. Можливо Бот не є адміністратором цієї групи"
+          );
+          newUserStatus = "date";
+        }
+      } else if (newUserStatus == "contact") {
+        newUser.contact = text;
+        bot.sendMessage(chatId, "Вкажіть контактну особу");
+        newUserStatus = "success";
+      } else if (newUserStatus == "success") {
+        // console.log(newUser);
+        try {
+          await bot.setChatPhoto(newUser.group, "./img/other/ava-group.png");
+        } catch (e) {}
+        let link = await bot.getChat(Number(newUser.group));
+        // console.log(link);
+        // console.log(link.invite_link);
+        // bot.sendMessage(chatId, link.invite_link);
 
-      bot.sendPhoto(chatId, "./img/other/invite-group.png", {
-        caption: `<b>🥳Вітаю! Ваше навчання вже розпочинається!</b>
+        bot.sendPhoto(chatId, "./img/other/invite-group.png", {
+          caption: `<b>🥳Вітаю! Ваше навчання вже розпочинається!</b>
 
 <b>1 крок:</b>
 Приєднайтесь до групи: 
@@ -901,106 +1039,122 @@ ${link.invite_link}
 <b>Це ваша особиста, основна група, де буде інформація лише про Ваше навчання, Ваші домашки, Ваші оцінки і т.д.</b> 
 
 <i>Також це запрошення, за бажанням, ви можете відправити усім хто має бути в курсі всіх подій стосовно навчання (батько, мати, син, донька і т.д.)</i>`,
-        parse_mode: "HTML",
-        reply_markup: {
-          inline_keyboard: [
-            [{ text: "Приєднатись до групи", url: link.invite_link }],
-          ],
-        },
-      });
+          parse_mode: "HTML",
+          reply_markup: {
+            inline_keyboard: [
+              [{ text: "Приєднатись до групи", url: link.invite_link }],
+            ],
+          },
+        });
 
-      User.insertMany(addNewUser(newUser))
-        .then(function () {
-          // console.log("Успешно сохраненные элементы в БД");
-        })
+        User.insertMany(addNewUser(newUser))
+          .then(function () {
+            // console.log("Успешно сохраненные элементы в БД");
+          })
 
-        .catch(function (err) {});
+          .catch(function (err) {});
 
-      bot.sendMessage(chatId, "Учень успішно зареєстрований!");
-      newUserStatus = undefined;
-      // console.log(newUser.group);
+        bot.sendMessage(chatId, "Учень успішно зареєстрований!");
+        newUserStatus = undefined;
+        // console.log(newUser.group);
 
-      sendFirstInfo(newUser.group, newUser.name, newUser.days);
+        sendFirstInfo(newUser.group, newUser.name, newUser.days);
+      }
     }
-  }
 
-  // commands
-  if (text === "/start") {
-    bot.sendMessage(chatId, "Hello");
-    bot.sendSticker(
-      chatId,
-      "https://th.bing.com/th/id/R.dcc695cb7dfebe439d96a1b2783620b5?rik=miYGC2ZgeKLgmg&pid=ImgRaw&r=0",
-      keyboardOptions
-    );
-  }
+    if (text === "/elements") {
+      bot.sendMessage(chatId, `elements`, {
+        ...keyboards.elementsCategory,
+        parse_mode: "HTML",
+      });
+    }
 
-  if (text === "1") {
-    bot.sendMessage(chatId, "symbols", keyboardSymbols);
-  }
 
-  // commands
-  if (text === "/results") {
-    let results = [];
-    // console.log("newGroupStudent", newGroupStudent);
-    newGroupStudent.forEach((studentId) => {
-      let answerSum = {
-        right: 0,
-        error: 0,
-        notData: 0,
-      };
-      testsID.forEach((testId) => {
-        // console.log("testId", testId.answers);
+    // commands
+    if (text === "/start") {
+      bot.sendMessage(chatId, "Hello", keyboards.keyboardStudents);
+      // bot.answer_callback_query(
+      //   callback_query_id = cmd.id,
+      //   text = "Неверно, Верный ответ...",
+      //   show_alert = True
+      // );
+      //  bot.answerCallbackQuery(msg.id, {
+      //    text: "Вы нажали на кнопку 1",
+      //  });
+      //   const callbackQueryId = msg.id;
+      //   const text = "Неверно, Верный ответ...";
+      //   const showAlert = true;
 
-        if (testId.answers.right.includes(Number(studentId))) {
-          console.log("++");
-          answerSum.right = answerSum.right + 1;
-        }
-        if (testId.answers.error.includes(Number(studentId))) {
-          console.log("--");
-          answerSum.error = answerSum.error + 1;
-        }
-        if (testId.answers.notData.includes(Number(studentId))) {
-          console.log("00");
-          answerSum.notData = answerSum.notData + 1;
-        }
+      //   bot.answerCallbackQuery(callbackQueryId, { text, showAlert });
+    }
+
+    if (text === "1") {
+      bot.sendMessage(chatId, "symbols", keyboards.keyboardSymbols);
+    }
+
+    // commands
+    if (text === "/results") {
+      let results = [];
+      // console.log("newGroupStudent", newGroupStudent);
+      newGroupStudent.forEach((studentId) => {
+        let answerSum = {
+          right: 0,
+          error: 0,
+          notData: 0,
+        };
+        testsID.forEach((testId) => {
+          // console.log("testId", testId.answers);
+
+          if (testId.answers.right.includes(Number(studentId))) {
+            console.log("++");
+            answerSum.right = answerSum.right + 1;
+          }
+          if (testId.answers.error.includes(Number(studentId))) {
+            console.log("--");
+            answerSum.error = answerSum.error + 1;
+          }
+          if (testId.answers.notData.includes(Number(studentId))) {
+            console.log("00");
+            answerSum.notData = answerSum.notData + 1;
+          }
+        });
+
+        results.push({
+          id: studentId,
+          answerSum: answerSum,
+        });
       });
 
-      results.push({
-        id: studentId,
-        answerSum: answerSum,
-      });
-    });
-
-    let sortListResults = results.sort((a, b) =>
-      a.answerSum.right < b.answerSum.right ? 1 : -1
-    );
-    let text = `
+      let sortListResults = results.sort((a, b) =>
+        a.answerSum.right < b.answerSum.right ? 1 : -1
+      );
+      let text = `
 Результати тестів:
 
 `;
-    sortListResults.forEach((student, i) => {
-      let percent =
-        student.answerSum.right /
-        (student.answerSum.error +
-          student.answerSum.notData +
-          student.answerSum.right);
-      let grade =
-        percent < 0.2
-          ? 6
-          : percent < 0.3
-          ? 7
-          : percent < 0.5
-          ? 8
-          : percent < 0.7
-          ? 9
-          : percent < 0.8
-          ? 10
-          : percent < 0.9
-          ? 11
-          : percent >= 0.9
-          ? 12
-          : undefined;
-      text += `
+      sortListResults.forEach((student, i) => {
+        let percent =
+          student.answerSum.right /
+          (student.answerSum.error +
+            student.answerSum.notData +
+            student.answerSum.right);
+        let grade =
+          percent < 0.2
+            ? 6
+            : percent < 0.3
+            ? 7
+            : percent < 0.5
+            ? 8
+            : percent < 0.7
+            ? 9
+            : percent < 0.8
+            ? 10
+            : percent < 0.9
+            ? 11
+            : percent >= 0.9
+            ? 12
+            : undefined;
+        text += `
 <b>${i + 1}. ${getNamesOneStudentByIdGroup(student.id)}</b>
 ✅ Правильних: ${student.answerSum.right}
 ❌ Неправильних: ${student.answerSum.error}
@@ -1009,123 +1163,124 @@ ${link.invite_link}
 <b>Оцінка: ${grade} балів</b>
  
 `;
-    });
+      });
 
-    console.log("results", results);
+      console.log("results", results);
 
-    bot.sendMessage(chatId, text, { parse_mode: "HTML" });
-  }
-
-  if (text === "/admin") {
-    if (chatId == myId) {
-      bot.sendMessage(chatId, "Оберіть потрібну дію", adminMain);
+      bot.sendMessage(chatId, text, { parse_mode: "HTML" });
     }
-  }
 
-  if (text == "Підтвердити нову групу") {
-    let newGroupNames = getNamesStudentByIdGroup(newGroupStudent);
-
-    console.log(newGroupNames);
-    bot.sendMessage(
-      chatId,
-      "Група успішно створена. Усі учні в групі: " + newGroupNames,
-      adminMain
-    );
-  }
-
-  if (text == "Підтвердити теми") {
-    bot.sendMessage(
-      chatId,
-      "Відправте фото звіт заняття (код, результат, скріншоти)",
-      photoKeyboard
-    );
-  }
-
-  if (text === "tts") {
-    for (let i = 0; i < students.length; i++) {
-      await drawResult(
-        students[i].name + " " + students[i].lastName,
-        students[i].quiz.lastResultMoney
-      );
-      await bot.sendPhoto(chatId, "./image20.png");
-    }
-  }
-  if (text == "фф") {
-    cc = await bot.sendPoll(
-      chatId,
-      "Title quiz",
-      JSON.stringify(["variant1", "variant2", "variant3"]),
-      {
-        is_anonymous: false,
-        type: "quiz",
-        correct_option_id: 0,
-        explanation: "Дивись хвилину 38-40",
+    if (text === "/admin") {
+      if (chatId == myId) {
+        bot.sendMessage(chatId, "Оберіть потрібну дію", keyboards.adminMain);
       }
-    );
-  }
-  if (text == "a") {
-    idMsgThemes = lastMsgId + 1;
-    bot.sendMessage(
-      chatId,
-      "themes",
-      themesKeyboard2(currentThemes, formSoloImg.themes)
-    );
-  }
-  if (text == "cc") {
-    bot.sendMessage(chatId, "hello", showQuiz());
-  }
-  if (text == "Підтвердити дату") {
-    bot.sendMessage(chatId, oldMessage);
+    }
 
-    // bot.sendMessage(chatId, "d", showQuiz());
-  }
+    if (text == "Підтвердити нову групу") {
+      let newGroupNames = getNamesStudentByIdGroup(newGroupStudent);
 
-  if (text === "Підтвердити технології") {
-    bot.sendMessage(
-      chatId,
-      "Оберіть пройдені теми та натисніть на кнопку підтвердження",
-      confirmThemes
-    );
-    bot.sendMessage(
-      chatId,
-      "Список усіх тем",
-      mainThemes(themes)
-      // themesKeyboard2(themes[0].data, formSoloImg.themes)
-    );
-  }
-  if (text == "Підтвердити фото") {
-    // let res = data.slice(8).split('_')
-    // res.pop()
-    // console.log(res)
-    // let r = themes[res];
-    // for (let i = 0; i < res.length; i++) {
-    //   r = r[res[i]]
-
-    // }
-    // console.log('- - - - ');
-    // console.log(r);
-    // themesKeyboard(r)
-    // bot.sendMessage(chatId, 'ss', themesKeyboard(r))
-    bot.sendMessage(chatId, "Поставте оцінку", gradeKeyboard());
-  }
-
-  if (text === "Підтвердити шаблон") {
-    if (chatId == myId) {
-      let msgForward = await bot.copyMessage(
-        templateGroupId,
-        chatId,
-        msg.message_id - 1
-      );
-
+      console.log(newGroupNames);
       bot.sendMessage(
         chatId,
-        `Шаблон створено!`,
-        templateSuccess(groupId, msgForward.message_id)
+        "Група успішно створена. Усі учні в групі: " + newGroupNames,
+        keyboards.adminMain
       );
     }
-  }
 
-  oldMessage = text;
+    if (text == "Підтвердити теми") {
+      bot.sendMessage(
+        chatId,
+        "Відправте фото звіт заняття (код, результат, скріншоти)",
+        keyboards.photoKeyboard
+      );
+    }
+
+    if (text === "tts") {
+      for (let i = 0; i < students.length; i++) {
+        await drawResult(
+          students[i].name + " " + students[i].lastName,
+          students[i].quiz.lastResultMoney
+        );
+        await bot.sendPhoto(chatId, "./img/image20.png");
+      }
+    }
+    if (text == "фф") {
+      cc = await bot.sendPoll(
+        chatId,
+        "Title quiz",
+        JSON.stringify(["variant1", "variant2", "variant3"]),
+        {
+          is_anonymous: false,
+          type: "quiz",
+          correct_option_id: 0,
+          explanation: "Дивись хвилину 38-40",
+        }
+      );
+    }
+    if (text == "a") {
+      idMsgThemes = lastMsgId + 1;
+      bot.sendMessage(
+        chatId,
+        "themes",
+        keyboards.themesKeyboard2(currentThemes, formSoloImg.themes)
+      );
+    }
+    if (text == "cc") {
+      bot.sendMessage(chatId, "hello", keyboards.showQuiz());
+    }
+    if (text == "Підтвердити дату") {
+      bot.sendMessage(chatId, oldMessage);
+
+      // bot.sendMessage(chatId, "d", keyboards.showQuiz());
+    }
+
+    if (text === "Підтвердити технології") {
+      bot.sendMessage(
+        chatId,
+        "Оберіть пройдені теми та натисніть на кнопку підтвердження",
+        keyboards.confirmThemes
+      );
+      bot.sendMessage(
+        chatId,
+        "Список усіх тем",
+        keyboards.mainThemes(themes)
+        // keyboards.keyboards.themesKeyboard2(themes[0].data, formSoloImg.themes)
+      );
+    }
+    if (text == "Підтвердити фото") {
+      // let res = data.slice(8).split('_')
+      // res.pop()
+      // console.log(res)
+      // let r = themes[res];
+      // for (let i = 0; i < res.length; i++) {
+      //   r = r[res[i]]
+
+      // }
+      // console.log('- - - - ');
+      // console.log(r);
+      // keyboards.themesKeyboard(r)
+      // bot.sendMessage(chatId, 'ss', keyboards.themesKeyboard(r))
+      bot.sendMessage(chatId, "Поставте оцінку", keyboards.gradeKeyboard());
+    }
+
+    if (text === "Підтвердити шаблон") {
+      if (chatId == myId) {
+        let msgForward = await bot.copyMessage(
+          templateGroupId,
+          chatId,
+          msg.message_id - 1
+        );
+
+        bot.sendMessage(
+          chatId,
+          `Шаблон створено!`,
+          keyboards.templateSuccess(groupId, msgForward.message_id)
+        );
+      }
+    }
+
+    oldMessage = text;
+  }
 });
 
 let userDay = {
@@ -1138,6 +1293,297 @@ bot.on("callback_query", async (msg) => {
   const chatId = msg.message.chat.id;
 
   // bot.answerCallbackQuery(msg.id, "Хорошо");
+  if (data.startsWith("elements-")) {
+    let element = data.slice(9);
+    let el = elementsData[element].variants[0];
+    let templateElementsText = `
+<b>${el.title}</b>
+
+<u><b>index.html</b></u>
+
+<pre>${escapeHTML(el.code["index.html"])}</pre>
+    `;
+    bot.sendPhoto(chatId, el.result, {
+      parse_mode: "HTML",
+      ...keyboards.code(el.id, element, elementsData[element].variants.length),
+      caption: templateElementsText,
+    });
+  }
+
+  if (data.startsWith("code")) {
+    let actionElement = data.split("//")[1];
+    let dataElement = data.split("//")[2];
+    let idElement = data.split("//")[3];
+
+    console.log(actionElement);
+    console.log(dataElement);
+    console.log(idElement);
+
+
+
+
+    if (actionElement == "STYLE") {
+      for (let i = 0; i < elementsData[dataElement].variants.length; i++) {
+        if (elementsData[dataElement].variants[i].id == idElement) {
+          let templateElementsText = `
+<b>${elementsData[dataElement].variants[i].title}</b>
+
+<u><b>style.css</b></u>
+
+<pre>${escapeHTML(
+            elementsData[dataElement].variants[i].code["style.css"]
+          )}</pre>
+    `;
+
+          console.log(elementsData[dataElement].variants[i].result);
+
+          const newPhotoUrl = elementsData[dataElement].variants[i].result;
+
+          const media = {
+            type: "photo",
+            media: newPhotoUrl,
+            caption: templateElementsText,
+
+            parse_mode: "HTML",
+          };
+
+          bot
+            .editMessageMedia(media, {
+              chat_id: chatId,
+              message_id: msg.message.message_id,
+              ...keyboards.code(
+                elementsData[dataElement].variants[i].id,
+                dataElement,
+                elementsData[dataElement].variants.length,
+                i+1,
+                "style.css"
+              ),
+            })
+            .then(() => {
+              console.log("Message media edited");
+            })
+            .catch((error) => {
+              console.log("Error in editing message media:", error);
+            });
+        }
+      }
+    }
+
+
+
+
+
+
+    if (actionElement == "INDEX") {
+      for (let i = 0; i < elementsData[dataElement].variants.length; i++) {
+        if (elementsData[dataElement].variants[i].id == idElement) {
+          let templateElementsText = `
+<b>${elementsData[dataElement].variants[i].title}</b>
+
+<u><b>index.html</b></u>
+
+<pre>${escapeHTML(
+            elementsData[dataElement].variants[i].code["index.html"]
+          )}</pre>
+    `;
+
+          console.log(elementsData[dataElement].variants[i].result);
+
+          const newPhotoUrl = elementsData[dataElement].variants[i].result;
+
+          const media = {
+            type: "photo",
+            media: newPhotoUrl,
+            caption: templateElementsText,
+
+            parse_mode: "HTML",
+          };
+
+          bot
+            .editMessageMedia(media, {
+              chat_id: chatId,
+              message_id: msg.message.message_id,
+              ...keyboards.code(
+                elementsData[dataElement].variants[i].id,
+                dataElement,
+                elementsData[dataElement].variants.length,
+                i+1,
+                "index.html"
+              ),
+            })
+            .then(() => {
+              console.log("Message media edited");
+            })
+            .catch((error) => {
+              console.log("Error in editing message media:", error);
+            });
+        }
+      }
+    }
+
+     if (actionElement == "SCRIPT") {
+       for (let i = 0; i < elementsData[dataElement].variants.length; i++) {
+         if (elementsData[dataElement].variants[i].id == idElement) {
+           let templateElementsText = `
+<b>${elementsData[dataElement].variants[i].title}</b>
+
+<u><b>script.js</b></u>
+
+<pre>${escapeHTML(
+             elementsData[dataElement].variants[i].code["script.js"]
+           )}</pre>
+    `;
+
+           console.log(elementsData[dataElement].variants[i].result);
+
+           const newPhotoUrl = elementsData[dataElement].variants[i].result;
+
+           const media = {
+             type: "photo",
+             media: newPhotoUrl,
+             caption: templateElementsText,
+
+             parse_mode: "HTML",
+           };
+
+           bot
+             .editMessageMedia(media, {
+               chat_id: chatId,
+               message_id: msg.message.message_id,
+               ...keyboards.code(
+                 elementsData[dataElement].variants[i].id,
+                 dataElement,
+                 elementsData[dataElement].variants.length,
+                 i+1,
+                 "script.js"
+               ),
+             })
+             .then(() => {
+               console.log("Message media edited");
+             })
+             .catch((error) => {
+               console.log("Error in editing message media:", error);
+             });
+         }
+       }
+     }
+
+    if (actionElement == "NEXT") {
+      for (let i = 0; i < elementsData[dataElement].variants.length; i++) {
+        if (elementsData[dataElement].variants[i].id == idElement) {
+          if (i == elementsData[dataElement].variants.length - 1) {
+            bot.answerCallbackQuery(msg.id, {
+              text: "Більше елементів в цій категорії немає",
+              show_alert: false, 
+            });
+          } else {
+            let templateElementsText = `
+<b>${elementsData[dataElement].variants[i + 1].title}</b>
+
+<u><b>index.html</b></u>
+
+<pre>${escapeHTML(
+              elementsData[dataElement].variants[i + 1].code["index.html"]
+            )}</pre>
+    `;
+
+            console.log(elementsData[dataElement].variants[i + 1].result);
+
+            const newPhotoUrl =
+              elementsData[dataElement].variants[i + 1].result;
+
+            const media = {
+              type: "photo",
+              media: newPhotoUrl,
+              caption: templateElementsText,
+
+              parse_mode: "HTML",
+            };
+
+            bot
+              .editMessageMedia(media, {
+                chat_id: chatId,
+                message_id: msg.message.message_id,
+                ...keyboards.code(
+                  elementsData[dataElement].variants[i + 1].id,
+                  dataElement,
+                  elementsData[dataElement].variants.length,
+                  i + 2
+                ),
+              })
+              .then(() => {
+                console.log("Message media edited");
+              })
+              .catch((error) => {
+                console.log("Error in editing message media:", error);
+              });
+          }
+        }
+      }
+    }
+
+    if (actionElement == "PREV") {
+      for (let i = 0; i < elementsData[dataElement].variants.length; i++) {
+        if (elementsData[dataElement].variants[i].id == idElement) {
+          if (i == 0) {
+            bot.answerCallbackQuery(msg.id, {
+              text: "Більше елементів в цій категорії немає",
+              show_alert: false,
+            });
+          } else {
+            let templateElementsText = `
+<b>${elementsData[dataElement].variants[i - 1].title}</b>
+
+<u><b>index.html</b></u>
+
+<pre>${escapeHTML(
+              elementsData[dataElement].variants[i - 1].code["index.html"]
+            )}</pre>
+    `;
+
+            console.log(elementsData[dataElement].variants[i - 1].result);
+
+            const newPhotoUrl =
+              elementsData[dataElement].variants[i - 1].result;
+
+            const media = {
+              type: "photo",
+              media: newPhotoUrl,
+              caption: templateElementsText,
+
+              parse_mode: "HTML",
+            };
+
+            bot
+              .editMessageMedia(media, {
+                chat_id: chatId,
+                message_id: msg.message.message_id,
+                ...keyboards.code(
+                  elementsData[dataElement].variants[i - 1].id,
+                  dataElement,
+                  elementsData[dataElement].variants.length,
+                  i
+                ),
+              })
+              .then(() => {
+                console.log("Message media edited");
+              })
+              .catch((error) => {
+                console.log("Error in editing message media:", error);
+              });
+          }
+        }
+      }
+    }
+
+    if (actionElement == "VIDEO") {
+      for (let i = 0; i < elementsData[dataElement].variants.length; i++) {
+        if (elementsData[dataElement].variants[i].id == idElement) {
+          bot.sendVideo(chatId, elementsData[dataElement].variants[i].video);
+        }
+      }
+    }
+  }
 
   if (data == "regStudent") {
     newUserStatus = "name";
@@ -1149,7 +1595,7 @@ bot.on("callback_query", async (msg) => {
     console.log(msg.message.reply_markup);
     try {
       bot.editMessageReplyMarkup(
-        editTest(msg.message.reply_markup, msg.data, bot, chatId),
+        keyboards.editTest(msg.message.reply_markup, msg.data, bot, chatId),
         {
           message_id: msg.message.message_id,
           chat_id: chatId,
@@ -1167,7 +1613,7 @@ bot.on("callback_query", async (msg) => {
         time: "",
       };
       userDay.day = data.slice(9);
-      bot.sendMessage(chatId, "Вкажіть час занять", keyboardTimeWeek);
+      bot.sendMessage(chatId, "Вкажіть час занять", keyboards.keyboardTimeWeek);
       newUserStatus = "time";
     } else if (newUserStatus == "time") {
       userDay.time = data.slice(9);
@@ -1177,7 +1623,7 @@ bot.on("callback_query", async (msg) => {
       bot.sendMessage(
         chatId,
         "Бажаєте додати ще один день занять?",
-        keyboardIsNextDay
+        keyboards.keyboardIsNextDay
       );
       newUserStatus = "nextDay!";
     } else if (newUserStatus == "nextDay!") {
@@ -1186,7 +1632,7 @@ bot.on("callback_query", async (msg) => {
         bot.sendMessage(
           chatId,
           "Вкажіть дні та години в які будуть проходити заняття",
-          keyboardDaysWeek
+          keyboards.keyboardDaysWeek
         );
         newUserStatus = "schedule";
       }
@@ -1214,7 +1660,7 @@ bot.on("callback_query", async (msg) => {
       bot.sendMessage(chatId, link.invite_link);
     } catch (e) {}
   }
-  if (data.startsWith("mainThemesIndex-")) {
+  if (data.startsWith("keyboards.mainThemesIndex-")) {
     let themeIndex = data.slice(16);
     currentThemes = themes[themeIndex].data;
 
@@ -1223,7 +1669,7 @@ bot.on("callback_query", async (msg) => {
     bot.sendMessage(
       chatId,
       "Тема: " + themes[themeIndex].title + " обрана!",
-      themesKeyboard2(currentThemes, formSoloImg.themes)
+      keyboards.themesKeyboard2(currentThemes, formSoloImg.themes)
     );
   }
 
@@ -1231,7 +1677,7 @@ bot.on("callback_query", async (msg) => {
     bot.sendMessage(
       chatId,
       "Оберіть по яким темам мають бути питання:",
-      themesKeyboard2(currentThemes, formSoloImg.themes)
+      keyboards.themesKeyboard2(currentThemes, formSoloImg.themes)
     );
     typeThemes = "tests";
   }
@@ -1239,7 +1685,7 @@ bot.on("callback_query", async (msg) => {
     bot.sendMessage(
       chatId,
       "Оберіть по яким темам мають бути питання:",
-      themesKeyboard2(currentThemes, formSoloImg.themes)
+      keyboards.themesKeyboard2(currentThemes, formSoloImg.themes)
     );
     typeThemes = "practice";
   }
@@ -1263,7 +1709,7 @@ bot.on("callback_query", async (msg) => {
         "</b> обраний. \nПідтвердіть дату, або напишіть свою: ",
       { parse_mode: "HTML" }
     );
-    bot.sendMessage(chatId, currentDate, confirmDate(currentDate));
+    bot.sendMessage(chatId, currentDate, keyboards.confirmDate(currentDate));
   }
   if (data.startsWith("themesIndex")) {
     try {
@@ -1320,9 +1766,9 @@ id: ${idTest}
           await testsImage(title);
 
           newGroupStudent.forEach(async (id) => {
-            bot.sendPhoto(id, "tests-create.png", {
+            bot.sendPhoto(id, "./img/tests-create.png", {
               caption: "<b>" + ddata[i].title + "</b>",
-              ...createTest(ddata[i].options, idTest),
+              ...keyboards.createTest(ddata[i].options, idTest),
               parse_mode: "HTML",
             });
           });
@@ -1372,7 +1818,7 @@ id: ${idTest}
           console.log("practiceTasks", practiceTasks);
           try {
             let templateObjectData = {
-              output: "./practice-old.png",
+              output: "./img/practice-old.png",
               html: `<html>
   <body>
    ${practiceTasks.data.html}
@@ -1394,7 +1840,7 @@ id: ${idTest}
             console.log("practiceTasks.data.html", practiceTasks);
 
             await nodeHtmlToImage({
-              output: "./practice-result.png",
+              output: "./img/practice-result.png",
               html: `<html>
   <body>
    ${practiceTasks.data.html}
@@ -1422,7 +1868,7 @@ id: ${idTest}
             }).then(() => console.log("The image was created successfully!"));
 
             await nodeHtmlToImage({
-              output: "./practice-result-tobase64.png",
+              output: "./img/practice-result-tobase64.png",
               html: `<html>
   <body>
   ${practiceTasks.data.html}
@@ -1464,7 +1910,7 @@ id: ${idTest}
               idPractice: idPracticeTask[i],
               photo:
                 "data:image/jpeg;base64," +
-                (await imageToBase64("./practice-result-tobase64.png")),
+                (await imageToBase64("./img/practice-result-tobase64.png")),
               students: [],
             });
 
@@ -1518,9 +1964,9 @@ ${tasksItems}
                 },
               });
 
-              bot.sendPhoto(id, "practice-result-canvas.png", {
+              bot.sendPhoto(id, "./img/practice-result-canvas.png", {
                 caption: templateCaption,
-                ...practiceKeyboard(id, idPracticeTask[i]),
+                ...keyboards.practiceKeyboard(id, idPracticeTask[i]),
                 parse_mode: "HTML",
               });
             });
@@ -1556,14 +2002,14 @@ ${readyThemes}
 Оберіть наступну тему, або натисніть на кнопку для підтвердження:`,
             {
               parse_mode: "HTML",
-              ...themesKeyboard2(currentThemes, formSoloImg.themes),
+              ...keyboards.themesKeyboard2(currentThemes, formSoloImg.themes),
             }
           );
         } else {
           bot.sendMessage(
             chatId,
             "Оберіть підтему:",
-            themesKeyboard2(currentThemes, formSoloImg.themes)
+            keyboards.themesKeyboard2(currentThemes, formSoloImg.themes)
           );
         }
       }
@@ -1572,63 +2018,197 @@ ${readyThemes}
     }
     bot.answerCallbackQuery(msg.id);
   }
+
+  if (data == "keyboards.getMoney") {
+    bot.sendMessage(
+      chatId,
+      "Відправте ваш номер картки (будь якого банку). На цю картку вам прийдуть кошти",
+      { parse_mode: "HTML" }
+    );
+    waitCardNumber = true;
+  }
+
+  if (data.startsWith("user-")) {
+    let text = data.slice(5);
+
+    if (text == "getCoins") {
+    }
+    if (text == "changeCar") {
+    }
+    if (text == "balance") {
+      let currentUser = 420; // await User.findOne({ idGroup: chatId });
+
+      if (currentUser) {
+        bot.sendMessage(
+          chatId,
+          `
+На вашому балансі
+💎 ${currentUser.diamonds}
+    `
+        );
+      } else {
+        bot.sendMessage(
+          chatId,
+          "Користувача не знайдено.",
+          keyboards.keyboardTask
+        );
+      }
+    }
+    if (text == "newTheme") {
+    }
+    if (text == "getTasks") {
+      bot.sendMessage(chatId, "Оберіть завдання", keyboards.keyboardTask);
+    }
+    if (text == "savedWork") {
+    }
+    if (text == "successes") {
+    }
+    if (text == "myGrade") {
+    }
+    if (text == "getCoins") {
+    }
+    if (text == "gpt") {
+      let gptTips = `<b>Ось декілька порад як краще написати запит Штучному Інтелекту:</b>
+
+
+▪️ <b>Чіткість питання.</b>
+Опишіть проблему коротко та ясно.
+
+▪️ <b>Надайте контекст.</b>
+Що ви намагаєтеся досягти з цим кодом?
+
+▪️ <b>Приклад коду.</b>
+Надайте короткий фрагмент коду, який викликає проблему. Оптимально: 10-20 рядків. Якщо код більший, намагайтеся відтворити проблему в меншому обсязі.
+
+▪️ <b>Помилки.</b>
+Якщо у вас є помилки, надайте повне повідомлення про помилку.
+
+▪️ <b>Очікувані та реальні результати.</b>
+Опишіть, який результат ви очікуєте від коду і що ви отримали насправді.
+
+▪️ <b>Зроблені спроби.</b>
+Що ви вже спробували, щоб вирішити проблему?
+
+▪️ <b>Форматування.</b>
+Щоб ваш код був читабельний, використовуйте обрамлення для коду при надсиланні.
+
+
+<b>Напиши своє питання Chat GPT 👇</b>
+`;
+      bot.sendMessage(chatId, gptTips, { parse_mode: "HTML" });
+    }
+
+    if (text == "schedule") {
+    }
+    if (text == "changeSchedule") {
+    }
+    if (text == "statistics") {
+    }
+    if (text == "competitions") {
+      let currentUser = await User.findOne({ idGroup: chatId });
+
+      if (currentUser) {
+        let curMoney = 450; //currentUser.quiz.currentMoney;
+        let kbMoney = {};
+        let moneyText =
+          "⚠️ Щоб вивести кошти на картку вам необхідно назбирати мінімум 300 грн.";
+        if (curMoney >= 300) {
+          moneyText =
+            '🥳 Вітаю! Ви вже можете вивести ваші кошти. Тисніть кнопку "зняти кошти" та вкажіть номер картки!';
+          kbMoney = keyboards.getMoney(curMoney);
+        }
+        bot.sendMessage(
+          chatId,
+          `
+На вашому балансі
+${curMoney} грн
+
+<i>${moneyText}</i>
+    `,
+          { parse_mode: "HTML", ...kbMoney }
+        );
+      }
+    }
+    if (text == "pay") {
+    }
+    if (text == "program") {
+    }
+    if (text == "settings") {
+      bot.sendMessage(
+        chatId,
+        `
+Ви в меню налаштувань.
+
+Оберіть що саме бажаєте змінити👇
+`,
+        keyboards.keyboardStudentsSettings
+      );
+    }
+  }
+
   if (data.startsWith("themesBack")) {
     bot.sendMessage(
       chatId,
       "Оберіть пройдені теми та натисніть на кнопку підтвердження",
-      confirmThemes
+      keyboards.confirmThemes
     );
     bot.sendMessage(
       chatId,
       "Список усіх тем",
-      mainThemes(themes)
-      // themesKeyboard2(themes[0].data, formSoloImg.themes)
+      keyboards.mainThemes(themes)
+      // keyboards.keyboards.themesKeyboard2(themes[0].data, formSoloImg.themes)
     );
   }
 
   if (data == "students") {
-    let kb = await chooseStudents();
+    let kb = await keyboards.chooseStudents();
     bot.sendMessage(chatId, "choose students100", kb);
   }
   if (data == "registeredLesson") {
     bot.sendMessage(
       chatId,
       "choose students200",
-      await chooseStudents("newLesson")
+      await keyboards.chooseStudents("newLesson")
     );
   }
   if (data == "createTemplate") {
     bot.sendMessage(
       chatId,
       "Відправте повідомлення, яке буде шаблоном для розсилки. Після цього натисніть: Готово",
-      confirmSave
+      keyboards.confirmSave
     );
   }
 
   if (data == "quiz") {
-    bot.sendMessage(chatId, "Оберіть: ", registeredQuiz); // result(chatId)
+    bot.sendMessage(chatId, "Оберіть: ", keyboards.registeredQuiz); // result(chatId)
   }
-
+  if (data == "s") {
+    bot.sendMessage(chatId, "Оберіть: ", keyboards.keyboardStudents); // result(chatId)
+  }
   if (data == "templates") {
-    bot.sendMessage(chatId, "Оберіть необхідну дію", templatesKeyboard);
+    bot.sendMessage(
+      chatId,
+      "Оберіть необхідну дію",
+      keyboards.templatesKeyboard
+    );
   }
-  if (data == "registeredQuizStudents") {
-    bot.sendMessage(chatId, "Оберіть студентів", confirmSave);
+  if (data == "keyboards.registeredQuizStudents") {
+    bot.sendMessage(chatId, "Оберіть студентів", keyboards.confirmSave);
   }
-  if (data == "themesDelete") {
+  if (data == "keyboards.themesDelete") {
     bot.sendMessage(
       chatId,
       "Оберіть теми для видалення",
-      themesDelete(formSoloImg.themes)
+      keyboards.themesDelete(formSoloImg.themes)
     );
   }
   if (data == "createGroup") {
     bot.sendMessage(
       chatId,
       "Оберіть учнів:",
-      await chooseStudents("createGroup")
+      await keyboards.chooseStudents("createGroup")
     );
-    bot.sendMessage(chatId, "Оберіть учнів:", confirmNewGroup);
+    bot.sendMessage(chatId, "Оберіть учнів:", keyboards.confirmNewGroup);
   }
 
   if (data == "clearGroup") {
@@ -1645,7 +2225,7 @@ ${readyThemes}
     bot.sendMessage(
       chatId,
       "Учень з ID: " + studentGroupID + " обраний!",
-      confirmNewGroup
+      keyboards.confirmNewGroup
     );
   }
 
@@ -1658,7 +2238,9 @@ ${readyThemes}
     } else {
       formSoloImg.technologies.push(newTechnology);
     }
-    let aa = technologiesKeyboard(formSoloImg.technologies).reply_markup;
+    let aa = keyboards.technologiesKeyboard(
+      formSoloImg.technologies
+    ).reply_markup;
     console.log(aa);
     bot.editMessageReplyMarkup(aa, {
       message_id: idMsgTechnologies - 1,
@@ -1815,7 +2397,7 @@ ID заняття:
 
     await bot.sendPhoto(
       formSoloImg.idGroup,
-      "./template-grade-individual-lesson20.png",
+      "./img/template-grade-individual-lesson20.png",
       { caption: template, parse_mode: "HTML", ...currentThemesKeyboard }
     );
 
@@ -1914,18 +2496,40 @@ ${theme.similarTags}
       disable_web_page_preview: true,
     });
   }
+
+  if (data.startsWith("help-50/50-")) {
+    let id = data.slice(11); // ec31bbe0
+    try {
+      bot.editMessageReplyMarkup(
+        keyboards.editTest50(msg.message.reply_markup, msg.data, bot, chatId),
+        {
+          message_id: msg.message.message_id,
+          chat_id: chatId,
+        }
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  if (data.startsWith("help-article-")) {
+    let id = data.slice(13); // ec31bbe0
+    console.log(msg);
+    bot.sendMessage(chatId, "hello");
+  }
+
   if (data.startsWith("info")) {
     formSoloImg.date = data.slice(5);
     formSoloImg.technologies = [];
     bot.sendMessage(
       chatId,
       `Дата: ` + data.slice(5) + ` обрана.`,
-      confirmTechnology
+      keyboards.confirmTechnology
     );
     bot.sendMessage(
       chatId,
       `Оберіть технології з якими працювали на уроці`,
-      technologiesKeyboard()
+      keyboards.technologiesKeyboard()
     );
 
     let msg = await bot.sendMessage(
@@ -1953,13 +2557,6 @@ bot.on("photo", async (msg) => {
   let pathToImg = await bot.downloadFile(photo, "./img/students/solo");
   formSoloImg.photos.push("./" + pathToImg);
 });
-
-// @bot.message_handler(content_types="web_app_data") #получаем отправленные данные
-// def answer(webAppMes):
-//    print(webAppMes) #вся информация о сообщении
-//    print(webAppMes.web_app_data.data) #конкретно то что мы передали в бота
-//    bot.send_message(webAppMes.chat.id, f"получили инофрмацию из веб-приложения: {webAppMes.web_app_data.data}")
-//    #отправляем сообщение в ответ на отправку данных из веб-приложения
 
 function viewCal(year, month, chat_id, cbq_id = null, message_id = null) {
   // получаем массив дней месяца

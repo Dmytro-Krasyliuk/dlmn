@@ -43,7 +43,6 @@ const schema = new Schema({
   lastName: { type: String },
 
   name: { type: String },
-  lastName: { type: String },
   days: { type: Array },
   pay: {
     day: { type: String },
@@ -61,6 +60,8 @@ const schema = new Schema({
   contact: { type: Array },
 
   idGroup: { type: String },
+  diamonds: { type: Number },
+  themes: { type: Array },
 });
 
 let User = mongoose.model("User", schema);
